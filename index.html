@@ -60,7 +60,7 @@
         }
         .tab-btn {
             flex: 1;
-            min-width: 150px;
+            min-width: 140px;
             padding: 12px;
             font-size: 1rem;
             font-weight: bold;
@@ -144,6 +144,51 @@
             color: #6c757d;
             font-style: italic;
         }
+        
+        /* CSS for Daily Availability Cards */
+        .day-card {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            margin: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .day-header {
+            background-color: var(--fedex-purple);
+            color: white;
+            padding: 12px 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+        .day-count {
+            background-color: var(--fedex-orange);
+            padding: 2px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        .day-body {
+            padding: 15px;
+            background-color: white;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .driver-badge {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-align: center;
+            border-left: 4px solid var(--fedex-purple);
+        }
+        .rotator-badge {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
@@ -155,16 +200,80 @@
 
     <div class="container">
         <div class="controls">
-            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver or route..." onkeyup="filterTables()">
+            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver, route, or day..." onkeyup="filterContent()">
             <div class="tab-buttons">
-                <button class="tab-btn active" onclick="switchTab('schedules', this)">Weekly Schedules</button>
-                <button class="tab-btn" onclick="switchTab('contacts', this)">Contact Directory</button>
-                <button class="tab-btn" onclick="switchTab('uniforms', this)">Uniform Sizes</button>
+                <button class="tab-btn active" onclick="switchTab('contacts', this)">1. Contact Info</button>
+                <button class="tab-btn" onclick="switchTab('uniforms', this)">2. Uniforms</button>
+                <button class="tab-btn" onclick="switchTab('schedules', this)">3. Schedule</button>
+                <button class="tab-btn" onclick="switchTab('availability', this)">4. Daily Available</button>
             </div>
         </div>
 
-        <!-- SCHEDULES TAB -->
-        <div id="schedules" class="table-container active">
+        <!-- 1. CONTACT DIRECTORY TAB -->
+        <div id="contacts" class="table-container active">
+            <table id="contactTable">
+                <thead>
+                    <tr>
+                        <th>Driver Name</th>
+                        <th>Route</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td><a href="tel:+13144651499" class="action-btn phone-btn">📞 314-465-1499</a></td><td><a href="mailto:Tonyejackson04@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 817-521-4570</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 682-287-7169</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 817-718-0259</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 210-897-1929</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 347-527-0069</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 817-875-0747</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 682-234-1522</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 662-435-4826</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 856-454-6248</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td><a href="tel:+13188922511" class="action-btn phone-btn">📞 318-892-2511</a></td><td><a href="mailto:Kymighiajackson18@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 817-449-4466</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 682-552-9523</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 817-730-8910</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 682-772-0589</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 2. UNIFORM SIZES TAB -->
+        <div id="uniforms" class="table-container">
+            <table id="uniformTable">
+                <thead>
+                    <tr>
+                        <th>Driver Name</th>
+                        <th>Route</th>
+                        <th>Shirt</th>
+                        <th>Pants</th>
+                        <th>Vest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td>S</td><td>32</td><td>M</td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td>L</td><td>36</td><td>L</td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td>XL / 2XL (Long)</td><td>42 (Shorts) / 42x30</td><td>Pending</td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td>M</td><td>N/A</td><td>M</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td>L</td><td>36</td><td>N/A</td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td>2XL</td><td>38</td><td>2XL</td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td>M</td><td>36</td><td>M</td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td>L</td><td>36</td><td>L</td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td>M</td><td>29x32</td><td>N/A</td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td>M</td><td>30</td><td>M</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 3. SCHEDULES TAB -->
+        <div id="schedules" class="table-container">
             
             <!-- WEEK 1 -->
             <div class="schedule-title">Week 1 (Elvis Works Sunday)</div>
@@ -245,67 +354,151 @@
             </table>
         </div>
 
-        <!-- CONTACT DIRECTORY TABLE -->
-        <div id="contacts" class="table-container">
-            <table id="contactTable">
-                <thead>
-                    <tr>
-                        <th>Driver Name</th>
-                        <th>Route</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Antonio J.</td><td>135</td><td><a href="tel:+13144651499" class="action-btn phone-btn">📞 314-465-1499</a></td><td><a href="mailto:Tonyejackson04@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Cayton M.</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 817-521-4570</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Datavious S.</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 682-287-7169</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Davion O.</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 817-718-0259</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Elvis G.R.</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 210-897-1929</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Jamal S.</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 347-527-0069</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Jesus P.</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 817-875-0747</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Jose G.</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 682-234-1522</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Joshua B.</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 662-435-4826</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 856-454-6248</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Kymighia J.</td><td>TBD</td><td><a href="tel:+13188922511" class="action-btn phone-btn">📞 318-892-2511</a></td><td><a href="mailto:Kymighiajackson18@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Mark F.</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 817-449-4466</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Noel R.</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 682-552-9523</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Quinton J.</td><td>Hosp.</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 817-730-8910</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Ryan H.</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 682-772-0589</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                </tbody>
-            </table>
-        </div>
+        <!-- 4. DAILY AVAILABILITY TAB -->
+        <div id="availability" class="table-container">
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Monday</span>
+                    <span class="day-count">12 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Cayton M.</div>
+                    <div class="driver-badge">Datavious S.</div>
+                    <div class="driver-badge">Davion O.</div>
+                    <div class="driver-badge">Elvis G.R.</div>
+                    <div class="driver-badge">Jamal S.</div>
+                    <div class="driver-badge">Jesus P.</div>
+                    <div class="driver-badge">Jose G.</div>
+                    <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Mark F.</div>
+                    <div class="driver-badge">Noel R.</div>
+                    <div class="driver-badge">Quinton J.</div>
+                    <div class="driver-badge">Ryan H.</div>
+                </div>
+            </div>
 
-        <!-- UNIFORM SIZES TABLE -->
-        <div id="uniforms" class="table-container">
-            <table id="uniformTable">
-                <thead>
-                    <tr>
-                        <th>Driver Name</th>
-                        <th>Route</th>
-                        <th>Shirt</th>
-                        <th>Pants</th>
-                        <th>Vest</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Antonio J.</td><td>135</td><td>S</td><td>32</td><td>M</td></tr>
-                    <tr><td>Cayton M.</td><td>127</td><td>L</td><td>36</td><td>L</td></tr>
-                    <tr><td>Datavious S.</td><td>234</td><td>XL / 2XL (Long)</td><td>42 (Shorts) / 42x30</td><td>Pending</td></tr>
-                    <tr><td>Davion O.</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
-                    <tr><td>Elvis G.R.</td><td>155</td><td>M</td><td>N/A</td><td>M</td></tr>
-                    <tr><td>Jamal S.</td><td>123</td><td>L</td><td>36</td><td>N/A</td></tr>
-                    <tr><td>Jesus P.</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
-                    <tr><td>Jose G.</td><td>130</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Joshua B.</td><td>TBD</td><td>2XL</td><td>38</td><td>2XL</td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
-                    <tr><td>Kymighia J.</td><td>TBD</td><td>M</td><td>36</td><td>M</td></tr>
-                    <tr><td>Mark F.</td><td>126</td><td>L</td><td>36</td><td>L</td></tr>
-                    <tr><td>Noel R.</td><td>154</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Quinton J.</td><td>Hosp.</td><td>M</td><td>29x32</td><td>N/A</td></tr>
-                    <tr><td>Ryan H.</td><td>138</td><td>M</td><td>30</td><td>M</td></tr>
-                </tbody>
-            </table>
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Tuesday</span>
+                    <span class="day-count">12 to 13 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Antonio J.</div>
+                    <div class="driver-badge">Cayton M.</div>
+                    <div class="driver-badge">Datavious S.</div>
+                    <div class="driver-badge">Davion O.</div>
+                    <div class="driver-badge">Elvis G.R.</div>
+                    <div class="driver-badge">Jamal S.</div>
+                    <div class="driver-badge">Jesus P.</div>
+                    <div class="driver-badge">Jose G.</div>
+                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Mark F.</div>
+                    <div class="driver-badge">Quinton J.</div>
+                    <div class="driver-badge">Ryan H.</div>
+                    <div class="driver-badge rotator-badge">Noel R. (Off Wk 3)</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Wednesday</span>
+                    <span class="day-count">12 to 13 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Antonio J.</div>
+                    <div class="driver-badge">Datavious S.</div>
+                    <div class="driver-badge">Davion O.</div>
+                    <div class="driver-badge">Elvis G.R.</div>
+                    <div class="driver-badge">Jamal S.</div>
+                    <div class="driver-badge">Jesus P.</div>
+                    <div class="driver-badge">Jose G.</div>
+                    <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Noel R.</div>
+                    <div class="driver-badge">Quinton J.</div>
+                    <div class="driver-badge">Ryan H.</div>
+                    <div class="driver-badge rotator-badge">Cayton M. (Off Wk 2)</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Thursday</span>
+                    <span class="day-count">13 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Antonio J.</div>
+                    <div class="driver-badge">Cayton M.</div>
+                    <div class="driver-badge">Datavious S.</div>
+                    <div class="driver-badge">Davion O.</div>
+                    <div class="driver-badge">Elvis G.R.</div>
+                    <div class="driver-badge">Jamal S.</div>
+                    <div class="driver-badge">Jesus P.</div>
+                    <div class="driver-badge">Jose G.</div>
+                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Mark F.</div>
+                    <div class="driver-badge">Noel R.</div>
+                    <div class="driver-badge">Quinton J.</div>
+                    <div class="driver-badge">Ryan H.</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Friday</span>
+                    <span class="day-count">11 to 12 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Antonio J.</div>
+                    <div class="driver-badge">Cayton M.</div>
+                    <div class="driver-badge">Datavious S.</div>
+                    <div class="driver-badge">Davion O.</div>
+                    <div class="driver-badge">Jamal S.</div>
+                    <div class="driver-badge">Jesus P.</div>
+                    <div class="driver-badge">Jose G.</div>
+                    <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Mark F.</div>
+                    <div class="driver-badge">Noel R.</div>
+                    <div class="driver-badge">Quinton J.</div>
+                    <div class="driver-badge">Ryan H.</div>
+                    <div class="driver-badge rotator-badge">Elvis G.R. (Off Wk 1)</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Saturday</span>
+                    <span class="day-count">7 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Antonio J.</div>
+                    <div class="driver-badge">Cayton M.</div>
+                    <div class="driver-badge">Elvis G.R.</div>
+                    <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Noel R.</div>
+                    <div class="driver-badge" style="background-color: #d1ecf1; border-color: #bee5eb;">Rob A. (Mgmt)</div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Sunday</span>
+                    <span class="day-count">6 Drivers</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Antonio J.</div>
+                    <div class="driver-badge">Jamal S.</div>
+                    <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Mark F.</div>
+                    <div class="driver-badge rotator-badge">1 Rotator (Cayton, Elvis, or Noel)</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; font-style: italic; color: #666;">Note: Kymighia J. is currently unscheduled (TBD) and not included in daily counts.</p>
+
         </div>
     </div>
 
@@ -323,9 +516,11 @@
             btn.classList.add('active');
         }
 
-        // Function to filter rows using the search bar across all active tables
-        function filterTables() {
+        // Function to filter rows and cards using the search bar
+        function filterContent() {
             let input = document.getElementById("searchInput").value.toLowerCase();
+            
+            // Filter standard tables
             let tables = [
                 document.getElementById("contactTable"), 
                 document.getElementById("uniformTable"),
@@ -344,6 +539,16 @@
                     } else {
                         tr[i].style.display = "none";
                     }
+                }
+            });
+
+            // Filter daily availability cards
+            let cards = document.querySelectorAll('.day-card');
+            cards.forEach(card => {
+                if (card.innerText.toLowerCase().includes(input)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
                 }
             });
         }
