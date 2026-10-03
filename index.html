@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FedEx Driver Operations Dashboard</title>
+    <style>
+        :root {
+            --fedex-purple: #4d148c;
+            --fedex-orange: #ff6600;
+            --light-bg: #f4f4f4;
+            --border-color: #ddd;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+        .header {
+            background-color: var(--fedex-purple);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--fedex-orange);
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tab-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            color: #333;
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            background-color: var(--fedex-orange);
+            color: white;
+        }
+        .table-container {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            display: none;
+            margin-bottom: 20px;
+        }
+        .table-container.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: var(--fedex-purple);
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .action-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 2px 0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .phone-btn {
+            background-color: #28a745;
+        }
+        .email-btn {
+            background-color: #007bff;
+        }
+        .action-btn:hover {
+            opacity: 0.9;
+        }
+        .schedule-title {
+            background-color: #333;
+            color: white;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .work-day {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .off-day {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .tbd-day {
+            color: #6c757d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Driver Directory & Operations Dashboard</h1>
+        <p>Facility: 4901 Village Creek Rd | Manager: Rob Alicea</p>
+    </div>
+
+    <div class="container">
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver or route..." onkeyup="filterTables()">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab('schedules', this)">Weekly Schedules</button>
+                <button class="tab-btn" onclick="switchTab('contacts', this)">Contact Directory</button>
+                <button class="tab-btn" onclick="switchTab('uniforms', this)">Uniform Sizes</button>
+            </div>
+        </div>
+
+        <!-- SCHEDULES TAB -->
+        <div id="schedules" class="table-container active">
+            
+            <!-- WEEK 1 -->
+            <div class="schedule-title">Week 1 (Elvis Works Sunday)</div>
+            <table id="w1Table">
+                <thead>
+                    <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
+                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                </tbody>
+            </table>
+
+            <!-- WEEK 2 -->
+            <div class="schedule-title">Week 2 (Cayton Works Sunday)</div>
+            <table id="w2Table">
+                <thead>
+                    <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
+                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                </tbody>
+            </table>
+
+            <!-- WEEK 3 -->
+            <div class="schedule-title">Week 3 (Noel Works Sunday)</div>
+            <table id="w3Table">
+                <thead>
+                    <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
+                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CONTACT DIRECTORY TABLE -->
+        <div id="contacts" class="table-container">
+            <table id="contactTable">
+                <thead>
+                    <tr>
+                        <th>Driver Name</th>
+                        <th>Route</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td><a href="tel:+13144651499" class="action-btn phone-btn">📞 314-465-1499</a></td><td><a href="mailto:Tonyejackson04@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 817-521-4570</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 682-287-7169</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 817-718-0259</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 210-897-1929</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 347-527-0069</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 817-875-0747</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 682-234-1522</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 662-435-4826</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 856-454-6248</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td><a href="tel:+13188922511" class="action-btn phone-btn">📞 318-892-2511</a></td><td><a href="mailto:Kymighiajackson18@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 817-449-4466</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 682-552-9523</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 817-730-8910</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 682-772-0589</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- UNIFORM SIZES TABLE -->
+        <div id="uniforms" class="table-container">
+            <table id="uniformTable">
+                <thead>
+                    <tr>
+                        <th>Driver Name</th>
+                        <th>Route</th>
+                        <th>Shirt</th>
+                        <th>Pants</th>
+                        <th>Vest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Antonio J.</td><td>135</td><td>S</td><td>32</td><td>M</td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td>L</td><td>36</td><td>L</td></tr>
+                    <tr><td>Datavious S.</td><td>234</td><td>XL / 2XL (Long)</td><td>42 (Shorts) / 42x30</td><td>Pending</td></tr>
+                    <tr><td>Davion O.</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td>M</td><td>N/A</td><td>M</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td>L</td><td>36</td><td>N/A</td></tr>
+                    <tr><td>Jesus P.</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
+                    <tr><td>Jose G.</td><td>130</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Joshua B.</td><td>TBD</td><td>2XL</td><td>38</td><td>2XL</td></tr>
+                    <tr><td>Kyaire S.</td><td>TBD</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
+                    <tr><td>Kymighia J.</td><td>TBD</td><td>M</td><td>36</td><td>M</td></tr>
+                    <tr><td>Mark F.</td><td>126</td><td>L</td><td>36</td><td>L</td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Quinton J.</td><td>Hosp.</td><td>M</td><td>29x32</td><td>N/A</td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td>M</td><td>30</td><td>M</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Function to switch between the tabs
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.table-container').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // Function to filter rows using the search bar across all active tables
+        function filterTables() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let tables = [
+                document.getElementById("contactTable"), 
+                document.getElementById("uniformTable"),
+                document.getElementById("w1Table"),
+                document.getElementById("w2Table"),
+                document.getElementById("w3Table")
+            ];
+            
+            tables.forEach(table => {
+                if (!table) return;
+                let tr = table.getElementsByTagName("tr");
+                for (let i = 1; i < tr.length; i++) {
+                    let rowText = tr[i].innerText.toLowerCase();
+                    if (rowText.includes(input)) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
