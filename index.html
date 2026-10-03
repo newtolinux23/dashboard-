@@ -204,10 +204,26 @@
             text-align: center;
             border-left: 4px solid var(--fedex-purple);
         }
-        .rotator-badge {
+        .off-duty-badge {
             background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
+            border-left: 4px solid #dc3545;
+            color: #555;
             font-size: 0.85rem;
+        }
+        .weekend-call-section {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 2px dashed #ddd;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .weekend-call-title {
+            width: 100%;
+            font-weight: bold;
+            color: #dc3545;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -242,7 +258,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>John Doe A (Coverage)</td><td>135</td><td><a href="tel:" class="action-btn phone-btn">📞 TBD</a></td><td><a href="mailto:" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Cayton M.</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 817-521-4570</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Datavious S.</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 682-287-7169</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Davion O.</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 817-718-0259</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
@@ -251,12 +266,13 @@
                     <tr><td>Jesus P.</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 817-875-0747</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jose G.</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 682-234-1522</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Joshua B.</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 662-435-4826</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 856-454-6248</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Kyaire S.</td><td>135 / 126</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 856-454-6248</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Kymighia J.</td><td>TBD</td><td><a href="tel:+13188922511" class="action-btn phone-btn">📞 318-892-2511</a></td><td><a href="mailto:Kymighiajackson18@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Mark F.</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 817-449-4466</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Noel R.</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 682-552-9523</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Quinton J.</td><td>Hosp.</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 817-730-8910</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Ryan H.</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 682-772-0589</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Ryan H.</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 682-772-0589</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>John Doe A (Coverage)</td><td>TBD</td><td><a href="tel:" class="action-btn phone-btn">📞 TBD</a></td><td><a href="mailto:" class="action-btn email-btn">✉️ Email</a></td></tr>
                 </tbody>
             </table>
         </div>
@@ -274,7 +290,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>John Doe A (Coverage)</td><td>135</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
                     <tr><td>Cayton M.</td><td>127</td><td>L</td><td>36</td><td>L</td></tr>
                     <tr><td>Datavious S.</td><td>234</td><td>XL / 2XL (Long)</td><td>42 (Shorts) / 42x30</td><td>Pending</td></tr>
                     <tr><td>Davion O.</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
@@ -283,12 +298,13 @@
                     <tr><td>Jesus P.</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
                     <tr><td>Jose G.</td><td>130</td><td>XL</td><td>38</td><td>XL</td></tr>
                     <tr><td>Joshua B.</td><td>TBD</td><td>2XL</td><td>38</td><td>2XL</td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
+                    <tr><td>Kyaire S.</td><td>135 / 126</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
                     <tr><td>Kymighia J.</td><td>TBD</td><td>M</td><td>36</td><td>M</td></tr>
                     <tr><td>Mark F.</td><td>126</td><td>L</td><td>36</td><td>L</td></tr>
                     <tr><td>Noel R.</td><td>154</td><td>XL</td><td>38</td><td>XL</td></tr>
                     <tr><td>Quinton J.</td><td>Hosp.</td><td>M</td><td>29x32</td><td>N/A</td></tr>
                     <tr><td>Ryan H.</td><td>138</td><td>M</td><td>30</td><td>M</td></tr>
+                    <tr><td>John Doe A (Coverage)</td><td>TBD</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
                 </tbody>
             </table>
         </div>
@@ -297,106 +313,102 @@
         <div id="schedules" class="table-container">
             
             <!-- WEEK 1 -->
-            <div class="schedule-title">Week 1 (Elvis Works Sunday)</div>
+            <div class="schedule-title">Week 1 (Davion Works Sunday)</div>
             <table id="w1Table">
                 <thead>
                     <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>John Doe A</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
-                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>135/126</td><td class="off-day">OFF</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O. (Rot)</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kymighia J. (Rot)</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
-                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>John Doe A (Cov)</td><td>TBD</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td></tr>
                 </tbody>
             </table>
 
             <!-- WEEK 2 -->
-            <div class="schedule-title">Week 2 (Cayton Works Sunday)</div>
+            <div class="schedule-title">Week 2 (Kymighia Works Sunday)</div>
             <table id="w2Table">
                 <thead>
                     <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>John Doe A</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
-                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>135/126</td><td class="off-day">OFF</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O. (Rot)</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Kymighia J. (Rot)</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
-                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>John Doe A (Cov)</td><td>TBD</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td></tr>
                 </tbody>
             </table>
 
             <!-- WEEK 3 -->
-            <div class="schedule-title">Week 3 (Noel Works Sunday)</div>
+            <div class="schedule-title">Week 3 (Davion Works Sunday)</div>
             <table id="w3Table">
                 <thead>
                     <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>John Doe A</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
-                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>135/126</td><td class="off-day">OFF</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O. (Rot)</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kymighia J. (Rot)</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
-                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>John Doe A (Cov)</td><td>TBD</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td></tr>
                 </tbody>
             </table>
 
-            <!-- WEEK 4 (Mirrors Week 1 to complete the Month) -->
-            <div class="schedule-title">Week 4 (Elvis Works Sunday)</div>
+            <!-- WEEK 4 -->
+            <div class="schedule-title">Week 4 (Kymighia Works Sunday)</div>
             <table id="w4Table">
                 <thead>
                     <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>John Doe A</td><td>135</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
-                    <tr><td>Elvis G.R. (Rot)</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Cayton M. (Rot)</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Noel R. (Rot)</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Cayton M.</td><td>127</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Mark F.</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Kyaire S.</td><td>135/126</td><td class="off-day">OFF</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td></tr>
+                    <tr><td>Elvis G.R.</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel R.</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jamal S.</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Datavious S.</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Davion O.</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion O. (Rot)</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Kymighia J. (Rot)</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Jose G.</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus P.</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton J.</td><td>Hosp.</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Ryan H.</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Joshua B.</td><td>TBD</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kyaire S.</td><td>TBD</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Kymighia J.</td><td>TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td><td class="tbd-day">TBD</td></tr>
-                    <tr><td>Rob Alicea</td><td>Mgmt</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>John Doe A (Cov)</td><td>TBD</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td><td class="off-day">Covered</td><td class="tbd-day">Needs Coverage</td><td class="off-day">Covered</td></tr>
                 </tbody>
             </table>
         </div>
@@ -407,10 +419,9 @@
             <div class="day-card">
                 <div class="day-header">
                     <span>Monday</span>
-                    <span class="day-count">12 Drivers</span>
+                    <span class="day-count">11 Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">Cayton M.</div>
                     <div class="driver-badge">Datavious S.</div>
                     <div class="driver-badge">Davion O.</div>
                     <div class="driver-badge">Elvis G.R.</div>
@@ -418,6 +429,7 @@
                     <div class="driver-badge">Jesus P.</div>
                     <div class="driver-badge">Jose G.</div>
                     <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Kymighia J.</div>
                     <div class="driver-badge">Mark F.</div>
                     <div class="driver-badge">Noel R.</div>
                     <div class="driver-badge">Quinton J.</div>
@@ -428,10 +440,9 @@
             <div class="day-card">
                 <div class="day-header">
                     <span>Tuesday</span>
-                    <span class="day-count">12 to 13 Drivers</span>
+                    <span class="day-count">12 Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">John Doe A</div>
                     <div class="driver-badge">Cayton M.</div>
                     <div class="driver-badge">Datavious S.</div>
                     <div class="driver-badge">Davion O.</div>
@@ -439,21 +450,22 @@
                     <div class="driver-badge">Jamal S.</div>
                     <div class="driver-badge">Jesus P.</div>
                     <div class="driver-badge">Jose G.</div>
-                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Kyaire S. (on 135)</div>
+                    <div class="driver-badge">Kymighia J.</div>
                     <div class="driver-badge">Mark F.</div>
+                    <div class="driver-badge">Noel R.</div>
                     <div class="driver-badge">Quinton J.</div>
                     <div class="driver-badge">Ryan H.</div>
-                    <div class="driver-badge rotator-badge">Noel R. (Off Wk 3)</div>
                 </div>
             </div>
 
             <div class="day-card">
                 <div class="day-header">
                     <span>Wednesday</span>
-                    <span class="day-count">12 to 13 Drivers</span>
+                    <span class="day-count">11 Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">John Doe A</div>
+                    <div class="driver-badge">Cayton M.</div>
                     <div class="driver-badge">Datavious S.</div>
                     <div class="driver-badge">Davion O.</div>
                     <div class="driver-badge">Elvis G.R.</div>
@@ -461,21 +473,20 @@
                     <div class="driver-badge">Jesus P.</div>
                     <div class="driver-badge">Jose G.</div>
                     <div class="driver-badge">Joshua B.</div>
-                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Kyaire S. (on 126)</div>
+                    <div class="driver-badge">Kymighia J.</div>
                     <div class="driver-badge">Noel R.</div>
                     <div class="driver-badge">Quinton J.</div>
                     <div class="driver-badge">Ryan H.</div>
-                    <div class="driver-badge rotator-badge">Cayton M. (Off Wk 2)</div>
                 </div>
             </div>
 
             <div class="day-card">
                 <div class="day-header">
                     <span>Thursday</span>
-                    <span class="day-count">13 Drivers</span>
+                    <span class="day-count">12 Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">John Doe A</div>
                     <div class="driver-badge">Cayton M.</div>
                     <div class="driver-badge">Datavious S.</div>
                     <div class="driver-badge">Davion O.</div>
@@ -483,7 +494,8 @@
                     <div class="driver-badge">Jamal S.</div>
                     <div class="driver-badge">Jesus P.</div>
                     <div class="driver-badge">Jose G.</div>
-                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Kyaire S. (on 135)</div>
+                    <div class="driver-badge">Kymighia J.</div>
                     <div class="driver-badge">Mark F.</div>
                     <div class="driver-badge">Noel R.</div>
                     <div class="driver-badge">Quinton J.</div>
@@ -494,85 +506,113 @@
             <div class="day-card">
                 <div class="day-header">
                     <span>Friday</span>
-                    <span class="day-count">11 to 12 Drivers</span>
+                    <span class="day-count">13 Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">John Doe A</div>
                     <div class="driver-badge">Cayton M.</div>
                     <div class="driver-badge">Datavious S.</div>
                     <div class="driver-badge">Davion O.</div>
+                    <div class="driver-badge">Elvis G.R.</div>
                     <div class="driver-badge">Jamal S.</div>
                     <div class="driver-badge">Jesus P.</div>
                     <div class="driver-badge">Jose G.</div>
                     <div class="driver-badge">Joshua B.</div>
+                    <div class="driver-badge">Kyaire S. (on 135)</div>
+                    <div class="driver-badge">Kymighia J.</div>
                     <div class="driver-badge">Mark F.</div>
                     <div class="driver-badge">Noel R.</div>
                     <div class="driver-badge">Quinton J.</div>
                     <div class="driver-badge">Ryan H.</div>
-                    <div class="driver-badge rotator-badge">Elvis G.R. (Off Wk 1 & Wk 4)</div>
                 </div>
             </div>
 
-            <div class="day-card">
+            <div class="day-card" style="border: 2px solid var(--fedex-purple);">
                 <div class="day-header">
                     <span>Saturday</span>
-                    <span class="day-count">7 Drivers</span>
+                    <span class="day-count">5 Working Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">John Doe A</div>
                     <div class="driver-badge">Cayton M.</div>
                     <div class="driver-badge">Elvis G.R.</div>
                     <div class="driver-badge">Joshua B.</div>
-                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Kyaire S. (on 126)</div>
                     <div class="driver-badge">Noel R.</div>
                     <div class="driver-badge" style="background-color: #d1ecf1; border-color: #bee5eb;">Rob A. (Mgmt)</div>
+                    
+                    <div class="weekend-call-section">
+                        <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
+                        <div class="driver-badge off-duty-badge">Mark F.</div>
+                        <div class="driver-badge off-duty-badge">Jamal S.</div>
+                        <div class="driver-badge off-duty-badge">Davion O.</div>
+                        <div class="driver-badge off-duty-badge">Datavious S.</div>
+                        <div class="driver-badge off-duty-badge">Jose G.</div>
+                        <div class="driver-badge off-duty-badge">Jesus P.</div>
+                        <div class="driver-badge off-duty-badge">Quinton J.</div>
+                        <div class="driver-badge off-duty-badge">Ryan H.</div>
+                        <div class="driver-badge off-duty-badge">Kymighia J.</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="day-card">
+            <div class="day-card" style="border: 2px solid var(--fedex-orange);">
                 <div class="day-header">
                     <span>Sunday</span>
-                    <span class="day-count">6 Drivers</span>
+                    <span class="day-count">5 Working Drivers</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">John Doe A</div>
                     <div class="driver-badge">Jamal S.</div>
                     <div class="driver-badge">Joshua B.</div>
-                    <div class="driver-badge">Kyaire S.</div>
+                    <div class="driver-badge">Kyaire S. (on 135)</div>
                     <div class="driver-badge">Mark F.</div>
-                    <div class="driver-badge rotator-badge">1 Rotator (Cayton, Elvis, or Noel)</div>
+                    <div class="driver-badge rotator-badge">1 Rotator (Davion OR Kymighia)</div>
+                    
+                    <div class="weekend-call-section">
+                        <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
+                        <div class="driver-badge off-duty-badge">Cayton M.</div>
+                        <div class="driver-badge off-duty-badge">Elvis G.R.</div>
+                        <div class="driver-badge off-duty-badge">Noel R.</div>
+                        <div class="driver-badge off-duty-badge">Datavious S.</div>
+                        <div class="driver-badge off-duty-badge">Jose G.</div>
+                        <div class="driver-badge off-duty-badge">Jesus P.</div>
+                        <div class="driver-badge off-duty-badge">Quinton J.</div>
+                        <div class="driver-badge off-duty-badge">Ryan H.</div>
+                    </div>
                 </div>
             </div>
             
-            <p style="text-align: center; font-style: italic; color: #666;">Note: Kymighia J. is currently unscheduled (TBD) and not included in daily counts.</p>
         </div>
 
         <!-- 5. DAILY NOTES TAB -->
         <div id="notes" class="table-container">
             <div class="note-card">
                 <div class="note-header">
-                    Saturday, October 3, 2026 - Transition Day Update
+                    Operations Update - Recent Schedule Changes
                 </div>
                 <div class="note-body">
-                    <h3>Operations Summary</h3>
-                    <p>It's a new day for us! Today marks the first day with the new contractor officially taking over operations (the previous contractor has sold the routes). We are retaining the same core team of drivers, but we are now operating under a new company (<em>Company Name: TBD</em>).</p>
-                    
-                    <h3>Equipment Updates</h3>
+                    <h3>Summary of Adjustments</h3>
                     <ul>
-                        <li><strong>New Trucks:</strong> We are utilizing brand-new trucks provided by the new company starting today.</li>
-                        <li><strong>New Scanners:</strong> The new contractor is bringing in all-new scanning equipment for the team.</li>
+                        <li><strong>Antonio:</strong> Officially removed from the roster. Route 135 is now open for coverage/new assignments.</li>
+                        <li><strong>Cayton M.:</strong> Removed from the rotation schedule. Permanent days off are now Sunday and Monday.</li>
+                        <li><strong>Mark F. & Kyaire (Carrie):</strong> Mark has Wednesdays and Saturdays off. Kyaire is permanently scheduled to run Mark's Route 126 on those days.</li>
+                        <li><strong>Noel R. & Elvis G.R.:</strong> Both are scheduled to work Monday through Saturday and will be off on Sundays.</li>
+                        <li><strong>Davion O.:</strong> Added back to the roster and will rotate the Sunday shift with Kymighia.</li>
                     </ul>
+                </div>
+            </div>
 
-                    <h3 style="margin-top: 20px;">Today's Live Roster (7 Routes)</h3>
-                    <p>Our operational roster for today's shifts is as follows:</p>
+            <div class="note-card">
+                <div class="note-header">
+                    Sunday, October 4, 2026 - Specific Assignments
+                </div>
+                <div class="note-body">
+                    <h3>Tomorrow's Live Roster</h3>
+                    <p>Our operational roster for tomorrow's shifts is as follows:</p>
                     <ul>
-                        <li><strong>Jose Garcia</strong> - Route 123</li>
-                        <li><strong>Cayton M.</strong> - Route 135</li>
-                        <li><strong>Elvis G.R.</strong> - Route 155</li>
-                        <li><strong>Mark F.</strong> - Route 146</li>
-                        <li><strong>Noel R.</strong> - Route TBD</li>
-                        <li><strong>Kyaire S.</strong> - Route TBD</li>
-                        <li><strong>External Driver</strong> - Route TBD <em>(Brought in by the new contractor)</em></li>
+                        <li><strong>Jamal S.</strong> - Route 123</li>
+                        <li><strong>External Driver (New)</strong> - Route 127</li>
+                        <li><strong>Mark F.</strong> - Route 130</li>
+                        <li><strong>Kyaire S.</strong> - Route 135</li>
+                        <li><strong>Elvis G.R.</strong> - Route 155 <em>(Exception: Working Sunday today before transitioning fully into his new Mon-Sat schedule)</em></li>
                     </ul>
                 </div>
             </div>
