@@ -66,6 +66,7 @@
             margin-bottom: 25px;
         }
 
+        /* Toggling Login Button States */
         .login-btn {
             background-color: var(--card-bg);
             color: var(--text-main);
@@ -86,6 +87,16 @@
         .login-btn:hover {
             border-color: var(--fedex-orange);
             background-color: rgba(255, 102, 0, 0.1);
+        }
+
+        .login-btn.unlocked {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+            color: #fca5a5;
+        }
+
+        .login-btn.unlocked:hover {
+            background-color: rgba(239, 68, 68, 0.2);
         }
 
         .search-bar {
@@ -129,8 +140,10 @@
         .tab-btn:hover { border-color: var(--fedex-orange); color: var(--text-main); }
         .tab-btn.active { background-color: var(--fedex-orange); color: white; border-color: var(--fedex-orange); box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3); }
 
-        /* THE FIX: Management Locked Elements */
-        .mgmt-locked { display: none !important; }
+        /* THE FIX: Management Locked CSS tied to the Body Tag */
+        body.locked .mgmt-restricted { 
+            display: none !important; 
+        }
 
         .table-container {
             background: var(--card-bg);
@@ -208,12 +221,11 @@
         .sig-name { font-weight: bold; color: var(--text-main); }
         .sig-time { font-size: 0.85rem; color: #94a3b8; }
         
-        /* Flex rows for inputs */
         .input-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
         .input-row > * { flex: 1; margin-bottom: 0; }
     </style>
 </head>
-<body>
+<body class="locked">
 
     <div class="header">
         <h1>Operations Directory</h1>
@@ -222,22 +234,22 @@
 
     <div class="container">
         <div class="controls">
-            <!-- Manager Login Button -->
-            <button id="loginBtn" class="login-btn" onclick="unlockDashboard()">🔒 Unlock Management Access</button>
+            <!-- Manager Toggle Button -->
+            <button id="loginBtn" class="login-btn" onclick="toggleManagement()">🔒 Unlock Management Access</button>
             
             <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver, route, or keyword..." onkeyup="filterContent()">
             
             <div class="tab-buttons">
                 <!-- Public Tabs -->
-                <button class="tab-btn active" onclick="switchTab('contacts', this)">1. Contact Info</button>
+                <button id="btn-contacts" class="tab-btn active" onclick="switchTab('contacts', this)">1. Contact Info</button>
                 <button class="tab-btn" onclick="switchTab('safety', this)">7. Safety Meetings</button>
                 
-                <!-- Locked Tabs -->
-                <button class="tab-btn mgmt-locked" onclick="switchTab('uniforms', this)">2. Uniforms</button>
-                <button class="tab-btn mgmt-locked" onclick="switchTab('schedules', this)">3. Schedule</button>
-                <button class="tab-btn mgmt-locked" onclick="switchTab('availability', this)">4. Availability</button>
-                <button class="tab-btn mgmt-locked" onclick="switchTab('notes', this)">5. Daily Diary</button>
-                <button class="tab-btn mgmt-locked" onclick="switchTab('inspections', this)">6. Inspections</button>
+                <!-- Restricted Tabs -->
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('uniforms', this)">2. Uniforms</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('schedules', this)">3. Schedule</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('availability', this)">4. Availability</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('notes', this)">5. Daily Diary</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('inspections', this)">6. Inspections</button>
             </div>
         </div>
 
@@ -252,7 +264,7 @@
                     <tr><td>Datavious Striblen</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Jamal Sealy</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉️️ Email</a></td></tr>
+                    <tr><td>Jamal Sealy</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Joshua Boyd</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
@@ -268,13 +280,11 @@
 
         <!-- 7. SAFETY MEETINGS TAB (PUBLIC VIEW & MGMT VIEW) -->
         <div id="safety" class="table-container">
-            <!-- Public Facing: The Lesson & Signature Form -->
             <div class="note-card">
                 <div class="note-header safety">
                     <span>🛡️ Weekly Safety Briefing</span>
                 </div>
                 <div class="note-body" id="safetyTopicDisplay">
-                    <!-- Dynamic topic loads here -->
                     <p>Loading this week's safety topic...</p>
                 </div>
                 <div class="database-form">
@@ -291,8 +301,8 @@
                 </div>
             </div>
 
-            <!-- Management Only: Edit Topic & View Ledger -->
-            <div class="mgmt-locked">
+            <!-- Management Only Section -->
+            <div class="mgmt-restricted">
                 <div class="note-card" style="border-color: var(--fedex-orange);">
                     <div class="note-header inspection">
                         <span>⚙️ Manager Tools: Edit Topic & View Ledger</span>
@@ -305,17 +315,15 @@
                     
                     <div class="note-body">
                         <h3 style="margin-top: 0; color: var(--text-main);">Signed Acknowledgments</h3>
-                        <div id="safetyLedgerDisplay" style="margin-bottom: 20px;">
-                            <!-- Signatures load here -->
-                        </div>
+                        <div id="safetyLedgerDisplay" style="margin-bottom: 20px;"></div>
                         <button class="delete-btn" style="width: 100%; padding: 12px; background: rgba(239, 68, 68, 0.2); border-color: #ef4444;" onclick="clearSignatures()">🗑️ Clear Signatures for New Week</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 2. UNIFORM SIZES TAB (LOCKED) -->
-        <div id="uniforms" class="table-container mgmt-locked">
+        <!-- 2. UNIFORM SIZES TAB (RESTRICTED) -->
+        <div id="uniforms" class="table-container mgmt-restricted">
             <table id="uniformTable">
                 <thead>
                     <tr><th>Driver Name</th><th>Route</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr>
@@ -339,8 +347,8 @@
             </table>
         </div>
 
-        <!-- 3. SCHEDULES TAB (LOCKED) -->
-        <div id="schedules" class="table-container mgmt-locked">
+        <!-- 3. SCHEDULES TAB (RESTRICTED) -->
+        <div id="schedules" class="table-container mgmt-restricted">
             <div class="schedule-title">Master Schedule</div>
             <table id="w1Table">
                 <thead>
@@ -365,8 +373,8 @@
             </table>
         </div>
 
-        <!-- 4. DAILY AVAILABILITY TAB (LOCKED) -->
-        <div id="availability" class="table-container mgmt-locked">
+        <!-- 4. DAILY AVAILABILITY TAB (RESTRICTED) -->
+        <div id="availability" class="table-container mgmt-restricted">
             <div class="day-card" style="border: 2px solid var(--fedex-purple);">
                 <div class="day-header">
                     <span>Saturday</span>
@@ -378,19 +386,6 @@
                     <div class="driver-badge">Kyaire Segers (126)</div>
                     <div class="driver-badge">Noel Rosales</div>
                     <div class="driver-badge rotator-badge">Davion Oliver (Standby)</div>
-                    
-                    <div class="weekend-call-section">
-                        <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
-                        <div class="driver-badge off-duty-badge">Mark Francis</div>
-                        <div class="driver-badge off-duty-badge">Jamal Sealy</div>
-                        <div class="driver-badge off-duty-badge">Datavious S.</div>
-                        <div class="driver-badge off-duty-badge">Jose Garcia</div>
-                        <div class="driver-badge off-duty-badge">Jesus Pasos</div>
-                        <div class="driver-badge off-duty-badge">Quinton Jackson</div>
-                        <div class="driver-badge off-duty-badge">Ryan Huffaker</div>
-                        <div class="driver-badge off-duty-badge">Kymighia Jackson</div>
-                        <div class="driver-badge off-duty-badge">Joshua Boyd</div>
-                    </div>
                 </div>
             </div>
 
@@ -404,26 +399,12 @@
                     <div class="driver-badge">Kyaire Segers</div>
                     <div class="driver-badge">Mark Francis</div>
                     <div class="driver-badge rotator-badge">Davion Oliver (Standby)</div>
-                    
-                    <div class="weekend-call-section">
-                        <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
-                        <div class="driver-badge off-duty-badge">Cayton McDonald</div>
-                        <div class="driver-badge off-duty-badge">Elvis Guanipa R.</div>
-                        <div class="driver-badge off-duty-badge">Noel Rosales</div>
-                        <div class="driver-badge off-duty-badge">Datavious S.</div>
-                        <div class="driver-badge off-duty-badge">Jose Garcia</div>
-                        <div class="driver-badge off-duty-badge">Jesus Pasos</div>
-                        <div class="driver-badge off-duty-badge">Quinton Jackson</div>
-                        <div class="driver-badge off-duty-badge">Ryan Huffaker</div>
-                        <div class="driver-badge off-duty-badge">Kymighia Jackson</div>
-                        <div class="driver-badge off-duty-badge">Joshua Boyd</div>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- 5. DAILY DIARY / NOTES TAB (LOCKED) -->
-        <div id="notes" class="table-container mgmt-locked">
+        <!-- 5. DAILY DIARY / NOTES TAB (RESTRICTED) -->
+        <div id="notes" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Add Daily Note / Diary Entry</h3>
                 <input type="text" id="noteTitle" class="db-input" placeholder="Subject (e.g., Morning Huddle, Route 126 Update)">
@@ -433,8 +414,8 @@
             <div id="notes-display"></div>
         </div>
 
-        <!-- 6. TRUCK INSPECTIONS TAB (LOCKED) -->
-        <div id="inspections" class="table-container mgmt-locked">
+        <!-- 6. TRUCK INSPECTIONS TAB (RESTRICTED) -->
+        <div id="inspections" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Daily Truck Inspection Log</h3>
                 
@@ -458,35 +439,50 @@
     </div>
 
     <script>
-        // THE FIX: Remove the mgmt-locked class instead of applying inline block styles
-        function unlockDashboard() {
-            let pin = prompt("Enter Manager PIN to access restricted sections:");
-            if (pin === "7170928" || pin === "717-0928") {
-                document.querySelectorAll('.mgmt-locked').forEach(el => {
-                    el.classList.remove('mgmt-locked');
-                });
-                document.getElementById('loginBtn').style.display = 'none';
-                sessionStorage.setItem('mgmt_unlocked', 'true');
-            } else if (pin !== null) {
-                alert("Incorrect PIN. Access Denied.");
+        // --- State Toggling & Authentication Logic ---
+        function applyAuthState() {
+            let isUnlocked = sessionStorage.getItem('mgmt_unlocked') === 'true';
+            let btn = document.getElementById('loginBtn');
+            
+            if (isUnlocked) {
+                document.body.classList.remove('locked');
+                btn.innerHTML = '🔓 Lock Management Access';
+                btn.classList.add('unlocked');
+            } else {
+                document.body.classList.add('locked');
+                btn.innerHTML = '🔒 Unlock Management Access';
+                btn.classList.remove('unlocked');
+                
+                // If dashboard is locked, kick view back to Public Contacts Tab to hide restricted data
+                switchTab('contacts', document.getElementById('btn-contacts'));
+            }
+        }
+
+        function toggleManagement() {
+            if (document.body.classList.contains('locked')) {
+                let pin = prompt("Enter Manager PIN to access restricted sections:");
+                if (pin === "7170928" || pin === "717-0928") {
+                    sessionStorage.setItem('mgmt_unlocked', 'true');
+                    applyAuthState();
+                } else if (pin !== null) {
+                    alert("Incorrect PIN. Access Denied.");
+                }
+            } else {
+                // Instantly re-lock the dashboard
+                sessionStorage.setItem('mgmt_unlocked', 'false');
+                applyAuthState();
             }
         }
 
         window.onload = function() {
-            if (sessionStorage.getItem('mgmt_unlocked') === 'true') {
-                document.querySelectorAll('.mgmt-locked').forEach(el => {
-                    el.classList.remove('mgmt-locked');
-                });
-                if(document.getElementById('loginBtn')) {
-                    document.getElementById('loginBtn').style.display = 'none';
-                }
-            }
+            applyAuthState();
             renderNotes();
             renderInspections();
             loadSafetyTopic();
             renderSafetyAcks();
         };
 
+        // --- Tab Switching Logic ---
         function switchTab(tabId, btn) {
             document.querySelectorAll('.table-container').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
@@ -494,6 +490,7 @@
             btn.classList.add('active');
         }
 
+        // --- Global Search Logic ---
         function filterContent() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let tables = [document.getElementById("contactTable"), document.getElementById("uniformTable"), document.getElementById("w1Table")];
@@ -506,4 +503,169 @@
                     tr[i].style.display = rowText.includes(input) ? "" : "none";
                 }
             });
-            document.querySelectorAll('.day-card, .note-card, .inspection-card').forEach(card
+            document.querySelectorAll('.day-card, .note-card, .inspection-card').forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(input) ? "" : "none";
+            });
+        }
+
+        // --- Safety Meetings Logic ---
+        const defaultSafetyTopic = `<h3>Three Points of Contact</h3><p>Always maintain three points of contact when entering or exiting the vehicle. Falls are the leading cause of injury in delivery operations. Take your time and protect your knees and back.</p>`;
+
+        function loadSafetyTopic() {
+            let topic = localStorage.getItem('fedex_safety_topic') || defaultSafetyTopic;
+            document.getElementById('safetyTopicDisplay').innerHTML = topic;
+            document.getElementById('editSafetyTopic').value = topic.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''); 
+        }
+
+        function saveSafetyTopic() {
+            let newTopic = document.getElementById('editSafetyTopic').value;
+            let formattedTopic = `<p>${newTopic.replace(/\n/g, "<br>")}</p>`;
+            localStorage.setItem('fedex_safety_topic', formattedTopic);
+            loadSafetyTopic();
+            alert("Topic updated successfully!");
+        }
+
+        function submitSafetyAck() {
+            const check = document.getElementById('ackCheck');
+            const name = document.getElementById('ackName').value;
+            const email = document.getElementById('ackEmail').value;
+
+            if(!check.checked) { alert("You must check the acknowledgment box."); return; }
+            if(!name || !email) { alert("Please provide both your name and email."); return; }
+
+            let acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]');
+            const dateStr = new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+            
+            acks.push({ name: name, email: email, time: dateStr });
+            localStorage.setItem('fedex_safety_acks', JSON.stringify(acks));
+
+            check.checked = false;
+            document.getElementById('ackName').value = '';
+            document.getElementById('ackEmail').value = '';
+            
+            const msg = document.getElementById('ackSuccessMessage');
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 4000);
+            
+            renderSafetyAcks();
+        }
+
+        function renderSafetyAcks() {
+            let acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]');
+            const container = document.getElementById('safetyLedgerDisplay');
+            container.innerHTML = '';
+
+            if (acks.length === 0) {
+                container.innerHTML = '<p>No signatures yet for this week.</p>';
+                return;
+            }
+
+            acks.slice().reverse().forEach(ack => {
+                container.innerHTML += `
+                    <div class="sig-badge">
+                        <div>
+                            <div class="sig-name">📝 ${ack.name}</div>
+                            <div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div>
+                        </div>
+                        <div class="sig-time">${ack.time}</div>
+                    </div>
+                `;
+            });
+        }
+
+        function clearSignatures() {
+            if(confirm("Are you sure you want to delete all signatures? Do this only at the start of a new week after you've recorded them!")) {
+                localStorage.setItem('fedex_safety_acks', '[]');
+                renderSafetyAcks();
+            }
+        }
+
+        // --- Diary & Inspections Logic ---
+        function getNotes() { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); }
+        
+        function renderNotes() {
+            const container = document.getElementById('notes-display');
+            container.innerHTML = '';
+            getNotes().slice().reverse().forEach(note => {
+                container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`;
+            });
+        }
+        
+        function addNote() {
+            const title = document.getElementById('noteTitle').value;
+            const body = document.getElementById('noteBody').value;
+            if(!title || !body) { alert("Enter subject and note."); return; }
+            let notes = getNotes();
+            notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" });
+            localStorage.setItem('fedex_diary', JSON.stringify(notes));
+            document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = '';
+            renderNotes();
+        }
+        
+        function deleteNote(id) {
+            if(confirm("Delete this diary entry?")) {
+                localStorage.setItem('fedex_diary', JSON.stringify(getNotes().filter(n => n.id !== id)));
+                renderNotes();
+            }
+        }
+
+        function getInspections() { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); }
+        
+        function renderInspections() {
+            const container = document.getElementById('inspections-display');
+            container.innerHTML = '';
+            getInspections().slice().reverse().forEach(insp => {
+                let badgeClass = insp.cleanliness === 'Good' ? 'clean-good' : (insp.cleanliness === 'Fair' ? 'clean-fair' : 'clean-poor');
+                let titleDisplay = insp.route ? `🚛 Truck: ${insp.truck} | Route: ${insp.route}` : `🚛 ${insp.truck}`;
+                
+                container.innerHTML += `
+                    <div class="inspection-card">
+                        <div class="note-header inspection">
+                            <span>${titleDisplay} | ${insp.date}</span>
+                            <button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button>
+                        </div>
+                        <div class="note-body">
+                            <span class="badge-cleanliness ${badgeClass}">Cleanliness: ${insp.cleanliness}</span>
+                            <p><strong>Damages / Notes:</strong><br>${insp.damages}</p>
+                        </div>
+                    </div>`;
+            });
+        }
+        
+        function addInspection() {
+            const truckNum = document.getElementById('inspTruckNum').value;
+            const routeNum = document.getElementById('inspRouteNum').value;
+            const clean = document.getElementById('inspClean').value;
+            const damage = document.getElementById('inspDamage').value;
+            
+            if(!truckNum || !routeNum || !damage) { alert("Please fill out the Truck Number, Route, and Damages."); return; }
+            
+            let inspections = getInspections();
+            inspections.push({ 
+                id: Date.now(), 
+                date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), 
+                truck: truckNum, 
+                route: routeNum,
+                cleanliness: clean, 
+                damages: damage.replace(/\n/g, "<br>") 
+            });
+            
+            localStorage.setItem('fedex_inspections', JSON.stringify(inspections));
+            
+            document.getElementById('inspTruckNum').value = ''; 
+            document.getElementById('inspRouteNum').value = ''; 
+            document.getElementById('inspClean').value = 'Good'; 
+            document.getElementById('inspDamage').value = '';
+            
+            renderInspections();
+        }
+        
+        function deleteInspection(id) {
+            if(confirm("Delete this inspection record?")) {
+                localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id)));
+                renderInspections();
+            }
+        }
+    </script>
+</body>
+</html>
