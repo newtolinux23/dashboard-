@@ -206,6 +206,10 @@
         .sig-badge { background: #334155; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; border-left: 4px solid #10b981; }
         .sig-name { font-weight: bold; color: var(--text-main); }
         .sig-time { font-size: 0.85rem; color: #94a3b8; }
+        
+        /* Flex rows for inputs */
+        .input-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+        .input-row > * { flex: 1; margin-bottom: 0; }
     </style>
 </head>
 <body>
@@ -249,7 +253,7 @@
                     <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jamal Sealy</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉️️ Email</a></td></tr>
+                    <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Joshua Boyd</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Kyaire Segers</td><td>Floater</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Kymighia Jackson</td><td>TBD</td><td><a href="tel:+13188922511" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Kymighiajackson18@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
@@ -277,8 +281,10 @@
                         <input type="checkbox" id="ackCheck">
                         <span class="checkbox-label">I acknowledge that I have read and understand this week's safety briefing, and I commit to following these procedures on the road.</span>
                     </label>
-                    <input type="text" id="ackName" class="db-input" placeholder="Full Name (Required)">
-                    <input type="email" id="ackEmail" class="db-input" placeholder="Email Address (Required)">
+                    <div class="input-row">
+                        <input type="text" id="ackName" class="db-input" placeholder="Full Name (Required)">
+                        <input type="email" id="ackEmail" class="db-input" placeholder="Email Address (Required)">
+                    </div>
                     <button class="save-btn" style="background-color: #10b981;" onclick="submitSafetyAck()">🖊️ Sign & Acknowledge</button>
                     <div id="ackSuccessMessage" style="color: #34d399; font-weight: bold; margin-top: 15px; display: none; text-align: center;">✅ Acknowledgment Saved Successfully!</div>
                 </div>
@@ -344,259 +350,4 @@
                     <tr><td>Mark Francis</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Kyaire Segers</td><td>Floater</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work (126)</td><td class="work-day">Work</td></tr>
                     <tr><td>Elvis Guanipa R.</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Noel Rosales</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Jamal Sealy</td><td>123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
-                    <tr><td>Datavious Striblen</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Davion Oliver</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">Possible</td><td class="tbd-day">Possible</td></tr>
-                    <tr><td>Quinton Jackson</td><td>218</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Joshua Boyd</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Kymighia Jackson</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Jose Garcia</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Jesus Pasos</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Ryan Huffaker</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- 4. DAILY AVAILABILITY TAB (LOCKED) -->
-        <div id="availability" class="table-container mgmt-locked">
-            <div class="day-card" style="border: 2px solid var(--fedex-purple);">
-                <div class="day-header">
-                    <span>Saturday</span>
-                    <span class="day-count">4 Working + Standby</span>
-                </div>
-                <div class="day-body">
-                    <div class="driver-badge">Cayton McDonald</div>
-                    <div class="driver-badge">Elvis Guanipa R.</div>
-                    <div class="driver-badge">Kyaire Segers (126)</div>
-                    <div class="driver-badge">Noel Rosales</div>
-                    <div class="driver-badge rotator-badge">Davion Oliver (Standby)</div>
-                </div>
-            </div>
-
-            <div class="day-card" style="border: 2px solid var(--fedex-orange);">
-                <div class="day-header">
-                    <span>Sunday</span>
-                    <span class="day-count">3 Working + Standby</span>
-                </div>
-                <div class="day-body">
-                    <div class="driver-badge">Jamal Sealy</div>
-                    <div class="driver-badge">Kyaire Segers</div>
-                    <div class="driver-badge">Mark Francis</div>
-                    <div class="driver-badge rotator-badge">Davion Oliver (Standby)</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. DAILY DIARY / NOTES TAB (LOCKED) -->
-        <div id="notes" class="table-container mgmt-locked">
-            <div class="database-form">
-                <h3 style="margin-top: 0; color: var(--text-main);">Add Daily Note / Diary Entry</h3>
-                <input type="text" id="noteTitle" class="db-input" placeholder="Subject (e.g., Morning Huddle, Route 126 Update)">
-                <textarea id="noteBody" class="db-textarea" placeholder="Log details, issues, or general diary entries here..."></textarea>
-                <button class="save-btn" onclick="addNote()">💾 Save to Diary</button>
-            </div>
-            <div id="notes-display"></div>
-        </div>
-
-        <!-- 6. TRUCK INSPECTIONS TAB (LOCKED) -->
-        <div id="inspections" class="table-container mgmt-locked">
-            <div class="database-form">
-                <h3 style="margin-top: 0; color: var(--text-main);">Daily Truck Inspection Log</h3>
-                <input type="text" id="inspTruck" class="db-input" placeholder="Truck # or Route (e.g., Truck 155 - Elvis)">
-                <select id="inspClean" class="db-select">
-                    <option value="Good">Cleanliness: Good (Ready for dispatch)</option>
-                    <option value="Fair">Cleanliness: Fair (Needs minor cleaning)</option>
-                    <option value="Poor">Cleanliness: Poor (Unacceptable condition)</option>
-                </select>
-                <textarea id="inspDamage" class="db-textarea" placeholder="Describe any damages (scratches, mirrors, tires). If none, write 'No new damages observed'"></textarea>
-                <button class="save-btn" onclick="addInspection()">🚛 Log Inspection</button>
-            </div>
-            <div id="inspections-display"></div>
-        </div>
-
-    </div>
-
-    <script>
-        // --- Password & Authentication Logic ---
-        function unlockDashboard() {
-            let pin = prompt("Enter Manager PIN to access restricted sections:");
-            if (pin === "7170928" || pin === "717-0928") {
-                document.querySelectorAll('.mgmt-locked').forEach(el => {
-                    el.style.display = 'block'; 
-                    if(el.tagName === 'BUTTON') el.style.display = 'inline-block';
-                });
-                document.getElementById('loginBtn').style.display = 'none';
-                sessionStorage.setItem('mgmt_unlocked', 'true');
-            } else if (pin !== null) {
-                alert("Incorrect PIN. Access Denied.");
-            }
-        }
-
-        window.onload = function() {
-            if (sessionStorage.getItem('mgmt_unlocked') === 'true') {
-                document.querySelectorAll('.mgmt-locked').forEach(el => {
-                    if(el.tagName === 'BUTTON') el.style.display = 'inline-block';
-                    else el.style.display = 'block';
-                });
-                document.getElementById('loginBtn').style.display = 'none';
-            }
-            renderNotes();
-            renderInspections();
-            loadSafetyTopic();
-            renderSafetyAcks();
-        };
-
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.table-container').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            btn.classList.add('active');
-        }
-
-        function filterContent() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let tables = [document.getElementById("contactTable"), document.getElementById("uniformTable"), document.getElementById("w1Table")];
-            
-            tables.forEach(table => {
-                if (!table) return;
-                let tr = table.getElementsByTagName("tr");
-                for (let i = 1; i < tr.length; i++) {
-                    let rowText = tr[i].innerText.toLowerCase();
-                    tr[i].style.display = rowText.includes(input) ? "" : "none";
-                }
-            });
-            document.querySelectorAll('.day-card, .note-card, .inspection-card').forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(input) ? "" : "none";
-            });
-        }
-
-        // --- Safety Meetings Logic ---
-        const defaultSafetyTopic = `<h3>Three Points of Contact</h3><p>Always maintain three points of contact when entering or exiting the vehicle. Falls are the leading cause of injury in delivery operations. Take your time and protect your knees and back.</p>`;
-
-        function loadSafetyTopic() {
-            let topic = localStorage.getItem('fedex_safety_topic') || defaultSafetyTopic;
-            document.getElementById('safetyTopicDisplay').innerHTML = topic;
-            document.getElementById('editSafetyTopic').value = topic.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''); // strip HTML for editor
-        }
-
-        function saveSafetyTopic() {
-            let newTopic = document.getElementById('editSafetyTopic').value;
-            let formattedTopic = `<p>${newTopic.replace(/\n/g, "<br>")}</p>`;
-            localStorage.setItem('fedex_safety_topic', formattedTopic);
-            loadSafetyTopic();
-            alert("Topic updated successfully!");
-        }
-
-        function submitSafetyAck() {
-            const check = document.getElementById('ackCheck');
-            const name = document.getElementById('ackName').value;
-            const email = document.getElementById('ackEmail').value;
-
-            if(!check.checked) { alert("You must check the acknowledgment box."); return; }
-            if(!name || !email) { alert("Please provide both your name and email."); return; }
-
-            let acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]');
-            const dateStr = new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-            
-            acks.push({ name: name, email: email, time: dateStr });
-            localStorage.setItem('fedex_safety_acks', JSON.stringify(acks));
-
-            // Reset form
-            check.checked = false;
-            document.getElementById('ackName').value = '';
-            document.getElementById('ackEmail').value = '';
-            
-            // Show success
-            const msg = document.getElementById('ackSuccessMessage');
-            msg.style.display = 'block';
-            setTimeout(() => { msg.style.display = 'none'; }, 4000);
-            
-            renderSafetyAcks();
-        }
-
-        function renderSafetyAcks() {
-            let acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]');
-            const container = document.getElementById('safetyLedgerDisplay');
-            container.innerHTML = '';
-
-            if (acks.length === 0) {
-                container.innerHTML = '<p>No signatures yet for this week.</p>';
-                return;
-            }
-
-            acks.slice().reverse().forEach(ack => {
-                container.innerHTML += `
-                    <div class="sig-badge">
-                        <div>
-                            <div class="sig-name">📝 ${ack.name}</div>
-                            <div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div>
-                        </div>
-                        <div class="sig-time">${ack.time}</div>
-                    </div>
-                `;
-            });
-        }
-
-        function clearSignatures() {
-            if(confirm("Are you sure you want to delete all signatures? Do this only at the start of a new week after you've recorded them!")) {
-                localStorage.setItem('fedex_safety_acks', '[]');
-                renderSafetyAcks();
-            }
-        }
-
-        // --- Diary & Inspections (Existing Logic) ---
-        function getNotes() { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); }
-        function renderNotes() {
-            const container = document.getElementById('notes-display');
-            container.innerHTML = '';
-            getNotes().slice().reverse().forEach(note => {
-                container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`;
-            });
-        }
-        function addNote() {
-            const title = document.getElementById('noteTitle').value;
-            const body = document.getElementById('noteBody').value;
-            if(!title || !body) { alert("Enter subject and note."); return; }
-            let notes = getNotes();
-            notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" });
-            localStorage.setItem('fedex_diary', JSON.stringify(notes));
-            document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = '';
-            renderNotes();
-        }
-        function deleteNote(id) {
-            if(confirm("Delete this diary entry?")) {
-                localStorage.setItem('fedex_diary', JSON.stringify(getNotes().filter(n => n.id !== id)));
-                renderNotes();
-            }
-        }
-
-        function getInspections() { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); }
-        function renderInspections() {
-            const container = document.getElementById('inspections-display');
-            container.innerHTML = '';
-            getInspections().slice().reverse().forEach(insp => {
-                let badgeClass = insp.cleanliness === 'Good' ? 'clean-good' : (insp.cleanliness === 'Fair' ? 'clean-fair' : 'clean-poor');
-                container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>🚛 ${insp.truck} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Cleanliness: ${insp.cleanliness}</span><p><strong>Damages / Notes:</strong><br>${insp.damages}</p></div></div>`;
-            });
-        }
-        function addInspection() {
-            const truck = document.getElementById('inspTruck').value;
-            const clean = document.getElementById('inspClean').value;
-            const damage = document.getElementById('inspDamage').value;
-            if(!truck || !damage) { alert("Fill out Truck # and Damages."); return; }
-            let inspections = getInspections();
-            inspections.push({ id: Date.now(), date: new Date().toLocaleString(), truck: truck, cleanliness: clean, damages: damage.replace(/\n/g, "<br>") });
-            localStorage.setItem('fedex_inspections', JSON.stringify(inspections));
-            document.getElementById('inspTruck').value = ''; document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
-            renderInspections();
-        }
-        function deleteInspection(id) {
-            if(confirm("Delete this inspection record?")) {
-                localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id)));
-                renderInspections();
-            }
-        }
-    </script>
-</body>
-</html>
+                    <tr><td>Noel Rosales</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td>
