@@ -39,64 +39,24 @@
             box-shadow: var(--shadow-md);
         }
 
-        .header h1 {
-            margin: 0 0 8px 0;
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
-        }
-
-        .header p {
-            margin: 0;
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
-
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
+        .header h1 { margin: 0 0 8px 0; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); }
+        .header p { margin: 0; font-size: 1rem; color: var(--text-muted); font-weight: 600; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 15px; }
+        .controls { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
 
         .login-btn {
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 2px solid var(--border-color);
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.05rem;
-            font-weight: 800;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-            text-align: center;
+            background-color: var(--card-bg); color: var(--text-main); border: 2px solid var(--border-color);
+            padding: 15px; border-radius: 10px; font-size: 1.05rem; font-weight: 800; cursor: pointer;
+            transition: var(--transition); box-shadow: var(--shadow-sm); text-align: center;
         }
-
         .login-btn:hover { border-color: var(--fedex-orange); background-color: rgba(255, 102, 0, 0.1); }
         .login-btn.unlocked { background-color: rgba(239, 68, 68, 0.1); border-color: #ef4444; color: #fca5a5; }
 
         .search-bar {
-            padding: 15px 20px;
-            font-size: 1.05rem;
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: var(--shadow-sm);
-            font-family: 'Inter', sans-serif;
+            padding: 15px 20px; font-size: 1.05rem; background-color: var(--card-bg); color: var(--text-main);
+            border: 2px solid var(--border-color); border-radius: 10px; width: 100%; box-sizing: border-box;
+            box-shadow: var(--shadow-sm); font-family: 'Inter', sans-serif;
         }
-
         .search-bar::placeholder { color: #64748b; }
         .search-bar:focus { outline: none; border-color: var(--fedex-purple); background-color: #0f172a; }
 
@@ -105,7 +65,6 @@
         .tab-btn:hover { border-color: var(--fedex-orange); color: var(--text-main); }
         .tab-btn.active { background-color: var(--fedex-orange); color: white; border-color: var(--fedex-orange); }
 
-        /* Security Lock State applied directly to body */
         body.locked-state .mgmt-restricted { display: none !important; }
 
         .table-container { background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow-md); overflow-x: auto; display: none; margin-bottom: 30px; border: 1px solid var(--border-color); }
@@ -126,7 +85,6 @@
         .off-day { color: #f87171; font-weight: 800; }
         .tbd-day { color: #fbbf24; font-weight: 800; }
 
-        /* Cards */
         .day-card, .note-card, .inspection-card { border: 1px solid var(--border-color); border-radius: 10px; margin: 20px; overflow: hidden; box-shadow: var(--shadow-sm); background: var(--card-bg); }
         .day-header { background-color: var(--fedex-purple-dark); color: white; padding: 15px 20px; font-size: 1.2rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
         .day-count { background-color: var(--fedex-orange); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 800; }
@@ -137,7 +95,6 @@
         .weekend-call-section { grid-column: 1 / -1; margin-top: 10px; padding-top: 15px; border-top: 2px dashed var(--border-color); display: flex; flex-wrap: wrap; gap: 10px; }
         .weekend-call-title { width: 100%; font-weight: bold; color: #f87171; margin-bottom: 5px; }
 
-        /* Database Forms */
         .database-form { padding: 20px; background: #0f172a; border-bottom: 2px solid var(--border-color); }
         .db-input, .db-select, .db-textarea { width: 100%; padding: 12px; margin-bottom: 15px; background-color: var(--card-bg); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 1rem; box-sizing: border-box; }
         .db-input::placeholder, .db-textarea::placeholder { color: #64748b; }
@@ -157,11 +114,9 @@
         .clean-good { background: rgba(16, 185, 129, 0.2); color: #34d399; }
         .clean-fair { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
         .clean-poor { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-
         .delete-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--text-muted); cursor: pointer; padding: 5px 10px; border-radius: 4px; font-weight: bold; }
         .delete-btn:hover { background: #ef4444; color: white; border-color: #ef4444; }
 
-        /* Safety Sign-Off Form Specifics */
         .checkbox-container { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; cursor: pointer; background: rgba(16, 185, 129, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); }
         .checkbox-container input { width: 24px; height: 24px; cursor: pointer; accent-color: #10b981; margin-top: 2px; }
         .checkbox-label { font-weight: 600; color: var(--text-main); line-height: 1.4; }
@@ -211,6 +166,7 @@
                     <tr><td>Mark Francis</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Cayton McDonald</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Kyaire Segers</td><td>135 / 126</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Ryan Huffaker</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
@@ -218,8 +174,7 @@
                     <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Kyaire Segers</td><td>Floater</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Joshua Boyd</td><td>TBD</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Joshua Boyd</td><td>Overflow</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                 </tbody>
             </table>
         </div>
@@ -247,7 +202,6 @@
                 </div>
             </div>
 
-            <!-- Management Only Section -->
             <div class="mgmt-restricted">
                 <div class="note-card" style="border-color: var(--fedex-orange);">
                     <div class="note-header inspection">
@@ -278,6 +232,7 @@
                     <tr><td>Mark Francis</td><td>126</td><td>L</td><td>36</td><td>L</td></tr>
                     <tr><td>Cayton McDonald</td><td>127</td><td>L</td><td>36</td><td>L</td></tr>
                     <tr><td>Jose Garcia</td><td>130</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Kyaire Segers</td><td>135 / 126</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
                     <tr><td>Ryan Huffaker</td><td>138</td><td>M</td><td>30</td><td>M</td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
@@ -285,8 +240,7 @@
                     <tr><td>Elvis Guanipa Rangel</td><td>155</td><td>M</td><td>N/A</td><td>M</td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td>M</td><td>29x32</td><td>N/A</td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td>XL / 2XL (Long)</td><td>42 (Shorts) / 42x30</td><td>Pending</td></tr>
-                    <tr><td>Kyaire Segers</td><td>Floater</td><td>S / M (Long)</td><td>28 or 29</td><td>M</td></tr>
-                    <tr><td>Joshua Boyd</td><td>TBD</td><td>2XL</td><td>38</td><td>2XL</td></tr>
+                    <tr><td>Joshua Boyd</td><td>Overflow</td><td>2XL</td><td>38</td><td>2XL</td></tr>
                 </tbody>
             </table>
         </div>
@@ -303,6 +257,7 @@
                     <tr><td>Mark Francis</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Cayton McDonald</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jose Garcia</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Kyaire Segers</td><td>135 / 126</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (126)</td><td class="work-day">Work (135)</td></tr>
                     <tr><td>Ryan Huffaker</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">Standby</td><td class="tbd-day">Standby</td></tr>
@@ -310,8 +265,7 @@
                     <tr><td>Elvis Guanipa R.</td><td>155</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Kyaire Segers</td><td>Floater</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work (126)</td><td class="work-day">Work</td></tr>
-                    <tr><td>Joshua Boyd</td><td>TBD</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Joshua Boyd</td><td>Overflow</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">Overflow</td><td class="tbd-day">Overflow</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                 </tbody>
             </table>
         </div>
@@ -332,10 +286,10 @@
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
                     <div class="driver-badge">Quinton Jackson (218)</div>
                     <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Joshua Boyd (TBD)</div>
+                    <div class="driver-badge">Joshua Boyd (Overflow)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
-                        <div class="driver-badge off-duty-badge">Kyaire Segers (Floater)</div>
+                        <div class="driver-badge off-duty-badge">Kyaire Segers (135/126)</div>
                     </div>
                 </div>
             </div>
@@ -354,10 +308,10 @@
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
                     <div class="driver-badge">Quinton Jackson (218)</div>
                     <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Joshua Boyd (TBD)</div>
+                    <div class="driver-badge">Joshua Boyd (Overflow)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
-                        <div class="driver-badge off-duty-badge">Kyaire Segers (Floater)</div>
+                        <div class="driver-badge off-duty-badge">Kyaire Segers (135/126)</div>
                     </div>
                 </div>
             </div>
@@ -376,7 +330,7 @@
                     <div class="driver-badge">Quinton Jackson (218)</div>
                     <div class="driver-badge">Datavious Striblen (234)</div>
                     <div class="driver-badge" style="border-color: var(--fedex-orange);">Kyaire Segers (126)</div>
-                    <div class="driver-badge">Joshua Boyd (TBD)</div>
+                    <div class="driver-badge">Joshua Boyd (Overflow)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
@@ -391,6 +345,7 @@
                     <div class="driver-badge">Mark Francis (126)</div>
                     <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Jose Garcia (130)</div>
+                    <div class="driver-badge" style="border-color: #10b981;">Kyaire Segers (135)</div>
                     <div class="driver-badge">Ryan Huffaker (138)</div>
                     <div class="driver-badge">Jesus Pasos (139)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
@@ -398,8 +353,7 @@
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
                     <div class="driver-badge">Quinton Jackson (218)</div>
                     <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge" style="border-color: #10b981;">Kyaire Segers (Floater)</div>
-                    <div class="driver-badge">Joshua Boyd (TBD)</div>
+                    <div class="driver-badge rotator-badge">Joshua Boyd (Overflow)</div>
                 </div>
             </div>
 
@@ -410,6 +364,7 @@
                     <div class="driver-badge">Mark Francis (126)</div>
                     <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Jose Garcia (130)</div>
+                    <div class="driver-badge" style="border-color: #10b981;">Kyaire Segers (135)</div>
                     <div class="driver-badge">Ryan Huffaker (138)</div>
                     <div class="driver-badge">Jesus Pasos (139)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
@@ -417,8 +372,7 @@
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
                     <div class="driver-badge">Quinton Jackson (218)</div>
                     <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge" style="border-color: #10b981;">Kyaire Segers (Floater)</div>
-                    <div class="driver-badge">Joshua Boyd (TBD)</div>
+                    <div class="driver-badge rotator-badge">Joshua Boyd (Overflow)</div>
                 </div>
             </div>
 
@@ -439,7 +393,7 @@
                         <div class="driver-badge off-duty-badge">Jesus Pasos (139)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (218)</div>
                         <div class="driver-badge off-duty-badge">Datavious Striblen (234)</div>
-                        <div class="driver-badge off-duty-badge">Joshua Boyd (TBD)</div>
+                        <div class="driver-badge off-duty-badge">Joshua Boyd (Overflow)</div>
                     </div>
                 </div>
             </div>
@@ -449,7 +403,7 @@
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (123)</div>
                     <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge" style="border-color: #10b981;">Kyaire Segers (Floater)</div>
+                    <div class="driver-badge" style="border-color: #10b981;">Kyaire Segers (135)</div>
                     <div class="driver-badge rotator-badge">Davion Oliver (146) - Standby</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
@@ -461,7 +415,7 @@
                         <div class="driver-badge off-duty-badge">Elvis Guanipa R. (155)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (218)</div>
                         <div class="driver-badge off-duty-badge">Datavious Striblen (234)</div>
-                        <div class="driver-badge off-duty-badge">Joshua Boyd (TBD)</div>
+                        <div class="driver-badge off-duty-badge">Joshua Boyd (Overflow)</div>
                     </div>
                 </div>
             </div>
@@ -503,12 +457,8 @@
     </div>
 
     <script>
-        // Bulletproof Error Handling wrapper
-        function safeExecute(fn) {
-            try { fn(); } catch (error) { console.error("Execution Error:", error); }
-        }
+        function safeExecute(fn) { try { fn(); } catch (error) { console.error("Execution Error:", error); } }
 
-        // --- State Toggling & Authentication Logic ---
         function applyAuthState() {
             try {
                 let isUnlocked = sessionStorage.getItem('mgmt_unlocked') === 'true';
@@ -516,47 +466,27 @@
                 
                 if (isUnlocked) {
                     document.body.classList.remove('locked-state');
-                    if(btn) {
-                        btn.innerHTML = '🔓 Lock Management Access';
-                        btn.classList.add('unlocked');
-                    }
+                    if(btn) { btn.innerHTML = '🔓 Lock Management Access'; btn.classList.add('unlocked'); }
                 } else {
                     document.body.classList.add('locked-state');
-                    if(btn) {
-                        btn.innerHTML = '🔒 Unlock Management Access';
-                        btn.classList.remove('unlocked');
-                    }
-                    // Kick back to Public Contacts Tab to hide restricted data
+                    if(btn) { btn.innerHTML = '🔒 Unlock Management Access'; btn.classList.remove('unlocked'); }
                     let activeTab = document.querySelector('.table-container.active');
-                    if (activeTab && activeTab.classList.contains('mgmt-restricted')) {
-                        switchTab('contacts', document.getElementById('btn-contacts'));
-                    }
+                    if (activeTab && activeTab.classList.contains('mgmt-restricted')) { switchTab('contacts', document.getElementById('btn-contacts')); }
                 }
-            } catch (error) {
-                // Failsafe if sessionStorage is blocked
-                document.body.classList.add('locked-state');
-                console.error("Storage Error:", error);
-            }
+            } catch (error) { document.body.classList.add('locked-state'); console.error("Storage Error:", error); }
         }
 
         function toggleManagement() {
             try {
                 let isUnlocked = sessionStorage.getItem('mgmt_unlocked') === 'true';
                 if (isUnlocked) {
-                    sessionStorage.setItem('mgmt_unlocked', 'false');
-                    applyAuthState();
+                    sessionStorage.setItem('mgmt_unlocked', 'false'); applyAuthState();
                 } else {
                     let pin = prompt("Enter Manager PIN (7170928) to access restricted sections:");
-                    if (pin === "7170928" || pin === "717-0928") {
-                        sessionStorage.setItem('mgmt_unlocked', 'true');
-                        applyAuthState();
-                    } else if (pin !== null && pin !== "") {
-                        alert("Incorrect PIN. Access Denied.");
-                    }
+                    if (pin === "7170928" || pin === "717-0928") { sessionStorage.setItem('mgmt_unlocked', 'true'); applyAuthState(); }
+                    else if (pin !== null && pin !== "") { alert("Incorrect PIN. Access Denied."); }
                 }
-            } catch (error) {
-                alert("Security error: Please ensure your browser allows cookies/session storage.");
-            }
+            } catch (error) { alert("Security error: Please ensure your browser allows cookies/session storage."); }
         }
 
         window.onload = function() {
@@ -567,7 +497,6 @@
             safeExecute(renderSafetyAcks);
         };
 
-        // --- Tab Switching Logic ---
         function switchTab(tabId, btn) {
             document.querySelectorAll('.table-container').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
@@ -576,7 +505,6 @@
             if (btn) btn.classList.add('active');
         }
 
-        // --- Global Search Logic ---
         function filterContent() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let tables = [document.getElementById("contactTable"), document.getElementById("uniformTable"), document.getElementById("w1Table")];
@@ -594,7 +522,6 @@
             });
         }
 
-        // --- Safety & Service Meetings Logic ---
         const defaultSafetyTopic = `<h3>Week 1: Safety & Service Standards</h3>
         <p><strong>1. Safety (Three Points of Contact):</strong> Always maintain three points of contact when entering or exiting the truck. Never jump out. Slips and falls are the #1 injury in this business.</p>
         <p><strong>2. Morning Truck Organization:</strong> Organize your trucks in the morning before leaving the terminal. Check your load to catch and avoid misloads early.</p>
@@ -638,10 +565,7 @@
             document.getElementById('ackEmail').value = '';
             
             const msg = document.getElementById('ackSuccessMessage');
-            if (msg) {
-                msg.style.display = 'block';
-                setTimeout(() => { msg.style.display = 'none'; }, 4000);
-            }
+            if (msg) { msg.style.display = 'block'; setTimeout(() => { msg.style.display = 'none'; }, 4000); }
             renderSafetyAcks();
         }
 
@@ -652,21 +576,10 @@
             if (!container) return;
             
             container.innerHTML = '';
-            if (acks.length === 0) {
-                container.innerHTML = '<p>No signatures yet for this week.</p>';
-                return;
-            }
+            if (acks.length === 0) { container.innerHTML = '<p>No signatures yet for this week.</p>'; return; }
 
             acks.slice().reverse().forEach(ack => {
-                container.innerHTML += `
-                    <div class="sig-badge">
-                        <div>
-                            <div class="sig-name">📝 ${ack.name}</div>
-                            <div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div>
-                        </div>
-                        <div class="sig-time">${ack.time}</div>
-                    </div>
-                `;
+                container.innerHTML += `<div class="sig-badge"><div><div class="sig-name">📝 ${ack.name}</div><div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div></div><div class="sig-time">${ack.time}</div></div>`;
             });
         }
 
@@ -677,10 +590,7 @@
             }
         }
 
-        // --- Diary & Inspections Logic ---
-        function getNotes() { 
-            try { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); } catch(e) { return []; } 
-        }
+        function getNotes() { try { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); } catch(e) { return []; } }
         
         function renderNotes() {
             const container = document.getElementById('notes-display');
@@ -709,9 +619,7 @@
             }
         }
 
-        function getInspections() { 
-            try { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); } catch(e) { return []; } 
-        }
+        function getInspections() { try { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); } catch(e) { return []; } }
         
         function renderInspections() {
             const container = document.getElementById('inspections-display');
@@ -721,17 +629,7 @@
                 let badgeClass = insp.cleanliness === 'Good' ? 'clean-good' : (insp.cleanliness === 'Fair' ? 'clean-fair' : 'clean-poor');
                 let titleDisplay = insp.route ? `🚛 Truck: ${insp.truck} | Route: ${insp.route}` : `🚛 ${insp.truck}`;
                 
-                container.innerHTML += `
-                    <div class="inspection-card">
-                        <div class="note-header inspection">
-                            <span>${titleDisplay} | ${insp.date}</span>
-                            <button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button>
-                        </div>
-                        <div class="note-body">
-                            <span class="badge-cleanliness ${badgeClass}">Cleanliness: ${insp.cleanliness}</span>
-                            <p><strong>Damages / Notes:</strong><br>${insp.damages}</p>
-                        </div>
-                    </div>`;
+                container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>${titleDisplay} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Cleanliness: ${insp.cleanliness}</span><p><strong>Damages / Notes:</strong><br>${insp.damages}</p></div></div>`;
             });
         }
         
@@ -747,19 +645,13 @@
             inspections.push({ 
                 id: Date.now(), 
                 date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), 
-                truck: truckNum, 
-                route: routeNum,
-                cleanliness: clean, 
-                damages: damage.replace(/\n/g, "<br>") 
+                truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>") 
             });
             
             try { localStorage.setItem('fedex_inspections', JSON.stringify(inspections)); } catch(e) { alert("Storage Error."); return;}
             
-            document.getElementById('inspTruckNum').value = ''; 
-            document.getElementById('inspRouteNum').value = ''; 
-            document.getElementById('inspClean').value = 'Good'; 
-            document.getElementById('inspDamage').value = '';
-            
+            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; 
+            document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
             renderInspections();
         }
         
