@@ -143,44 +143,21 @@
             
             <div class="tab-buttons">
                 <!-- Public Tabs -->
-                <button id="btn-contacts" class="tab-btn active" onclick="switchTab('contacts', this)">1. Contact Info</button>
-                <button class="tab-btn" onclick="switchTab('safety', this)">7. Safety & Service Meetings</button>
+                <button id="btn-safety" class="tab-btn active" onclick="switchTab('safety', this)">1. Safety Briefing</button>
+                <button class="tab-btn" onclick="switchTab('requests', this)">2. Driver Requests</button>
                 
                 <!-- Restricted Tabs -->
-                <button class="tab-btn mgmt-restricted" onclick="switchTab('uniforms', this)">2. Uniforms</button>
-                <button class="tab-btn mgmt-restricted" onclick="switchTab('schedules', this)">3. Schedule</button>
-                <button class="tab-btn mgmt-restricted" onclick="switchTab('availability', this)">4. Availability</button>
-                <button class="tab-btn mgmt-restricted" onclick="switchTab('notes', this)">5. Daily Diary</button>
-                <button class="tab-btn mgmt-restricted" onclick="switchTab('inspections', this)">6. Inspections</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('contacts', this)">3. Contact Info</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('uniforms', this)">4. Uniforms</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('schedules', this)">5. Schedule</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('availability', this)">6. Availability</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('notes', this)">7. Daily Diary</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('inspections', this)">8. Inspections</button>
             </div>
         </div>
 
-        <!-- 1. CONTACT DIRECTORY TAB (PUBLIC) -->
-        <div id="contacts" class="table-container active">
-            <table id="contactTable">
-                <thead>
-                    <tr><th>Driver Name</th><th>Route</th><th>Phone</th><th>Email</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Jamal Sealy</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Mark Francis</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Cayton McDonald</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Kyaire Segers</td><td>135 / 126</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Ryan Huffaker</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Davion Oliver</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Noel Rosales</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Quinton Jackson</td><td>218</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Datavious Striblen</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Joshua Boyd</td><td>Overflow</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- 7. SAFETY & SERVICE MEETINGS TAB (PUBLIC VIEW & MGMT VIEW) -->
-        <div id="safety" class="table-container">
+        <!-- 1. SAFETY & SERVICE MEETINGS TAB (PUBLIC DEFAULT) -->
+        <div id="safety" class="table-container active">
             <div class="note-card">
                 <div class="note-header safety">
                     <span>🛡️ Weekly Safety & Service Briefing</span>
@@ -221,7 +198,69 @@
             </div>
         </div>
 
-        <!-- 2. UNIFORM SIZES TAB (RESTRICTED) -->
+        <!-- 2. DRIVER REQUESTS TAB (PUBLIC FORM & RESTRICTED INBOX) -->
+        <div id="requests" class="table-container">
+            <!-- Public Facing Form -->
+            <div class="note-card">
+                <div class="note-header" style="background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; color: #60a5fa;">
+                    <span>📬 Driver Request Form</span>
+                </div>
+                <div class="database-form">
+                    <p style="color: var(--text-muted); margin-top: 0; margin-bottom: 20px;">Use this private form to request uniform changes, report route/truck issues, request time off, or communicate needs to management. These messages are sent securely and directly to Rob.</p>
+                    <div class="input-row">
+                        <input type="text" id="reqName" class="db-input" placeholder="Your Name (Required)">
+                        <select id="reqType" class="db-select">
+                            <option value="" disabled selected>-- Select Request Type --</option>
+                            <option value="👕 Uniform Need">Uniform Need</option>
+                            <option value="🚛 Route / Truck Issue">Route / Truck Issue</option>
+                            <option value="📅 Schedule / Time Off">Schedule / Time Off Request</option>
+                            <option value="💬 General / Other">General Inquiry / Other</option>
+                        </select>
+                    </div>
+                    <textarea id="reqMessage" class="db-textarea" placeholder="Explain what you need..."></textarea>
+                    <button class="save-btn" style="background-color: #3b82f6;" onclick="submitRequest()">📤 Submit Request to Manager</button>
+                    <div id="reqSuccessMessage" style="color: #60a5fa; font-weight: bold; margin-top: 15px; display: none; text-align: center;">✅ Request sent securely to management!</div>
+                </div>
+            </div>
+
+            <!-- Management Only Inbox -->
+            <div class="mgmt-restricted">
+                <div class="note-card" style="border-color: #3b82f6;">
+                    <div class="note-header" style="background: #020617; color: #60a5fa;">
+                        <span>📥 Manager Inbox: Pending Driver Requests</span>
+                    </div>
+                    <div class="note-body" id="requestInboxDisplay">
+                        <!-- Requests will load here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. CONTACT DIRECTORY TAB (RESTRICTED) -->
+        <div id="contacts" class="table-container mgmt-restricted">
+            <table id="contactTable">
+                <thead>
+                    <tr><th>Driver Name</th><th>Route</th><th>Phone</th><th>Email</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Jamal Sealy</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Mark Francis</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Cayton McDonald</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Kyaire Segers</td><td>135 / 126</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Ryan Huffaker</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Davion Oliver</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Noel Rosales</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Quinton Jackson</td><td>218</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Datavious Striblen</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Joshua Boyd</td><td>Overflow</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 4. UNIFORM SIZES TAB (RESTRICTED) -->
         <div id="uniforms" class="table-container mgmt-restricted">
             <table id="uniformTable">
                 <thead>
@@ -245,7 +284,7 @@
             </table>
         </div>
 
-        <!-- 3. SCHEDULES TAB (RESTRICTED) -->
+        <!-- 5. SCHEDULES TAB (RESTRICTED) -->
         <div id="schedules" class="table-container mgmt-restricted">
             <div class="schedule-title">Master Schedule</div>
             <table id="w1Table">
@@ -270,7 +309,7 @@
             </table>
         </div>
 
-        <!-- 4. DAILY AVAILABILITY TAB (RESTRICTED) -->
+        <!-- 6. DAILY AVAILABILITY TAB (RESTRICTED) -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="day-card">
                 <div class="day-header"><span>Monday</span><span class="day-count">12 Working</span></div>
@@ -421,7 +460,7 @@
             </div>
         </div>
 
-        <!-- 5. DAILY DIARY / NOTES TAB (RESTRICTED) -->
+        <!-- 7. DAILY DIARY / NOTES TAB (RESTRICTED) -->
         <div id="notes" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Add Daily Note / Diary Entry</h3>
@@ -432,22 +471,19 @@
             <div id="notes-display"></div>
         </div>
 
-        <!-- 6. TRUCK INSPECTIONS TAB (RESTRICTED) -->
+        <!-- 8. TRUCK INSPECTIONS TAB (RESTRICTED) -->
         <div id="inspections" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Daily Truck Inspection Log</h3>
-                
                 <div class="input-row">
                     <input type="text" id="inspTruckNum" class="db-input" placeholder="Truck Number (e.g., 23412)">
                     <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., 155 - Elvis)">
                 </div>
-                
                 <select id="inspClean" class="db-select">
                     <option value="Good">Cleanliness: Good (Ready for dispatch)</option>
                     <option value="Fair">Cleanliness: Fair (Needs minor cleaning)</option>
                     <option value="Poor">Cleanliness: Poor (Unacceptable condition)</option>
                 </select>
-
                 <textarea id="inspDamage" class="db-textarea" placeholder="Describe any damages (scratches, mirrors, tires). If none, write 'No new damages observed'"></textarea>
                 <button class="save-btn" onclick="addInspection()">🚛 Log Inspection</button>
             </div>
@@ -470,8 +506,9 @@
                 } else {
                     document.body.classList.add('locked-state');
                     if(btn) { btn.innerHTML = '🔒 Unlock Management Access'; btn.classList.remove('unlocked'); }
+                    // Kick back to Public Safety Tab to hide restricted data
                     let activeTab = document.querySelector('.table-container.active');
-                    if (activeTab && activeTab.classList.contains('mgmt-restricted')) { switchTab('contacts', document.getElementById('btn-contacts')); }
+                    if (activeTab && activeTab.classList.contains('mgmt-restricted')) { switchTab('safety', document.getElementById('btn-safety')); }
                 }
             } catch (error) { document.body.classList.add('locked-state'); console.error("Storage Error:", error); }
         }
@@ -495,6 +532,7 @@
             safeExecute(renderInspections);
             safeExecute(loadSafetyTopic);
             safeExecute(renderSafetyAcks);
+            safeExecute(renderRequests);
         };
 
         function switchTab(tabId, btn) {
@@ -522,6 +560,64 @@
             });
         }
 
+        // --- Driver Requests System ---
+        function submitRequest() {
+            const name = document.getElementById('reqName').value;
+            const type = document.getElementById('reqType').value;
+            const msg = document.getElementById('reqMessage').value;
+
+            if(!name || !type || !msg) { alert("Please fill out your name, select a request type, and include a message."); return; }
+
+            let requests = [];
+            try { requests = JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]'); } catch(e) {}
+            const dateStr = new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+            
+            requests.push({ id: Date.now(), name: name, type: type, message: msg.replace(/\n/g, "<br>"), time: dateStr });
+            try { localStorage.setItem('fedex_driver_requests', JSON.stringify(requests)); } catch(e) { alert("Storage Error"); return;}
+
+            document.getElementById('reqName').value = '';
+            document.getElementById('reqType').value = '';
+            document.getElementById('reqMessage').value = '';
+            
+            const successMsg = document.getElementById('reqSuccessMessage');
+            if (successMsg) { successMsg.style.display = 'block'; setTimeout(() => { successMsg.style.display = 'none'; }, 4000); }
+            renderRequests();
+        }
+
+        function renderRequests() {
+            let requests = [];
+            try { requests = JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]'); } catch(e) {}
+            const container = document.getElementById('requestInboxDisplay');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            if (requests.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No pending requests.</p>'; return; }
+
+            requests.slice().reverse().forEach(req => {
+                container.innerHTML += `
+                    <div class="inspection-card" style="margin: 10px 0; border-left: 4px solid #3b82f6; border-radius: 8px;">
+                        <div style="padding: 15px; display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;">
+                            <div style="flex-grow: 1;">
+                                <strong style="color: var(--text-main); font-size: 1.1rem;">${req.name}</strong> 
+                                <span style="color: #64748b; font-size: 0.85rem; margin-left: 8px;">${req.time}</span><br>
+                                <span style="display: inline-block; background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; margin: 8px 0; font-weight: bold;">${req.type}</span>
+                                <p style="margin: 5px 0 0 0; color: var(--text-muted); line-height: 1.5;">${req.message}</p>
+                            </div>
+                            <button class="delete-btn" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; white-space: nowrap;" onclick="resolveRequest(${req.id})">✔️ Mark Resolved</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function resolveRequest(id) {
+            if(confirm("Mark this request as resolved? It will be removed from your inbox.")) {
+                try { localStorage.setItem('fedex_driver_requests', JSON.stringify(JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]').filter(r => r.id !== id))); } catch(e) {}
+                renderRequests();
+            }
+        }
+
+        // --- Safety & Service Meetings Logic ---
         const defaultSafetyTopic = `<h3>Week 1: Safety & Service Standards</h3>
         <p><strong>1. Safety (Three Points of Contact):</strong> Always maintain three points of contact when entering or exiting the truck. Never jump out. Slips and falls are the #1 injury in this business.</p>
         <p><strong>2. Morning Truck Organization:</strong> Organize your trucks in the morning before leaving the terminal. Check your load to catch and avoid misloads early.</p>
@@ -574,10 +670,8 @@
             try { acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]'); } catch(e) {}
             const container = document.getElementById('safetyLedgerDisplay');
             if (!container) return;
-            
             container.innerHTML = '';
-            if (acks.length === 0) { container.innerHTML = '<p>No signatures yet for this week.</p>'; return; }
-
+            if (acks.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No signatures yet for this week.</p>'; return; }
             acks.slice().reverse().forEach(ack => {
                 container.innerHTML += `<div class="sig-badge"><div><div class="sig-name">📝 ${ack.name}</div><div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div></div><div class="sig-time">${ack.time}</div></div>`;
             });
@@ -590,37 +684,24 @@
             }
         }
 
+        // --- Diary & Inspections Logic ---
         function getNotes() { try { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); } catch(e) { return []; } }
-        
         function renderNotes() {
             const container = document.getElementById('notes-display');
             if (!container) return;
             container.innerHTML = '';
-            getNotes().slice().reverse().forEach(note => {
-                container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`;
-            });
+            getNotes().slice().reverse().forEach(note => { container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`; });
         }
-        
         function addNote() {
-            const title = document.getElementById('noteTitle').value;
-            const body = document.getElementById('noteBody').value;
+            const title = document.getElementById('noteTitle').value; const body = document.getElementById('noteBody').value;
             if(!title || !body) { alert("Enter subject and note."); return; }
-            let notes = getNotes();
-            notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" });
+            let notes = getNotes(); notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" });
             try { localStorage.setItem('fedex_diary', JSON.stringify(notes)); } catch(e) { alert("Storage error."); return;}
-            document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = '';
-            renderNotes();
+            document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = ''; renderNotes();
         }
-        
-        function deleteNote(id) {
-            if(confirm("Delete this diary entry?")) {
-                try { localStorage.setItem('fedex_diary', JSON.stringify(getNotes().filter(n => n.id !== id))); } catch(e) {}
-                renderNotes();
-            }
-        }
+        function deleteNote(id) { if(confirm("Delete this diary entry?")) { try { localStorage.setItem('fedex_diary', JSON.stringify(getNotes().filter(n => n.id !== id))); } catch(e) {} renderNotes(); } }
 
         function getInspections() { try { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); } catch(e) { return []; } }
-        
         function renderInspections() {
             const container = document.getElementById('inspections-display');
             if (!container) return;
@@ -628,39 +709,20 @@
             getInspections().slice().reverse().forEach(insp => {
                 let badgeClass = insp.cleanliness === 'Good' ? 'clean-good' : (insp.cleanliness === 'Fair' ? 'clean-fair' : 'clean-poor');
                 let titleDisplay = insp.route ? `🚛 Truck: ${insp.truck} | Route: ${insp.route}` : `🚛 ${insp.truck}`;
-                
                 container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>${titleDisplay} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Cleanliness: ${insp.cleanliness}</span><p><strong>Damages / Notes:</strong><br>${insp.damages}</p></div></div>`;
             });
         }
-        
         function addInspection() {
-            const truckNum = document.getElementById('inspTruckNum').value;
-            const routeNum = document.getElementById('inspRouteNum').value;
-            const clean = document.getElementById('inspClean').value;
-            const damage = document.getElementById('inspDamage').value;
-            
+            const truckNum = document.getElementById('inspTruckNum').value; const routeNum = document.getElementById('inspRouteNum').value;
+            const clean = document.getElementById('inspClean').value; const damage = document.getElementById('inspDamage').value;
             if(!truckNum || !routeNum || !damage) { alert("Please fill out the Truck Number, Route, and Damages."); return; }
-            
             let inspections = getInspections();
-            inspections.push({ 
-                id: Date.now(), 
-                date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), 
-                truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>") 
-            });
-            
+            inspections.push({ id: Date.now(), date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>") });
             try { localStorage.setItem('fedex_inspections', JSON.stringify(inspections)); } catch(e) { alert("Storage Error."); return;}
-            
-            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; 
-            document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
+            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
             renderInspections();
         }
-        
-        function deleteInspection(id) {
-            if(confirm("Delete this inspection record?")) {
-                try { localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id))); } catch(e) {}
-                renderInspections();
-            }
-        }
+        function deleteInspection(id) { if(confirm("Delete this inspection record?")) { try { localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id))); } catch(e) {} renderInspections(); } }
     </script>
 </body>
 </html>
