@@ -117,9 +117,9 @@
         .delete-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--text-muted); cursor: pointer; padding: 5px 10px; border-radius: 4px; font-weight: bold; }
         .delete-btn:hover { background: #ef4444; color: white; border-color: #ef4444; }
 
-        .checkbox-container { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; cursor: pointer; background: rgba(16, 185, 129, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); }
-        .checkbox-container input { width: 24px; height: 24px; cursor: pointer; accent-color: #10b981; margin-top: 2px; }
-        .checkbox-label { font-weight: 600; color: var(--text-main); line-height: 1.4; }
+        .checkbox-container { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; cursor: pointer; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .checkbox-container input { width: 20px; height: 20px; cursor: pointer; accent-color: var(--fedex-orange); }
+        .checkbox-label { font-weight: 600; color: var(--text-main); }
         .sig-badge { background: #334155; padding: 10px 15px; border-radius: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; border-left: 4px solid #10b981; }
         .sig-name { font-weight: bold; color: var(--text-main); }
         .sig-time { font-size: 0.85rem; color: #94a3b8; }
@@ -136,17 +136,13 @@
 
     <div class="container">
         <div class="controls">
-            <!-- Manager Toggle Button -->
             <button id="loginBtn" class="login-btn" onclick="toggleManagement()">🔒 Unlock Management Access</button>
             
             <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver, route, or keyword..." onkeyup="filterContent()">
             
             <div class="tab-buttons">
-                <!-- Public Tabs -->
                 <button id="btn-safety" class="tab-btn active" onclick="switchTab('safety', this)">1. Safety Briefing</button>
                 <button class="tab-btn" onclick="switchTab('requests', this)">2. Driver Requests</button>
-                
-                <!-- Restricted Tabs -->
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('contacts', this)">3. Contact Info</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('uniforms', this)">4. Uniforms</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('schedules', this)">5. Schedule</button>
@@ -156,7 +152,6 @@
             </div>
         </div>
 
-        <!-- 1. SAFETY & SERVICE MEETINGS TAB (PUBLIC DEFAULT) -->
         <div id="safety" class="table-container active">
             <div class="note-card">
                 <div class="note-header safety">
@@ -166,9 +161,9 @@
                     <p>Loading safety topic...</p>
                 </div>
                 <div class="database-form">
-                    <label class="checkbox-container">
+                    <label class="checkbox-container" style="background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2);">
                         <input type="checkbox" id="ackCheck">
-                        <span class="checkbox-label">I acknowledge that I have read and understand this week's safety and service briefing, and I commit to following these procedures on the road.</span>
+                        <span class="checkbox-label" style="color: #10b981;">I acknowledge that I have read and understand this week's safety and service briefing, and I commit to following these procedures on the road.</span>
                     </label>
                     <div class="input-row">
                         <input type="text" id="ackName" class="db-input" placeholder="Full Name (Required)">
@@ -198,9 +193,7 @@
             </div>
         </div>
 
-        <!-- 2. DRIVER REQUESTS TAB (PUBLIC FORM & RESTRICTED INBOX) -->
         <div id="requests" class="table-container">
-            <!-- Public Facing Form -->
             <div class="note-card">
                 <div class="note-header" style="background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; color: #60a5fa;">
                     <span>📬 Driver Request Form</span>
@@ -223,20 +216,17 @@
                 </div>
             </div>
 
-            <!-- Management Only Inbox -->
             <div class="mgmt-restricted">
                 <div class="note-card" style="border-color: #3b82f6;">
                     <div class="note-header" style="background: #020617; color: #60a5fa;">
                         <span>📥 Manager Inbox: Pending Driver Requests</span>
                     </div>
                     <div class="note-body" id="requestInboxDisplay">
-                        <!-- Requests will load here -->
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 3. CONTACT DIRECTORY TAB (RESTRICTED) -->
         <div id="contacts" class="table-container mgmt-restricted">
             <table id="contactTable">
                 <thead>
@@ -255,12 +245,11 @@
                     <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Joshua Boyd</td><td>Overflow</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Joshua Boyd</td><td>Overflow</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 4. UNIFORM SIZES TAB (RESTRICTED) -->
         <div id="uniforms" class="table-container mgmt-restricted">
             <table id="uniformTable">
                 <thead>
@@ -284,7 +273,6 @@
             </table>
         </div>
 
-        <!-- 5. SCHEDULES TAB (RESTRICTED) -->
         <div id="schedules" class="table-container mgmt-restricted">
             <div class="schedule-title">Master Schedule</div>
             <table id="w1Table">
@@ -309,7 +297,6 @@
             </table>
         </div>
 
-        <!-- 6. DAILY AVAILABILITY TAB (RESTRICTED) -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="day-card">
                 <div class="day-header"><span>Monday</span><span class="day-count">12 Working</span></div>
@@ -460,7 +447,6 @@
             </div>
         </div>
 
-        <!-- 7. DAILY DIARY / NOTES TAB (RESTRICTED) -->
         <div id="notes" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Add Daily Note / Diary Entry</h3>
@@ -471,7 +457,6 @@
             <div id="notes-display"></div>
         </div>
 
-        <!-- 8. TRUCK INSPECTIONS TAB (RESTRICTED) -->
         <div id="inspections" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Daily Truck Inspection Log</h3>
@@ -479,6 +464,30 @@
                     <input type="text" id="inspTruckNum" class="db-input" placeholder="Truck Number (e.g., 23412)">
                     <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., 155 - Elvis)">
                 </div>
+                
+                <h3 style="margin-top: 15px; margin-bottom: 10px; color: var(--text-main); font-size: 1rem;">Quick Checkpoints</h3>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chk-tires">
+                    <span class="checkbox-label">Tires & Wheels (Check for proper inflation & tread)</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chk-mirrors">
+                    <span class="checkbox-label">Mirrors & Glass (Intact and clear)</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chk-body">
+                    <span class="checkbox-label">Body Damages (No new dents, scratches, or missing trim)</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chk-lights">
+                    <span class="checkbox-label">Lights & Signals (Headlights, brake lights, and turn signals)</span>
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chk-clean">
+                    <span class="checkbox-label">Cargo Area Cleanliness (No debris or previous load remnants)</span>
+                </label>
+
+                <h3 style="margin-top: 15px; margin-bottom: 10px; color: var(--text-main); font-size: 1rem;">Overall Cleanliness Status</h3>
                 <select id="inspClean" class="db-select">
                     <option value="Good">Cleanliness: Good (Ready for dispatch)</option>
                     <option value="Fair">Cleanliness: Fair (Needs minor cleaning)</option>
@@ -506,7 +515,6 @@
                 } else {
                     document.body.classList.add('locked-state');
                     if(btn) { btn.innerHTML = '🔒 Unlock Management Access'; btn.classList.remove('unlocked'); }
-                    // Kick back to Public Safety Tab to hide restricted data
                     let activeTab = document.querySelector('.table-container.active');
                     if (activeTab && activeTab.classList.contains('mgmt-restricted')) { switchTab('safety', document.getElementById('btn-safety')); }
                 }
@@ -560,7 +568,6 @@
             });
         }
 
-        // --- Driver Requests System ---
         function submitRequest() {
             const name = document.getElementById('reqName').value;
             const type = document.getElementById('reqType').value;
@@ -617,7 +624,6 @@
             }
         }
 
-        // --- Safety & Service Meetings Logic ---
         const defaultSafetyTopic = `<h3>Week 1: Safety & Service Standards</h3>
         <p><strong>1. Safety (Three Points of Contact):</strong> Always maintain three points of contact when entering or exiting the truck. Never jump out. Slips and falls are the #1 injury in this business.</p>
         <p><strong>2. Morning Truck Organization:</strong> Organize your trucks in the morning before leaving the terminal. Check your load to catch and avoid misloads early.</p>
@@ -684,7 +690,6 @@
             }
         }
 
-        // --- Diary & Inspections Logic ---
         function getNotes() { try { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); } catch(e) { return []; } }
         function renderNotes() {
             const container = document.getElementById('notes-display');
@@ -720,6 +725,13 @@
             inspections.push({ id: Date.now(), date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>") });
             try { localStorage.setItem('fedex_inspections', JSON.stringify(inspections)); } catch(e) { alert("Storage Error."); return;}
             document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
+            
+            document.getElementById('chk-tires').checked = false;
+            document.getElementById('chk-mirrors').checked = false;
+            document.getElementById('chk-body').checked = false;
+            document.getElementById('chk-lights').checked = false;
+            document.getElementById('chk-clean').checked = false;
+
             renderInspections();
         }
         function deleteInspection(id) { if(confirm("Delete this inspection record?")) { try { localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id))); } catch(e) {} renderInspections(); } }
