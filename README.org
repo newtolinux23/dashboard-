@@ -39,7 +39,7 @@
 | Datavious S. | 234 | XL / 2XL (Long) | 42 (Shorts) / 42x30 | Pending |
 
 \newpage
-* 3. Weekly Master Schedule
+* 3. Weekly Master Schedule (Week 1 Rotation)
 | Driver Name | Route | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |-------------+-------+-----+-----+-----+-----+-----+-----+-----|
 | Jose G. | 130 | Work | Work | Work | Work | Work | OFF | OFF |
@@ -47,13 +47,13 @@
 | Ryan H. | 138 | Work | Work | Work | Work | Work | OFF | OFF |
 | Quinton J. | 218 | Work | Work | Work | Work | Work | OFF | OFF |
 | Datavious S. | 234 | Work | Work | Work | Work | Work | OFF | OFF |
-| Mark F. | 126 | Work | Work | OFF | Work | OFF | Work | Work |
+| Mark F. | 126 | Work | Work | OFF | Work | Work | OFF | Work |
 | Elvis G.R. | 155 | Work | OFF | OFF | Work | Work | Work | Work |
 | Jamal S. | 123 | OFF | Work | Work | Work | Work | Work | Work |
-| Cayton M. | 127 | Work | Work | Work | Work | Work | OFF | Work |
-| Davion O. | 146 | Work | Work | Work | Work | Work | Work | OFF |
-| Noel R. | 154 | Work | Work | Work | OFF | Work | Work | Work |
 | Jerrylee C. | 135 | Work | Work | Work | Work | Work | Work | OFF |
+| Davion O. | 146 | Work | Work | Work | Work | Work | Work | OFF (Rot) |
+| Cayton M. | 127 | Work | Work | Work | OFF (Rot) | Work | Work | Work |
+| Noel R. | 154 | Work | Work | Work | Work | OFF (Rot) | Work | Work |
 
 * 4. Daily Availability & Headcounts
 ** Monday (11 Working)
@@ -69,17 +69,17 @@ Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavio
 Off Duty: Mark F. (126), Elvis G.R. (155)
 
 ** Thursday (11 Working)
+Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Mark F. (126), Elvis G.R. (155), Jamal S. (123), Davion O. (146), Noel R. (154), Jerrylee C. (135)
+Off Duty: Cayton M. (127)
+
+** Friday (11 Working)
 Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Mark F. (126), Elvis G.R. (155), Jamal S. (123), Cayton M. (127), Davion O. (146), Jerrylee C. (135)
 Off Duty: Noel R. (154)
 
-** Friday (11 Working)
-Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Elvis G.R. (155), Jamal S. (123), Cayton M. (127), Davion O. (146), Noel R. (154), Jerrylee C. (135)
-Off Duty: Mark F. (126)
-
 ** Saturday (6 Working)
-Working: Mark F. (126), Elvis G.R. (155), Jamal S. (123), Davion O. (146), Noel R. (154), Jerrylee C. (135)
-Off Duty: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Cayton M. (127)
+Working: Elvis G.R. (155), Jamal S. (123), Jerrylee C. (135), Cayton M. (127), Davion O. (146), Noel R. (154)
+Off Duty: Mark F. (126), Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234)
 
 ** Sunday (5 Working)
 Working: Mark F. (126), Elvis G.R. (155), Jamal S. (123), Cayton M. (127), Noel R. (154)
-Off Duty: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Davion O. (146), Jerrylee C. (135)
+Off Duty: Jerrylee C. (135), Davion O. (146), Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234)
