@@ -21,8 +21,8 @@
 | Noe R. | wa154 | 682-552-9523 | Noe.r2003@yahoo.com |
 | Elvis G.R. | wa155 | 210-897-1929 | Elvisguanipa529@gmail.com |
 | Datavious S.| wa234 | 682-287-7169 | dstrib99@gmail.com |
-| Joe Doe | Coverage | TBD | TBD |
-| Flex Driver | Flex / Cov | TBD | TBD |
+| Helper | Coverage | TBD | TBD |
+| Flex Driver | Flex | TBD | TBD |
 
 * 2. Uniform Sizes
 | Driver Name | Route | Shirt | Pants | Vest |
@@ -39,7 +39,7 @@
 | Noe R. | wa154 | XL | 38 | XL |
 | Elvis G.R. | wa155 | M | N/A | M |
 | Datavious S.| wa234 | XL / 2XL (Long)| 42 / 42x30 | Pending |
-| Joe Doe | Coverage| TBD | TBD | TBD |
+| Helper | Coverage| TBD | TBD | TBD |
 | Flex Driver | Flex | TBD | TBD | TBD |
 
 \newpage
@@ -55,7 +55,7 @@
 | Ryan H. | wa138 | Work | Work | Work | OFF | Work | Work | OFF |
 | Jamal S. | wa123 | Work | Work | Work | Work | Work | OFF | Work |
 | Jerrylee C. | wa135 | Work | Work | Work | Work | Work | Work | OFF |
-| Joe Doe | Coverage| OFF | Work (155) | Work (155) | Work (138) | OFF | OFF | OFF |
+| Helper | Coverage| OFF | Work (155) | Work (155) | Work (138) | OFF | OFF | OFF |
 | Davion O. | wa146 | Work | Work | Work | Work | Work | Work | OFF (Rot) |
 | Cayton M. | wa127 | OFF (Rot) | Work | Work | Work | Work | Work | Work (Rot)|
 | Noe R. | wa154 | Work | Work | Work | Work | OFF (Rot) | Work | Work (Rot)|
@@ -64,28 +64,28 @@
 * 4. Daily Availability & Headcounts
 ** Monday (12 Working)
 Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Elvis G.R. (wa155), Ryan H. (wa138), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Noe R. (wa154), Flex Driver (wa127)
-Off Duty: Cayton M. (wa127), Joe Doe (Coverage)
+Off Duty: Cayton M. (wa127), Helper (Coverage)
 
 ** Tuesday (12 Working)
-Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Ryan H. (wa138), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154), Joe Doe (wa155)
+Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Ryan H. (wa138), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154), Helper (wa155)
 Off Duty: Elvis G.R. (wa155), Flex Driver (Flex)
 
 ** Wednesday (12 Working)
-Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Ryan H. (wa138), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154), Joe Doe (wa155), Flex Driver (wa126)
+Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Ryan H. (wa138), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154), Helper (wa155), Flex Driver (wa126)
 Off Duty: Mark F. (wa126), Elvis G.R. (wa155)
 
 ** Thursday (12 Working)
-Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Elvis G.R. (wa155), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154), Joe Doe (wa138)
+Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Elvis G.R. (wa155), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154), Helper (wa138)
 Off Duty: Ryan H. (wa138), Flex Driver (Flex)
 
 ** Friday (12 Working)
 Working: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Elvis G.R. (wa155), Ryan H. (wa138), Jamal S. (wa123), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Flex Driver (wa154)
-Off Duty: Noe R. (wa154), Joe Doe (Coverage)
+Off Duty: Noe R. (wa154), Helper (Coverage)
 
 ** Saturday (6 Working)
 Working: Elvis G.R. (wa155), Ryan H. (wa138), Jerrylee C. (wa135), Davion O. (wa146), Cayton M. (wa127), Noe R. (wa154)
-Off Duty: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Jamal S. (wa123), Joe Doe (Coverage), Flex Driver (Flex)
+Off Duty: Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Mark F. (wa126), Jamal S. (wa123), Helper (Coverage), Flex Driver (Flex)
 
 ** Sunday (5 Working)
 Working: Mark F. (wa126), Elvis G.R. (wa155), Jamal S. (wa123), Cayton M. (wa127), Noe R. (wa154)
-Off Duty: Jerrylee C. (wa135), Davion O. (wa146), Ryan H. (wa138), Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Joe Doe (Coverage), Flex Driver (Flex)
+Off Duty: Jerrylee C. (wa135), Davion O. (wa146), Ryan H. (wa138), Jose G. (wa130), Jesus P. (wa139), Quinton J. (wa134/218), Datavious S. (wa234), Helper (Coverage), Flex Driver (Flex)
