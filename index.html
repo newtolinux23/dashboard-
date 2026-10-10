@@ -114,17 +114,12 @@
 
     <div class="container">
         <div class="controls">
-            <!-- Manager Toggle Button -->
             <button id="loginBtn" class="login-btn" onclick="toggleManagement()">🔒 Unlock Management Access</button>
-            
             <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver, route, or keyword..." onkeyup="filterContent()">
             
             <div class="tab-buttons">
-                <!-- Public Tabs -->
                 <button id="btn-safety" class="tab-btn active" onclick="switchTab('safety', this)">1. Safety Briefing</button>
                 <button class="tab-btn" onclick="switchTab('requests', this)">2. Driver Requests</button>
-                
-                <!-- Restricted Tabs -->
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('contacts', this)">3. Contact Info</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('uniforms', this)">4. Uniforms</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('schedules', this)">5. Schedule</button>
@@ -134,12 +129,10 @@
             </div>
         </div>
 
-        <!-- 1. SAFETY & SERVICE MEETINGS TAB (PUBLIC DEFAULT) -->
+        <!-- 1. SAFETY -->
         <div id="safety" class="table-container active">
             <div class="note-card">
-                <div class="note-header safety">
-                    <span>🛡️ Weekly Safety & Service Briefing</span>
-                </div>
+                <div class="note-header safety"><span>🛡️ Weekly Safety & Service Briefing</span></div>
                 <div class="note-body" id="safetyTopicDisplay"><p>Loading safety topic...</p></div>
                 <div class="database-form">
                     <label class="checkbox-container">
@@ -154,16 +147,29 @@
                     <div id="ackSuccessMessage" style="color: #34d399; font-weight: bold; margin-top: 15px; display: none; text-align: center;">✅ Acknowledgment Saved!</div>
                 </div>
             </div>
+            <div class="mgmt-restricted">
+                <div class="note-card" style="border-color: var(--fedex-orange);">
+                    <div class="note-header inspection"><span>⚙️ Manager Tools: Edit Topic & View Ledger</span></div>
+                    <div class="database-form">
+                        <h3 style="margin-top: 0; color: var(--text-main);">Update Weekly Safety Topic</h3>
+                        <textarea id="editSafetyTopic" class="db-textarea" placeholder="Paste the new safety topic for the drivers here..."></textarea>
+                        <button class="save-btn" onclick="saveSafetyTopic()">Update Topic For Drivers</button>
+                    </div>
+                    <div class="note-body">
+                        <h3 style="margin-top: 0; color: var(--text-main);">Signed Acknowledgments</h3>
+                        <div id="safetyLedgerDisplay" style="margin-bottom: 20px;"></div>
+                        <button class="delete-btn" style="width: 100%; padding: 12px; background: rgba(239, 68, 68, 0.2); border-color: #ef4444;" onclick="clearSignatures()">🗑️ Clear Signatures</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- 2. DRIVER REQUESTS TAB -->
+        <!-- 2. REQUESTS -->
         <div id="requests" class="table-container">
             <div class="note-card">
-                <div class="note-header" style="background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; color: #60a5fa;">
-                    <span>📬 Driver Request Form</span>
-                </div>
+                <div class="note-header" style="background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; color: #60a5fa;"><span>📬 Driver Request Form</span></div>
                 <div class="database-form">
-                    <p style="color: var(--text-muted); margin-top: 0; margin-bottom: 20px;">Use this private form to request uniform changes, report route/truck issues, request time off, or communicate needs to management. These messages are sent securely and directly to Rob.</p>
+                    <p style="color: var(--text-muted); margin-top: 0; margin-bottom: 20px;">Use this private form to request uniform changes, report route/truck issues, request time off, or communicate needs to management.</p>
                     <div class="input-row">
                         <input type="text" id="reqName" class="db-input" placeholder="Your Name (Required)">
                         <select id="reqType" class="db-select">
@@ -179,18 +185,15 @@
                     <div id="reqSuccessMessage" style="color: #60a5fa; font-weight: bold; margin-top: 15px; display: none; text-align: center;">✅ Request sent securely to management!</div>
                 </div>
             </div>
-
             <div class="mgmt-restricted">
                 <div class="note-card" style="border-color: #3b82f6;">
-                    <div class="note-header" style="background: #020617; color: #60a5fa;">
-                        <span>📥 Manager Inbox: Pending Driver Requests</span>
-                    </div>
+                    <div class="note-header" style="background: #020617; color: #60a5fa;"><span>📥 Manager Inbox: Pending Driver Requests</span></div>
                     <div class="note-body" id="requestInboxDisplay"></div>
                 </div>
             </div>
         </div>
 
-        <!-- 3. CONTACT DIRECTORY TAB (RESTRICTED) -->
+        <!-- 3. CONTACT DIRECTORY -->
         <div id="contacts" class="table-container mgmt-restricted">
             <table id="contactTable">
                 <thead><tr><th>Driver Name</th><th>Route</th><th>Phone</th><th>Email</th></tr></thead>
@@ -204,14 +207,14 @@
                     <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Noel Rosales</td><td>154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Elvis Guanipa Rangel</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Elvis Guanipa R.</td><td>155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 4. UNIFORM SIZES TAB (RESTRICTED) -->
+        <!-- 4. UNIFORMS -->
         <div id="uniforms" class="table-container mgmt-restricted">
             <table id="uniformTable">
                 <thead><tr><th>Driver Name</th><th>Route</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr></thead>
@@ -225,16 +228,16 @@
                     <tr><td>Jesus Pasos</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
                     <tr><td>Noel Rosales</td><td>154</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Elvis Guanipa Rangel</td><td>155</td><td>M</td><td>N/A</td><td>M</td></tr>
+                    <tr><td>Elvis Guanipa R.</td><td>155</td><td>M</td><td>N/A</td><td>M</td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td>M</td><td>29x32</td><td>N/A</td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td>XL / 2XL (Long)</td><td>42 (Shorts) / 42x30</td><td>Pending</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 5. SCHEDULES TAB (RESTRICTED) -->
+        <!-- 5. SCHEDULES -->
         <div id="schedules" class="table-container mgmt-restricted">
-            <div class="schedule-title">Master Schedule</div>
+            <div class="schedule-title">Master Schedule (Week 1 Rotation)</div>
             <table id="w1Table">
                 <thead><tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
                 <tbody>
@@ -243,33 +246,28 @@
                     <tr><td>Ryan Huffaker</td><td>138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton Jackson</td><td>218</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Datavious Striblen</td><td>234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Mark Francis</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Mark Francis</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Elvis Guanipa R.</td><td>155</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                     <tr><td>Jamal Sealy</td><td>123</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Cayton McDonald</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
-                    <tr><td>Davion Oliver</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Noel Rosales</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                     <tr><td>Jerrylee Camacho</td><td>135</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Davion Oliver</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">OFF (Rot)</td></tr>
+                    <tr><td>Cayton McDonald</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">OFF (Rot)</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Noel Rosales</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">OFF (Rot)</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 6. DAILY AVAILABILITY TAB (RESTRICTED) -->
+        <!-- 6. AVAILABILITY -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="day-card">
                 <div class="day-header"><span>Monday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jose Garcia (130)</div>
-                    <div class="driver-badge">Jesus Pasos (139)</div>
-                    <div class="driver-badge">Ryan Huffaker (138)</div>
-                    <div class="driver-badge">Quinton Jackson (218)</div>
-                    <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
-                    <div class="driver-badge">Davion Oliver (146)</div>
+                    <div class="driver-badge">Jose Garcia (130)</div><div class="driver-badge">Jesus Pasos (139)</div>
+                    <div class="driver-badge">Ryan Huffaker (138)</div><div class="driver-badge">Quinton Jackson (218)</div>
+                    <div class="driver-badge">Datavious Striblen (234)</div><div class="driver-badge">Mark Francis (126)</div>
+                    <div class="driver-badge">Elvis Guanipa R. (155)</div><div class="driver-badge">Jerrylee Camacho (135)</div>
+                    <div class="driver-badge">Cayton McDonald (127)</div><div class="driver-badge">Davion Oliver (146)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Jamal Sealy (123)</div>
@@ -280,17 +278,12 @@
             <div class="day-card">
                 <div class="day-header"><span>Tuesday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jose Garcia (130)</div>
-                    <div class="driver-badge">Jesus Pasos (139)</div>
-                    <div class="driver-badge">Ryan Huffaker (138)</div>
-                    <div class="driver-badge">Quinton Jackson (218)</div>
-                    <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
-                    <div class="driver-badge">Davion Oliver (146)</div>
+                    <div class="driver-badge">Jose Garcia (130)</div><div class="driver-badge">Jesus Pasos (139)</div>
+                    <div class="driver-badge">Ryan Huffaker (138)</div><div class="driver-badge">Quinton Jackson (218)</div>
+                    <div class="driver-badge">Datavious Striblen (234)</div><div class="driver-badge">Mark Francis (126)</div>
+                    <div class="driver-badge">Jamal Sealy (123)</div><div class="driver-badge">Jerrylee Camacho (135)</div>
+                    <div class="driver-badge">Cayton McDonald (127)</div><div class="driver-badge">Davion Oliver (146)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Elvis Guanipa R. (155)</div>
@@ -301,16 +294,11 @@
             <div class="day-card">
                 <div class="day-header"><span>Wednesday</span><span class="day-count">10 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jose Garcia (130)</div>
-                    <div class="driver-badge">Jesus Pasos (139)</div>
-                    <div class="driver-badge">Ryan Huffaker (138)</div>
-                    <div class="driver-badge">Quinton Jackson (218)</div>
-                    <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
-                    <div class="driver-badge">Davion Oliver (146)</div>
-                    <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="driver-badge">Jerrylee Camacho (135)</div>
+                    <div class="driver-badge">Jose Garcia (130)</div><div class="driver-badge">Jesus Pasos (139)</div>
+                    <div class="driver-badge">Ryan Huffaker (138)</div><div class="driver-badge">Quinton Jackson (218)</div>
+                    <div class="driver-badge">Datavious Striblen (234)</div><div class="driver-badge">Jamal Sealy (123)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div><div class="driver-badge">Cayton McDonald (127)</div>
+                    <div class="driver-badge">Davion Oliver (146)</div><div class="driver-badge">Noel Rosales (154)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
@@ -322,20 +310,15 @@
             <div class="day-card">
                 <div class="day-header"><span>Thursday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jose Garcia (130)</div>
-                    <div class="driver-badge">Jesus Pasos (139)</div>
-                    <div class="driver-badge">Ryan Huffaker (138)</div>
-                    <div class="driver-badge">Quinton Jackson (218)</div>
-                    <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
-                    <div class="driver-badge">Davion Oliver (146)</div>
-                    <div class="driver-badge">Jerrylee Camacho (135)</div>
+                    <div class="driver-badge">Jose Garcia (130)</div><div class="driver-badge">Jesus Pasos (139)</div>
+                    <div class="driver-badge">Ryan Huffaker (138)</div><div class="driver-badge">Quinton Jackson (218)</div>
+                    <div class="driver-badge">Datavious Striblen (234)</div><div class="driver-badge">Mark Francis (126)</div>
+                    <div class="driver-badge">Elvis Guanipa R. (155)</div><div class="driver-badge">Jamal Sealy (123)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div><div class="driver-badge">Davion Oliver (146)</div>
+                    <div class="driver-badge">Noel Rosales (154)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
-                        <div class="driver-badge off-duty-badge">Noel Rosales (154)</div>
+                        <div class="driver-badge off-duty-badge">Cayton McDonald (127) (Rotation)</div>
                     </div>
                 </div>
             </div>
@@ -343,20 +326,15 @@
             <div class="day-card">
                 <div class="day-header"><span>Friday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jose Garcia (130)</div>
-                    <div class="driver-badge">Jesus Pasos (139)</div>
-                    <div class="driver-badge">Ryan Huffaker (138)</div>
-                    <div class="driver-badge">Quinton Jackson (218)</div>
-                    <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
+                    <div class="driver-badge">Jose Garcia (130)</div><div class="driver-badge">Jesus Pasos (139)</div>
+                    <div class="driver-badge">Ryan Huffaker (138)</div><div class="driver-badge">Quinton Jackson (218)</div>
+                    <div class="driver-badge">Datavious Striblen (234)</div><div class="driver-badge">Mark Francis (126)</div>
+                    <div class="driver-badge">Elvis Guanipa R. (155)</div><div class="driver-badge">Jamal Sealy (123)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div><div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
-                    <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
-                        <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
+                        <div class="driver-badge off-duty-badge">Noel Rosales (154) (Rotation)</div>
                     </div>
                 </div>
             </div>
@@ -364,20 +342,17 @@
             <div class="day-card" style="border: 2px solid var(--fedex-purple);">
                 <div class="day-header"><span>Saturday</span><span class="day-count">6 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Davion Oliver (146)</div>
-                    <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="driver-badge">Jerrylee Camacho (135)</div>
+                    <div class="driver-badge">Elvis Guanipa R. (155)</div><div class="driver-badge">Jamal Sealy (123)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div><div class="driver-badge">Cayton McDonald (127)</div>
+                    <div class="driver-badge">Davion Oliver (146)</div><div class="driver-badge">Noel Rosales (154)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
+                        <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
                         <div class="driver-badge off-duty-badge">Jose Garcia (130)</div>
                         <div class="driver-badge off-duty-badge">Ryan Huffaker (138)</div>
                         <div class="driver-badge off-duty-badge">Jesus Pasos (139)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (218)</div>
                         <div class="driver-badge off-duty-badge">Datavious Striblen (234)</div>
-                        <div class="driver-badge off-duty-badge">Cayton McDonald (127)</div>
                     </div>
                 </div>
             </div>
@@ -385,37 +360,35 @@
             <div class="day-card" style="border: 2px solid var(--fedex-orange);">
                 <div class="day-header"><span>Sunday</span><span class="day-count">5 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
+                    <div class="driver-badge">Mark Francis (126)</div><div class="driver-badge">Elvis Guanipa R. (155)</div>
+                    <div class="driver-badge">Jamal Sealy (123)</div><div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
+                        <div class="driver-badge off-duty-badge">Jerrylee Camacho (135)</div>
+                        <div class="driver-badge off-duty-badge">Davion Oliver (146) (Rotation)</div>
                         <div class="driver-badge off-duty-badge">Jose Garcia (130)</div>
                         <div class="driver-badge off-duty-badge">Ryan Huffaker (138)</div>
                         <div class="driver-badge off-duty-badge">Jesus Pasos (139)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (218)</div>
                         <div class="driver-badge off-duty-badge">Datavious Striblen (234)</div>
-                        <div class="driver-badge off-duty-badge">Davion Oliver (146)</div>
-                        <div class="driver-badge off-duty-badge">Jerrylee Camacho (135)</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 7. DAILY DIARY / NOTES TAB (RESTRICTED) -->
+        <!-- 7. DIARY -->
         <div id="notes" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Add Daily Note / Diary Entry</h3>
-                <input type="text" id="noteTitle" class="db-input" placeholder="Subject (e.g., Morning Huddle, Route 126 Update)">
+                <input type="text" id="noteTitle" class="db-input" placeholder="Subject (e.g., Morning Huddle)">
                 <textarea id="noteBody" class="db-textarea" placeholder="Log details, issues, or general diary entries here..."></textarea>
                 <button class="save-btn" onclick="addNote()">💾 Save to Diary</button>
             </div>
             <div id="notes-display"></div>
         </div>
 
-        <!-- 8. TRUCK INSPECTIONS TAB (RESTRICTED) -->
+        <!-- 8. INSPECTIONS -->
         <div id="inspections" class="table-container mgmt-restricted">
             <div class="database-form">
                 <h3 style="margin-top: 0; color: var(--text-main);">Daily Truck Inspection Log</h3>
@@ -423,7 +396,6 @@
                     <input type="text" id="inspTruckNum" class="db-input" placeholder="Truck Number (e.g., 23412)">
                     <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., 155 - Elvis)">
                 </div>
-                
                 <h4 style="color: var(--text-main); margin-bottom: 10px;">Quick Checkpoints</h4>
                 <div class="chk-grid">
                     <label class="chk-item"><input type="checkbox" id="chkClean" checked> Cargo/Cab Clean</label>
@@ -432,7 +404,6 @@
                     <label class="chk-item"><input type="checkbox" id="chkLights" checked> Lights & Blinkers</label>
                     <label class="chk-item"><input type="checkbox" id="chkMirrors" checked> Mirrors Intact</label>
                 </div>
-
                 <select id="inspClean" class="db-select">
                     <option value="Good">Overall Condition: Good (Ready for dispatch)</option>
                     <option value="Fair">Overall Condition: Fair (Needs minor attention)</option>
@@ -510,7 +481,6 @@
             });
         }
 
-        // --- Driver Requests ---
         function submitRequest() {
             const name = document.getElementById('reqName').value; const type = document.getElementById('reqType').value; const msg = document.getElementById('reqMessage').value;
             if(!name || !type || !msg) { alert("Please fill out your name, select a request type, and include a message."); return; }
@@ -531,27 +501,15 @@
                 container.innerHTML += `<div class="inspection-card" style="margin: 10px 0; border-left: 4px solid #3b82f6; border-radius: 8px;"><div style="padding: 15px; display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;"><div style="flex-grow: 1;"><strong style="color: var(--text-main); font-size: 1.1rem;">${req.name}</strong> <span style="color: #64748b; font-size: 0.85rem; margin-left: 8px;">${req.time}</span><br><span style="display: inline-block; background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; margin: 8px 0; font-weight: bold;">${req.type}</span><p style="margin: 5px 0 0 0; color: var(--text-muted); line-height: 1.5;">${req.message}</p></div><button class="delete-btn" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; white-space: nowrap;" onclick="resolveRequest(${req.id})">✔️ Mark Resolved</button></div></div>`;
             });
         }
+        function resolveRequest(id) { if(confirm("Mark this request as resolved? It will be removed from your inbox.")) { try { localStorage.setItem('fedex_driver_requests', JSON.stringify(JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]').filter(r => r.id !== id))); } catch(e) {} renderRequests(); } }
 
-        function resolveRequest(id) {
-            if(confirm("Mark this request as resolved? It will be removed from your inbox.")) {
-                try { localStorage.setItem('fedex_driver_requests', JSON.stringify(JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]').filter(r => r.id !== id))); } catch(e) {}
-                renderRequests();
-            }
-        }
-
-        // --- Safety Meetings ---
         function loadSafetyTopic() {
             let topic = `<h3>Week 1: Safety & Service Standards</h3><p><strong>1. Safety (Three Points of Contact):</strong> Always maintain three points of contact when entering or exiting the truck. Never jump out.</p><p><strong>2. Morning Truck Organization:</strong> Organize your trucks in the morning before leaving the terminal. Check your load to catch and avoid misloads early.</p>`;
             try { topic = localStorage.getItem('fedex_safety_topic') || topic; } catch(e) {}
             document.getElementById('safetyTopicDisplay').innerHTML = topic;
             let editBox = document.getElementById('editSafetyTopic'); if(editBox) editBox.value = topic.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''); 
         }
-
-        function saveSafetyTopic() {
-            let newTopic = document.getElementById('editSafetyTopic').value;
-            try { localStorage.setItem('fedex_safety_topic', `<p>${newTopic.replace(/\n/g, "<br>")}</p>`); } catch(e) { return; }
-            loadSafetyTopic(); alert("Topic updated successfully!");
-        }
+        function saveSafetyTopic() { let newTopic = document.getElementById('editSafetyTopic').value; try { localStorage.setItem('fedex_safety_topic', `<p>${newTopic.replace(/\n/g, "<br>")}</p>`); } catch(e) { return; } loadSafetyTopic(); alert("Topic updated successfully!"); }
 
         function submitSafetyAck() {
             const check = document.getElementById('ackCheck'); const name = document.getElementById('ackName').value; const email = document.getElementById('ackEmail').value;
@@ -563,30 +521,17 @@
             const msg = document.getElementById('ackSuccessMessage'); if (msg) { msg.style.display = 'block'; setTimeout(() => { msg.style.display = 'none'; }, 4000); }
             renderSafetyAcks();
         }
-
         function renderSafetyAcks() {
             let acks = []; try { acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]'); } catch(e) {}
-            const container = document.getElementById('safetyLedgerDisplay'); if (!container) return;
-            container.innerHTML = ''; if (acks.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No signatures yet for this week.</p>'; return; }
-            acks.slice().reverse().forEach(ack => {
-                container.innerHTML += `<div class="sig-badge"><div><div class="sig-name">📝 ${ack.name}</div><div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div></div><div class="sig-time">${ack.time}</div></div>`;
-            });
+            const container = document.getElementById('safetyLedgerDisplay'); if (!container) return; container.innerHTML = '';
+            if (acks.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No signatures yet for this week.</p>'; return; }
+            acks.slice().reverse().forEach(ack => { container.innerHTML += `<div class="sig-badge"><div><div class="sig-name">📝 ${ack.name}</div><div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div></div><div class="sig-time">${ack.time}</div></div>`; });
         }
         function clearSignatures() { if(confirm("Are you sure you want to delete all signatures? Do this only at the start of a new week!")) { try { localStorage.setItem('fedex_safety_acks', '[]'); } catch(e) {} renderSafetyAcks(); } }
 
-        // --- Diary & Inspections ---
         function getNotes() { try { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); } catch(e) { return []; } }
-        function renderNotes() {
-            const container = document.getElementById('notes-display'); if (!container) return; container.innerHTML = '';
-            getNotes().slice().reverse().forEach(note => { container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`; });
-        }
-        function addNote() {
-            const title = document.getElementById('noteTitle').value; const body = document.getElementById('noteBody').value;
-            if(!title || !body) { alert("Enter subject and note."); return; }
-            let notes = getNotes(); notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" });
-            try { localStorage.setItem('fedex_diary', JSON.stringify(notes)); } catch(e) {}
-            document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = ''; renderNotes();
-        }
+        function renderNotes() { const container = document.getElementById('notes-display'); if (!container) return; container.innerHTML = ''; getNotes().slice().reverse().forEach(note => { container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`; }); }
+        function addNote() { const title = document.getElementById('noteTitle').value; const body = document.getElementById('noteBody').value; if(!title || !body) { alert("Enter subject and note."); return; } let notes = getNotes(); notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" }); try { localStorage.setItem('fedex_diary', JSON.stringify(notes)); } catch(e) {} document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = ''; renderNotes(); }
         function deleteNote(id) { if(confirm("Delete this diary entry?")) { try { localStorage.setItem('fedex_diary', JSON.stringify(getNotes().filter(n => n.id !== id))); } catch(e) {} renderNotes(); } }
 
         function getInspections() { try { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); } catch(e) { return []; } }
@@ -594,46 +539,23 @@
             const container = document.getElementById('inspections-display'); if (!container) return; container.innerHTML = '';
             getInspections().slice().reverse().forEach(insp => {
                 let badgeClass = insp.cleanliness === 'Good' ? 'clean-good' : (insp.cleanliness === 'Fair' ? 'clean-fair' : 'clean-poor');
-                let titleDisplay = insp.route ? `🚛 Truck: ${insp.truck} | Route: ${insp.route}` : `🚛 ${insp.truck}`;
-                
-                // Construct Checkpoint HTML
                 let checksHtml = '';
                 if(insp.checks) {
                     checksHtml = '<div style="margin: 10px 0;">';
-                    Object.keys(insp.checks).forEach(k => {
-                        let isPass = insp.checks[k];
-                        checksHtml += `<span class="check-badge ${isPass ? 'pass' : 'fail'}">${isPass ? '✅' : '❌'} ${k}</span>`;
-                    });
+                    Object.keys(insp.checks).forEach(k => { checksHtml += `<span class="check-badge ${insp.checks[k] ? 'pass' : 'fail'}">${insp.checks[k] ? '✅' : '❌'} ${k}</span>`; });
                     checksHtml += '</div>';
                 }
-
-                container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>${titleDisplay} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Condition: ${insp.cleanliness}</span>${checksHtml}<p style="margin-top: 10px;"><strong>Notes:</strong><br>${insp.damages}</p></div></div>`;
+                container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>🚛 Truck: ${insp.truck} | Route: ${insp.route} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Condition: ${insp.cleanliness}</span>${checksHtml}<p style="margin-top: 10px;"><strong>Notes:</strong><br>${insp.damages}</p></div></div>`;
             });
         }
         function addInspection() {
-            const truckNum = document.getElementById('inspTruckNum').value; const routeNum = document.getElementById('inspRouteNum').value;
-            const clean = document.getElementById('inspClean').value; const damage = document.getElementById('inspDamage').value;
+            const truckNum = document.getElementById('inspTruckNum').value; const routeNum = document.getElementById('inspRouteNum').value; const clean = document.getElementById('inspClean').value; const damage = document.getElementById('inspDamage').value;
             if(!truckNum || !routeNum) { alert("Please fill out the Truck Number and Route."); return; }
-            
-            // Gather Checkpoints
-            let chks = {
-                "Clean": document.getElementById('chkClean').checked,
-                "Body": document.getElementById('chkBody').checked,
-                "Tires": document.getElementById('chkTires').checked,
-                "Lights": document.getElementById('chkLights').checked,
-                "Mirrors": document.getElementById('chkMirrors').checked
-            };
-
-            let inspections = getInspections();
-            inspections.push({ id: Date.now(), date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>"), checks: chks });
-            try { localStorage.setItem('fedex_inspections', JSON.stringify(inspections)); } catch(e) { alert("Storage Error."); return;}
-            
-            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; 
-            document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
-            
-            // Reset Checkboxes
-            document.getElementById('chkClean').checked = true; document.getElementById('chkBody').checked = true; document.getElementById('chkTires').checked = true; document.getElementById('chkLights').checked = true; document.getElementById('chkMirrors').checked = true;
-            renderInspections();
+            let chks = { "Clean": document.getElementById('chkClean').checked, "Body": document.getElementById('chkBody').checked, "Tires": document.getElementById('chkTires').checked, "Lights": document.getElementById('chkLights').checked, "Mirrors": document.getElementById('chkMirrors').checked };
+            let inspections = getInspections(); inspections.push({ id: Date.now(), date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>"), checks: chks });
+            try { localStorage.setItem('fedex_inspections', JSON.stringify(inspections)); } catch(e) { return; }
+            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
+            document.getElementById('chkClean').checked = true; document.getElementById('chkBody').checked = true; document.getElementById('chkTires').checked = true; document.getElementById('chkLights').checked = true; document.getElementById('chkMirrors').checked = true; renderInspections();
         }
         function deleteInspection(id) { if(confirm("Delete this inspection record?")) { try { localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id))); } catch(e) {} renderInspections(); } }
     </script>
