@@ -21,42 +21,18 @@
             --transition: all 0.3s ease;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-        }
-
-        .header {
-            background: #020617; 
-            color: white;
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--fedex-orange);
-            box-shadow: var(--shadow-md);
-        }
-
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-main); min-height: 100vh; }
+        .header { background: #020617; color: white; padding: 25px 20px; text-align: center; border-bottom: 4px solid var(--fedex-orange); box-shadow: var(--shadow-md); }
         .header h1 { margin: 0 0 8px 0; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); }
         .header p { margin: 0; font-size: 1rem; color: var(--text-muted); font-weight: 600; }
         .container { max-width: 1100px; margin: 30px auto; padding: 0 15px; }
         .controls { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
 
-        .login-btn {
-            background-color: var(--card-bg); color: var(--text-main); border: 2px solid var(--border-color);
-            padding: 15px; border-radius: 10px; font-size: 1.05rem; font-weight: 800; cursor: pointer;
-            transition: var(--transition); box-shadow: var(--shadow-sm); text-align: center;
-        }
+        .login-btn { background-color: var(--card-bg); color: var(--text-main); border: 2px solid var(--border-color); padding: 15px; border-radius: 10px; font-size: 1.05rem; font-weight: 800; cursor: pointer; transition: var(--transition); box-shadow: var(--shadow-sm); text-align: center; }
         .login-btn:hover { border-color: var(--fedex-orange); background-color: rgba(255, 102, 0, 0.1); }
         .login-btn.unlocked { background-color: rgba(239, 68, 68, 0.1); border-color: #ef4444; color: #fca5a5; }
 
-        .search-bar {
-            padding: 15px 20px; font-size: 1.05rem; background-color: var(--card-bg); color: var(--text-main);
-            border: 2px solid var(--border-color); border-radius: 10px; width: 100%; box-sizing: border-box;
-            box-shadow: var(--shadow-sm); font-family: 'Inter', sans-serif;
-        }
+        .search-bar { padding: 15px 20px; font-size: 1.05rem; background-color: var(--card-bg); color: var(--text-main); border: 2px solid var(--border-color); border-radius: 10px; width: 100%; box-sizing: border-box; box-shadow: var(--shadow-sm); font-family: 'Inter', sans-serif; }
         .search-bar::placeholder { color: #64748b; }
         .search-bar:focus { outline: none; border-color: var(--fedex-purple); background-color: #0f172a; }
 
@@ -91,7 +67,6 @@
         .day-body { padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
         .driver-badge { background-color: #334155; padding: 12px; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-align: center; border-left: 5px solid var(--fedex-purple); color: var(--text-main); }
         .off-duty-badge { background-color: rgba(239, 68, 68, 0.1); border-left: 5px solid #ef4444; color: #fca5a5; }
-        .rotator-badge { background-color: rgba(245, 158, 11, 0.1); border-left: 5px solid #f59e0b; color: #fcd34d; }
         .weekend-call-section { grid-column: 1 / -1; margin-top: 10px; padding-top: 15px; border-top: 2px dashed var(--border-color); display: flex; flex-wrap: wrap; gap: 10px; }
         .weekend-call-title { width: 100%; font-weight: bold; color: #f87171; margin-bottom: 5px; }
 
@@ -104,12 +79,8 @@
         
         .note-header { background-color: #020617; color: var(--text-main); padding: 15px 20px; font-size: 1.1rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
         .note-header.inspection { background-color: rgba(255, 102, 0, 0.1); border-bottom: 2px solid var(--fedex-orange); color: var(--fedex-orange); }
-        .note-header.alert { background-color: rgba(239, 68, 68, 0.1); border-bottom: 2px solid #ef4444; color: #fca5a5; }
-        .note-header.safety { background-color: rgba(16, 185, 129, 0.1); border-bottom: 2px solid #10b981; color: #34d399; }
         .note-body { padding: 20px; line-height: 1.6; color: var(--text-muted); }
-        .note-body p { margin-top: 0; }
-        .note-body h3 { color: var(--text-main); }
-
+        
         .badge-cleanliness { display: inline-block; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; margin-bottom: 10px; }
         .clean-good { background: rgba(16, 185, 129, 0.2); color: #34d399; }
         .clean-fair { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
@@ -125,6 +96,13 @@
         .sig-time { font-size: 0.85rem; color: #94a3b8; }
         .input-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
         .input-row > * { flex: 1; margin-bottom: 0; }
+        
+        .chk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 15px; }
+        .chk-item { display: flex; align-items: center; gap: 8px; color: var(--text-main); }
+        .chk-item input { accent-color: var(--fedex-orange); width: 18px; height: 18px; }
+        .check-badge { display: inline-block; padding: 3px 6px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; margin-bottom: 5px; background: rgba(255,255,255,0.1); color: var(--text-muted); }
+        .check-badge.pass { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .check-badge.fail { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
     </style>
 </head>
 <body class="locked-state">
@@ -162,9 +140,7 @@
                 <div class="note-header safety">
                     <span>🛡️ Weekly Safety & Service Briefing</span>
                 </div>
-                <div class="note-body" id="safetyTopicDisplay">
-                    <p>Loading safety topic...</p>
-                </div>
+                <div class="note-body" id="safetyTopicDisplay"><p>Loading safety topic...</p></div>
                 <div class="database-form">
                     <label class="checkbox-container">
                         <input type="checkbox" id="ackCheck">
@@ -178,27 +154,9 @@
                     <div id="ackSuccessMessage" style="color: #34d399; font-weight: bold; margin-top: 15px; display: none; text-align: center;">✅ Acknowledgment Saved!</div>
                 </div>
             </div>
-
-            <div class="mgmt-restricted">
-                <div class="note-card" style="border-color: var(--fedex-orange);">
-                    <div class="note-header inspection">
-                        <span>⚙️ Manager Tools: Edit Topic & View Ledger</span>
-                    </div>
-                    <div class="database-form">
-                        <h3 style="margin-top: 0; color: var(--text-main);">Update Weekly Safety Topic</h3>
-                        <textarea id="editSafetyTopic" class="db-textarea" placeholder="Paste the new safety topic for the drivers here..."></textarea>
-                        <button class="save-btn" onclick="saveSafetyTopic()">Update Topic For Drivers</button>
-                    </div>
-                    <div class="note-body">
-                        <h3 style="margin-top: 0; color: var(--text-main);">Signed Acknowledgments</h3>
-                        <div id="safetyLedgerDisplay" style="margin-bottom: 20px;"></div>
-                        <button class="delete-btn" style="width: 100%; padding: 12px; background: rgba(239, 68, 68, 0.2); border-color: #ef4444;" onclick="clearSignatures()">🗑️ Clear Signatures</button>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- 2. DRIVER REQUESTS TAB (PUBLIC FORM & RESTRICTED INBOX) -->
+        <!-- 2. DRIVER REQUESTS TAB -->
         <div id="requests" class="table-container">
             <div class="note-card">
                 <div class="note-header" style="background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; color: #60a5fa;">
@@ -235,14 +193,13 @@
         <!-- 3. CONTACT DIRECTORY TAB (RESTRICTED) -->
         <div id="contacts" class="table-container mgmt-restricted">
             <table id="contactTable">
-                <thead>
-                    <tr><th>Driver Name</th><th>Route</th><th>Phone</th><th>Email</th></tr>
-                </thead>
+                <thead><tr><th>Driver Name</th><th>Route</th><th>Phone</th><th>Email</th></tr></thead>
                 <tbody>
                     <tr><td>Jamal Sealy</td><td>123</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Mark Francis</td><td>126</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Cayton McDonald</td><td>127</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jose Garcia</td><td>130</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Jerrylee Camacho</td><td>135</td><td><a href="#" class="action-btn phone-btn" style="background:#475569;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#475569;">✉ TBD</a></td></tr>
                     <tr><td>Ryan Huffaker</td><td>138</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Phone</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
@@ -257,14 +214,13 @@
         <!-- 4. UNIFORM SIZES TAB (RESTRICTED) -->
         <div id="uniforms" class="table-container mgmt-restricted">
             <table id="uniformTable">
-                <thead>
-                    <tr><th>Driver Name</th><th>Route</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr>
-                </thead>
+                <thead><tr><th>Driver Name</th><th>Route</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr></thead>
                 <tbody>
                     <tr><td>Jamal Sealy</td><td>123</td><td>L</td><td>36</td><td>N/A</td></tr>
                     <tr><td>Mark Francis</td><td>126</td><td>L</td><td>36</td><td>L</td></tr>
                     <tr><td>Cayton McDonald</td><td>127</td><td>L</td><td>36</td><td>L</td></tr>
                     <tr><td>Jose Garcia</td><td>130</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Jerrylee Camacho</td><td>135</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
                     <tr><td>Ryan Huffaker</td><td>138</td><td>M</td><td>30</td><td>M</td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td>M</td><td>34</td><td>M</td></tr>
                     <tr><td>Davion Oliver</td><td>146</td><td>M</td><td>34</td><td>M</td></tr>
@@ -280,9 +236,7 @@
         <div id="schedules" class="table-container mgmt-restricted">
             <div class="schedule-title">Master Schedule</div>
             <table id="w1Table">
-                <thead>
-                    <tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
-                </thead>
+                <thead><tr><th>Driver Name</th><th>Route</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
                 <tbody>
                     <tr><td>Jose Garcia</td><td>130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus Pasos</td><td>139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
@@ -292,9 +246,10 @@
                     <tr><td>Mark Francis</td><td>126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                     <tr><td>Elvis Guanipa R.</td><td>155</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                     <tr><td>Jamal Sealy</td><td>123</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Cayton McDonald</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Davion Oliver</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
-                    <tr><td>Noel Rosales</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Cayton McDonald</td><td>127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
+                    <tr><td>Davion Oliver</td><td>146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noel Rosales</td><td>154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Jerrylee Camacho</td><td>135</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                 </tbody>
             </table>
         </div>
@@ -302,7 +257,7 @@
         <!-- 6. DAILY AVAILABILITY TAB (RESTRICTED) -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="day-card">
-                <div class="day-header"><span>Monday</span><span class="day-count">10 Working</span></div>
+                <div class="day-header"><span>Monday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jose Garcia (130)</div>
                     <div class="driver-badge">Jesus Pasos (139)</div>
@@ -314,6 +269,7 @@
                     <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Jamal Sealy (123)</div>
@@ -322,7 +278,7 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Tuesday</span><span class="day-count">10 Working</span></div>
+                <div class="day-header"><span>Tuesday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jose Garcia (130)</div>
                     <div class="driver-badge">Jesus Pasos (139)</div>
@@ -334,6 +290,7 @@
                     <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Elvis Guanipa R. (155)</div>
@@ -342,7 +299,7 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Wednesday</span><span class="day-count">9 Working</span></div>
+                <div class="day-header"><span>Wednesday</span><span class="day-count">10 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jose Garcia (130)</div>
                     <div class="driver-badge">Jesus Pasos (139)</div>
@@ -353,6 +310,7 @@
                     <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
@@ -362,7 +320,7 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Thursday</span><span class="day-count">10 Working</span></div>
+                <div class="day-header"><span>Thursday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jose Garcia (130)</div>
                     <div class="driver-badge">Jesus Pasos (139)</div>
@@ -373,44 +331,45 @@
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
                     <div class="driver-badge">Jamal Sealy (123)</div>
                     <div class="driver-badge">Cayton McDonald (127)</div>
-                    <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="weekend-call-section" style="border-top-color: #334155;">
-                        <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
-                        <div class="driver-badge off-duty-badge">Davion Oliver (146)</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header"><span>Friday</span><span class="day-count">9 Working</span></div>
-                <div class="day-body">
-                    <div class="driver-badge">Jose Garcia (130)</div>
-                    <div class="driver-badge">Jesus Pasos (139)</div>
-                    <div class="driver-badge">Ryan Huffaker (138)</div>
-                    <div class="driver-badge">Quinton Jackson (218)</div>
-                    <div class="driver-badge">Datavious Striblen (234)</div>
-                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
-                    <div class="driver-badge">Jamal Sealy (123)</div>
-                    <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section" style="border-top-color: #334155;">
                         <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
-                        <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
                         <div class="driver-badge off-duty-badge">Noel Rosales (154)</div>
                     </div>
                 </div>
             </div>
 
-            <div class="day-card" style="border: 2px solid var(--fedex-purple);">
-                <div class="day-header"><span>Saturday</span><span class="day-count">6 Working + 1 Open Route</span></div>
+            <div class="day-card">
+                <div class="day-header"><span>Friday</span><span class="day-count">11 Working</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Mark Francis (126)</div>
+                    <div class="driver-badge">Jose Garcia (130)</div>
+                    <div class="driver-badge">Jesus Pasos (139)</div>
+                    <div class="driver-badge">Ryan Huffaker (138)</div>
+                    <div class="driver-badge">Quinton Jackson (218)</div>
+                    <div class="driver-badge">Datavious Striblen (234)</div>
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
                     <div class="driver-badge">Jamal Sealy (123)</div>
                     <div class="driver-badge">Cayton McDonald (127)</div>
                     <div class="driver-badge">Davion Oliver (146)</div>
                     <div class="driver-badge">Noel Rosales (154)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (Coverage Needed)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div>
+                    <div class="weekend-call-section" style="border-top-color: #334155;">
+                        <div class="weekend-call-title" style="color: #64748b;">OFF DUTY</div>
+                        <div class="driver-badge off-duty-badge">Mark Francis (126)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" style="border: 2px solid var(--fedex-purple);">
+                <div class="day-header"><span>Saturday</span><span class="day-count">6 Working</span></div>
+                <div class="day-body">
+                    <div class="driver-badge">Mark Francis (126)</div>
+                    <div class="driver-badge">Elvis Guanipa R. (155)</div>
+                    <div class="driver-badge">Jamal Sealy (123)</div>
+                    <div class="driver-badge">Davion Oliver (146)</div>
+                    <div class="driver-badge">Noel Rosales (154)</div>
+                    <div class="driver-badge">Jerrylee Camacho (135)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
                         <div class="driver-badge off-duty-badge">Jose Garcia (130)</div>
@@ -418,6 +377,7 @@
                         <div class="driver-badge off-duty-badge">Jesus Pasos (139)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (218)</div>
                         <div class="driver-badge off-duty-badge">Datavious Striblen (234)</div>
+                        <div class="driver-badge off-duty-badge">Cayton McDonald (127)</div>
                     </div>
                 </div>
             </div>
@@ -427,17 +387,18 @@
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (123)</div>
                     <div class="driver-badge">Mark Francis (126)</div>
-                    <div class="driver-badge">Davion Oliver (146)</div>
-                    <div class="driver-badge">Noel Rosales (154)</div>
                     <div class="driver-badge">Elvis Guanipa R. (155)</div>
+                    <div class="driver-badge">Cayton McDonald (127)</div>
+                    <div class="driver-badge">Noel Rosales (154)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY (Available to Call-In)</div>
-                        <div class="driver-badge off-duty-badge">Cayton McDonald (127)</div>
                         <div class="driver-badge off-duty-badge">Jose Garcia (130)</div>
                         <div class="driver-badge off-duty-badge">Ryan Huffaker (138)</div>
                         <div class="driver-badge off-duty-badge">Jesus Pasos (139)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (218)</div>
                         <div class="driver-badge off-duty-badge">Datavious Striblen (234)</div>
+                        <div class="driver-badge off-duty-badge">Davion Oliver (146)</div>
+                        <div class="driver-badge off-duty-badge">Jerrylee Camacho (135)</div>
                     </div>
                 </div>
             </div>
@@ -462,12 +423,22 @@
                     <input type="text" id="inspTruckNum" class="db-input" placeholder="Truck Number (e.g., 23412)">
                     <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., 155 - Elvis)">
                 </div>
+                
+                <h4 style="color: var(--text-main); margin-bottom: 10px;">Quick Checkpoints</h4>
+                <div class="chk-grid">
+                    <label class="chk-item"><input type="checkbox" id="chkClean" checked> Cargo/Cab Clean</label>
+                    <label class="chk-item"><input type="checkbox" id="chkBody" checked> No Body Damages</label>
+                    <label class="chk-item"><input type="checkbox" id="chkTires" checked> Tires (Good Tread)</label>
+                    <label class="chk-item"><input type="checkbox" id="chkLights" checked> Lights & Blinkers</label>
+                    <label class="chk-item"><input type="checkbox" id="chkMirrors" checked> Mirrors Intact</label>
+                </div>
+
                 <select id="inspClean" class="db-select">
-                    <option value="Good">Cleanliness: Good (Ready for dispatch)</option>
-                    <option value="Fair">Cleanliness: Fair (Needs minor cleaning)</option>
-                    <option value="Poor">Cleanliness: Poor (Unacceptable condition)</option>
+                    <option value="Good">Overall Condition: Good (Ready for dispatch)</option>
+                    <option value="Fair">Overall Condition: Fair (Needs minor attention)</option>
+                    <option value="Poor">Overall Condition: Poor (Unacceptable condition)</option>
                 </select>
-                <textarea id="inspDamage" class="db-textarea" placeholder="Describe any damages (scratches, mirrors, tires). If none, write 'No new damages observed'"></textarea>
+                <textarea id="inspDamage" class="db-textarea" placeholder="Describe any specific damages or missing items. If none, write 'No new damages observed'"></textarea>
                 <button class="save-btn" onclick="addInspection()">🚛 Log Inspection</button>
             </div>
             <div id="inspections-display"></div>
@@ -482,7 +453,6 @@
             try {
                 let isUnlocked = sessionStorage.getItem('mgmt_unlocked') === 'true';
                 let btn = document.getElementById('loginBtn');
-                
                 if (isUnlocked) {
                     document.body.classList.remove('locked-state');
                     if(btn) { btn.innerHTML = '🔓 Lock Management Access'; btn.classList.add('unlocked'); }
@@ -492,20 +462,19 @@
                     let activeTab = document.querySelector('.table-container.active');
                     if (activeTab && activeTab.classList.contains('mgmt-restricted')) { switchTab('safety', document.getElementById('btn-safety')); }
                 }
-            } catch (error) { document.body.classList.add('locked-state'); console.error("Storage Error:", error); }
+            } catch (error) { document.body.classList.add('locked-state'); }
         }
 
         function toggleManagement() {
             try {
-                let isUnlocked = sessionStorage.getItem('mgmt_unlocked') === 'true';
-                if (isUnlocked) {
+                if (sessionStorage.getItem('mgmt_unlocked') === 'true') {
                     sessionStorage.setItem('mgmt_unlocked', 'false'); applyAuthState();
                 } else {
                     let pin = prompt("Enter Manager PIN (7170928) to access restricted sections:");
                     if (pin === "7170928" || pin === "717-0928") { sessionStorage.setItem('mgmt_unlocked', 'true'); applyAuthState(); }
                     else if (pin !== null && pin !== "") { alert("Incorrect PIN. Access Denied."); }
                 }
-            } catch (error) { alert("Security error: Please ensure your browser allows cookies/session storage."); }
+            } catch (error) { alert("Security error: Browser blocking storage."); }
         }
 
         window.onload = function() {
@@ -528,7 +497,6 @@
         function filterContent() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let tables = [document.getElementById("contactTable"), document.getElementById("uniformTable"), document.getElementById("w1Table")];
-            
             tables.forEach(table => {
                 if (!table) return;
                 let tr = table.getElementsByTagName("tr");
@@ -542,53 +510,25 @@
             });
         }
 
-        // --- Driver Requests System ---
+        // --- Driver Requests ---
         function submitRequest() {
-            const name = document.getElementById('reqName').value;
-            const type = document.getElementById('reqType').value;
-            const msg = document.getElementById('reqMessage').value;
-
+            const name = document.getElementById('reqName').value; const type = document.getElementById('reqType').value; const msg = document.getElementById('reqMessage').value;
             if(!name || !type || !msg) { alert("Please fill out your name, select a request type, and include a message."); return; }
-
-            let requests = [];
-            try { requests = JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]'); } catch(e) {}
-            const dateStr = new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-            
-            requests.push({ id: Date.now(), name: name, type: type, message: msg.replace(/\n/g, "<br>"), time: dateStr });
-            try { localStorage.setItem('fedex_driver_requests', JSON.stringify(requests)); } catch(e) { alert("Storage Error"); return;}
-
-            document.getElementById('reqName').value = '';
-            document.getElementById('reqType').value = '';
-            document.getElementById('reqMessage').value = '';
-            
+            let requests = []; try { requests = JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]'); } catch(e) {}
+            requests.push({ id: Date.now(), name: name, type: type, message: msg.replace(/\n/g, "<br>"), time: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) });
+            try { localStorage.setItem('fedex_driver_requests', JSON.stringify(requests)); } catch(e) { return; }
+            document.getElementById('reqName').value = ''; document.getElementById('reqType').value = ''; document.getElementById('reqMessage').value = '';
             const successMsg = document.getElementById('reqSuccessMessage');
             if (successMsg) { successMsg.style.display = 'block'; setTimeout(() => { successMsg.style.display = 'none'; }, 4000); }
             renderRequests();
         }
 
         function renderRequests() {
-            let requests = [];
-            try { requests = JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]'); } catch(e) {}
-            const container = document.getElementById('requestInboxDisplay');
-            if (!container) return;
-            
-            container.innerHTML = '';
-            if (requests.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No pending requests.</p>'; return; }
-
+            let requests = []; try { requests = JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]'); } catch(e) {}
+            const container = document.getElementById('requestInboxDisplay'); if (!container) return;
+            container.innerHTML = ''; if (requests.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No pending requests.</p>'; return; }
             requests.slice().reverse().forEach(req => {
-                container.innerHTML += `
-                    <div class="inspection-card" style="margin: 10px 0; border-left: 4px solid #3b82f6; border-radius: 8px;">
-                        <div style="padding: 15px; display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;">
-                            <div style="flex-grow: 1;">
-                                <strong style="color: var(--text-main); font-size: 1.1rem;">${req.name}</strong> 
-                                <span style="color: #64748b; font-size: 0.85rem; margin-left: 8px;">${req.time}</span><br>
-                                <span style="display: inline-block; background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; margin: 8px 0; font-weight: bold;">${req.type}</span>
-                                <p style="margin: 5px 0 0 0; color: var(--text-muted); line-height: 1.5;">${req.message}</p>
-                            </div>
-                            <button class="delete-btn" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; white-space: nowrap;" onclick="resolveRequest(${req.id})">✔️ Mark Resolved</button>
-                        </div>
-                    </div>
-                `;
+                container.innerHTML += `<div class="inspection-card" style="margin: 10px 0; border-left: 4px solid #3b82f6; border-radius: 8px;"><div style="padding: 15px; display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;"><div style="flex-grow: 1;"><strong style="color: var(--text-main); font-size: 1.1rem;">${req.name}</strong> <span style="color: #64748b; font-size: 0.85rem; margin-left: 8px;">${req.time}</span><br><span style="display: inline-block; background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; margin: 8px 0; font-weight: bold;">${req.type}</span><p style="margin: 5px 0 0 0; color: var(--text-muted); line-height: 1.5;">${req.message}</p></div><button class="delete-btn" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; white-space: nowrap;" onclick="resolveRequest(${req.id})">✔️ Mark Resolved</button></div></div>`;
             });
         }
 
@@ -599,107 +539,100 @@
             }
         }
 
-        const defaultSafetyTopic = `<h3>Week 1: Safety & Service Standards</h3>
-        <p><strong>1. Safety (Three Points of Contact):</strong> Always maintain three points of contact when entering or exiting the truck. Never jump out. Slips and falls are the #1 injury in this business.</p>
-        <p><strong>2. Morning Truck Organization:</strong> Organize your trucks in the morning before leaving the terminal. Check your load to catch and avoid misloads early.</p>
-        <p><strong>3. Code 02 Accountability:</strong> Make absolutely sure any Code 02 (Bad Address) is legitimate. If you have any doubts, you MUST call management before applying the code.</p>
-        <p><strong>4. Strict Pickup Windows:</strong> Check your itineraries closely. Avoid scanning early pickups or late pickups at all costs, as this directly harms our metrics.</p>
-        <p><strong>5. Protect Our Service Rating:</strong> Our service rating is everything. Any issue on the road that prevents a successful delivery or pickup must be communicated to management immediately so we can fix it.</p>`;
-
+        // --- Safety Meetings ---
         function loadSafetyTopic() {
-            let topic = defaultSafetyTopic;
-            try { topic = localStorage.getItem('fedex_safety_topic') || defaultSafetyTopic; } catch(e) {}
+            let topic = `<h3>Week 1: Safety & Service Standards</h3><p><strong>1. Safety (Three Points of Contact):</strong> Always maintain three points of contact when entering or exiting the truck. Never jump out.</p><p><strong>2. Morning Truck Organization:</strong> Organize your trucks in the morning before leaving the terminal. Check your load to catch and avoid misloads early.</p>`;
+            try { topic = localStorage.getItem('fedex_safety_topic') || topic; } catch(e) {}
             document.getElementById('safetyTopicDisplay').innerHTML = topic;
-            let editBox = document.getElementById('editSafetyTopic');
-            if(editBox) editBox.value = topic.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''); 
+            let editBox = document.getElementById('editSafetyTopic'); if(editBox) editBox.value = topic.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''); 
         }
 
         function saveSafetyTopic() {
             let newTopic = document.getElementById('editSafetyTopic').value;
-            let formattedTopic = `<p>${newTopic.replace(/\n/g, "<br>")}</p>`;
-            try { localStorage.setItem('fedex_safety_topic', formattedTopic); } catch(e) { alert("Storage Error"); return;}
-            loadSafetyTopic();
-            alert("Topic updated successfully!");
+            try { localStorage.setItem('fedex_safety_topic', `<p>${newTopic.replace(/\n/g, "<br>")}</p>`); } catch(e) { return; }
+            loadSafetyTopic(); alert("Topic updated successfully!");
         }
 
         function submitSafetyAck() {
-            const check = document.getElementById('ackCheck');
-            const name = document.getElementById('ackName').value;
-            const email = document.getElementById('ackEmail').value;
-
-            if(!check.checked) { alert("You must check the acknowledgment box."); return; }
-            if(!name || !email) { alert("Please provide both your name and email."); return; }
-
-            let acks = [];
-            try { acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]'); } catch(e) {}
-            const dateStr = new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' });
-            
-            acks.push({ name: name, email: email, time: dateStr });
-            try { localStorage.setItem('fedex_safety_acks', JSON.stringify(acks)); } catch(e) { alert("Storage Error"); return;}
-
-            check.checked = false;
-            document.getElementById('ackName').value = '';
-            document.getElementById('ackEmail').value = '';
-            
-            const msg = document.getElementById('ackSuccessMessage');
-            if (msg) { msg.style.display = 'block'; setTimeout(() => { msg.style.display = 'none'; }, 4000); }
+            const check = document.getElementById('ackCheck'); const name = document.getElementById('ackName').value; const email = document.getElementById('ackEmail').value;
+            if(!check.checked || !name || !email) { alert("Please fill out all fields and check the box."); return; }
+            let acks = []; try { acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]'); } catch(e) {}
+            acks.push({ name: name, email: email, time: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) });
+            try { localStorage.setItem('fedex_safety_acks', JSON.stringify(acks)); } catch(e) { return; }
+            check.checked = false; document.getElementById('ackName').value = ''; document.getElementById('ackEmail').value = '';
+            const msg = document.getElementById('ackSuccessMessage'); if (msg) { msg.style.display = 'block'; setTimeout(() => { msg.style.display = 'none'; }, 4000); }
             renderSafetyAcks();
         }
 
         function renderSafetyAcks() {
-            let acks = [];
-            try { acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]'); } catch(e) {}
-            const container = document.getElementById('safetyLedgerDisplay');
-            if (!container) return;
-            container.innerHTML = '';
-            if (acks.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No signatures yet for this week.</p>'; return; }
+            let acks = []; try { acks = JSON.parse(localStorage.getItem('fedex_safety_acks') || '[]'); } catch(e) {}
+            const container = document.getElementById('safetyLedgerDisplay'); if (!container) return;
+            container.innerHTML = ''; if (acks.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No signatures yet for this week.</p>'; return; }
             acks.slice().reverse().forEach(ack => {
                 container.innerHTML += `<div class="sig-badge"><div><div class="sig-name">📝 ${ack.name}</div><div style="font-size: 0.85rem; color: #cbd5e1;">${ack.email}</div></div><div class="sig-time">${ack.time}</div></div>`;
             });
         }
+        function clearSignatures() { if(confirm("Are you sure you want to delete all signatures? Do this only at the start of a new week!")) { try { localStorage.setItem('fedex_safety_acks', '[]'); } catch(e) {} renderSafetyAcks(); } }
 
-        function clearSignatures() {
-            if(confirm("Are you sure you want to delete all signatures? Do this only at the start of a new week!")) {
-                try { localStorage.setItem('fedex_safety_acks', '[]'); } catch(e) {}
-                renderSafetyAcks();
-            }
-        }
-
+        // --- Diary & Inspections ---
         function getNotes() { try { return JSON.parse(localStorage.getItem('fedex_diary') || '[]'); } catch(e) { return []; } }
         function renderNotes() {
-            const container = document.getElementById('notes-display');
-            if (!container) return;
-            container.innerHTML = '';
+            const container = document.getElementById('notes-display'); if (!container) return; container.innerHTML = '';
             getNotes().slice().reverse().forEach(note => { container.innerHTML += `<div class="note-card"><div class="note-header"><span>📅 ${note.date} - ${note.title}</span><button class="delete-btn" onclick="deleteNote(${note.id})">Delete</button></div><div class="note-body">${note.body}</div></div>`; });
         }
         function addNote() {
             const title = document.getElementById('noteTitle').value; const body = document.getElementById('noteBody').value;
             if(!title || !body) { alert("Enter subject and note."); return; }
             let notes = getNotes(); notes.push({ id: Date.now(), date: new Date().toLocaleString(), title: title, body: `<p>${body.replace(/\n/g, "<br>")}</p>`, type: "standard" });
-            try { localStorage.setItem('fedex_diary', JSON.stringify(notes)); } catch(e) { alert("Storage error."); return;}
+            try { localStorage.setItem('fedex_diary', JSON.stringify(notes)); } catch(e) {}
             document.getElementById('noteTitle').value = ''; document.getElementById('noteBody').value = ''; renderNotes();
         }
         function deleteNote(id) { if(confirm("Delete this diary entry?")) { try { localStorage.setItem('fedex_diary', JSON.stringify(getNotes().filter(n => n.id !== id))); } catch(e) {} renderNotes(); } }
 
         function getInspections() { try { return JSON.parse(localStorage.getItem('fedex_inspections') || '[]'); } catch(e) { return []; } }
         function renderInspections() {
-            const container = document.getElementById('inspections-display');
-            if (!container) return;
-            container.innerHTML = '';
+            const container = document.getElementById('inspections-display'); if (!container) return; container.innerHTML = '';
             getInspections().slice().reverse().forEach(insp => {
                 let badgeClass = insp.cleanliness === 'Good' ? 'clean-good' : (insp.cleanliness === 'Fair' ? 'clean-fair' : 'clean-poor');
                 let titleDisplay = insp.route ? `🚛 Truck: ${insp.truck} | Route: ${insp.route}` : `🚛 ${insp.truck}`;
-                container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>${titleDisplay} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Cleanliness: ${insp.cleanliness}</span><p><strong>Damages / Notes:</strong><br>${insp.damages}</p></div></div>`;
+                
+                // Construct Checkpoint HTML
+                let checksHtml = '';
+                if(insp.checks) {
+                    checksHtml = '<div style="margin: 10px 0;">';
+                    Object.keys(insp.checks).forEach(k => {
+                        let isPass = insp.checks[k];
+                        checksHtml += `<span class="check-badge ${isPass ? 'pass' : 'fail'}">${isPass ? '✅' : '❌'} ${k}</span>`;
+                    });
+                    checksHtml += '</div>';
+                }
+
+                container.innerHTML += `<div class="inspection-card"><div class="note-header inspection"><span>${titleDisplay} | ${insp.date}</span><button class="delete-btn" onclick="deleteInspection(${insp.id})">Delete</button></div><div class="note-body"><span class="badge-cleanliness ${badgeClass}">Condition: ${insp.cleanliness}</span>${checksHtml}<p style="margin-top: 10px;"><strong>Notes:</strong><br>${insp.damages}</p></div></div>`;
             });
         }
         function addInspection() {
             const truckNum = document.getElementById('inspTruckNum').value; const routeNum = document.getElementById('inspRouteNum').value;
             const clean = document.getElementById('inspClean').value; const damage = document.getElementById('inspDamage').value;
-            if(!truckNum || !routeNum || !damage) { alert("Please fill out the Truck Number, Route, and Damages."); return; }
+            if(!truckNum || !routeNum) { alert("Please fill out the Truck Number and Route."); return; }
+            
+            // Gather Checkpoints
+            let chks = {
+                "Clean": document.getElementById('chkClean').checked,
+                "Body": document.getElementById('chkBody').checked,
+                "Tires": document.getElementById('chkTires').checked,
+                "Lights": document.getElementById('chkLights').checked,
+                "Mirrors": document.getElementById('chkMirrors').checked
+            };
+
             let inspections = getInspections();
-            inspections.push({ id: Date.now(), date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>") });
+            inspections.push({ id: Date.now(), date: new Date().toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }), truck: truckNum, route: routeNum, cleanliness: clean, damages: damage.replace(/\n/g, "<br>"), checks: chks });
             try { localStorage.setItem('fedex_inspections', JSON.stringify(inspections)); } catch(e) { alert("Storage Error."); return;}
-            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
+            
+            document.getElementById('inspTruckNum').value = ''; document.getElementById('inspRouteNum').value = ''; 
+            document.getElementById('inspClean').value = 'Good'; document.getElementById('inspDamage').value = '';
+            
+            // Reset Checkboxes
+            document.getElementById('chkClean').checked = true; document.getElementById('chkBody').checked = true; document.getElementById('chkTires').checked = true; document.getElementById('chkLights').checked = true; document.getElementById('chkMirrors').checked = true;
             renderInspections();
         }
         function deleteInspection(id) { if(confirm("Delete this inspection record?")) { try { localStorage.setItem('fedex_inspections', JSON.stringify(getInspections().filter(i => i.id !== id))); } catch(e) {} renderInspections(); } }
