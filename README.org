@@ -1,0 +1,83 @@
+#+TITLE: FedEx Driver Operations Directory & Schedule
+#+AUTHOR: Rob Alicea, Manager - Facility: 4901 Village Creek Rd
+#+DATE: \today
+#+OPTIONS: toc:t num:nil
+#+LATEX_HEADER: \usepackage[landscape, margin=0.5in]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+
+* 1. Contact Directory
+| Driver Name | Route | Phone | Email |
+|-------------+-------+-------+-------|
+| Jamal S. | 123 | 347-527-0069 | Malinvestments27@gmail.com |
+| Mark F. | 126 | 817-449-4466 | markanttony92@gmail.com |
+| Cayton M. | 127 | 817-521-4570 | Cryptocayton@gmail.com |
+| Jose G. | 130 | 682-234-1522 | Garcia_turco_jose@yahoo.com |
+| Ryan H. | 138 | 682-772-0589 | Wurker.man.247@gmail.com |
+| Jesus P. | 139 | 817-875-0747 | Pasos_j@yahoo.com |
+| Davion O. | 146 | 817-718-0259 | Oliverdavion@me.com |
+| Noel R. | 154 | 682-552-9523 | Noe.r2003@yahoo.com |
+| Elvis G.R. | 155 | 210-897-1929 | Elvisguanipa529@gmail.com |
+| Quinton J. | 218 | 817-730-8910 | yungactionjack@gmail.com |
+| Datavious S. | 234 | 682-287-7169 | dstrib99@gmail.com |
+
+* 2. Uniform Sizes
+| Driver Name | Route | Shirt | Pants | Vest |
+|-------------+-------+-------+-------+------|
+| Jamal S. | 123 | L | 36 | N/A |
+| Mark F. | 126 | L | 36 | L |
+| Cayton M. | 127 | L | 36 | L |
+| Jose G. | 130 | XL | 38 | XL |
+| Ryan H. | 138 | M | 30 | M |
+| Jesus P. | 139 | M | 34 | M |
+| Davion O. | 146 | M | 34 | M |
+| Noel R. | 154 | XL | 38 | XL |
+| Elvis G.R. | 155 | M | N/A | M |
+| Quinton J. | 218 | M | 29x32 | N/A |
+| Datavious S. | 234 | XL / 2XL (Long) | 42 (Shorts) / 42x30 | Pending |
+
+\newpage
+* 3. Weekly Master Schedule
+| Driver Name | Route | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
+|-------------+-------+-----+-----+-----+-----+-----+-----+-----|
+| Jose G. | 130 | Work | Work | Work | Work | Work | OFF | OFF |
+| Jesus P. | 139 | Work | Work | Work | Work | Work | OFF | OFF |
+| Ryan H. | 138 | Work | Work | Work | Work | Work | OFF | OFF |
+| Quinton J. | 218 | Work | Work | Work | Work | Work | OFF | OFF |
+| Datavious S. | 234 | Work | Work | Work | Work | Work | OFF | OFF |
+| Mark F. | 126 | Work | Work | OFF | Work | OFF | Work | Work |
+| Elvis G.R. | 155 | Work | OFF | OFF | Work | Work | Work | Work |
+| Jamal S. | 123 | OFF | Work | Work | Work | Work | Work | Work |
+| Cayton M. | 127 | Work | Work | Work | Work | Work | Work | OFF |
+| Davion O. | 146 | Work | Work | Work | OFF | Work | Work | Work |
+| Noel R. | 154 | Work | Work | Work | Work | OFF | Work | Work |
+
+* 4. Daily Availability & Headcounts
+** Monday (10 Working)
+Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Mark F. (126), Elvis G.R. (155), Cayton M. (127), Davion O. (146), Noel R. (154)
+Off Duty: Jamal S. (123)
+
+** Tuesday (10 Working)
+Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Mark F. (126), Jamal S. (123), Cayton M. (127), Davion O. (146), Noel R. (154)
+Off Duty: Elvis G.R. (155)
+
+** Wednesday (9 Working)
+Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Jamal S. (123), Cayton M. (127), Davion O. (146), Noel R. (154)
+Off Duty: Mark F. (126), Elvis G.R. (155)
+
+** Thursday (10 Working)
+Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Mark F. (126), Elvis G.R. (155), Jamal S. (123), Cayton M. (127), Noel R. (154)
+Off Duty: Davion O. (146)
+
+** Friday (9 Working)
+Working: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234), Elvis G.R. (155), Jamal S. (123), Cayton M. (127), Davion O. (146)
+Off Duty: Mark F. (126), Noel R. (154)
+
+** Saturday (6 Working + 1 Open Route)
+Working: Mark F. (126), Elvis G.R. (155), Jamal S. (123), Cayton M. (127), Davion O. (146), Noel R. (154)
+Coverage Needed: 1 Open Route
+Off Duty: Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234)
+
+** Sunday (5 Working)
+Working: Mark F. (126), Elvis G.R. (155), Jamal S. (123), Davion O. (146), Noel R. (154)
+Off Duty: Cayton M. (127), Jose G. (130), Jesus P. (139), Ryan H. (138), Quinton J. (218), Datavious S. (234)
