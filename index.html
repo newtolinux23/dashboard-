@@ -10,7 +10,6 @@
         :root {
             --fedex-purple: #7b42ff; 
             --fedex-orange: #ff6600;
-            --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 100%);
             --card-bg: #1e293b; 
             --text-main: #f8fafc; 
             --text-muted: #cbd5e1; 
@@ -23,11 +22,13 @@
 
         body { 
             font-family: 'Inter', sans-serif; margin: 0; padding: 0; 
-            background: var(--bg-gradient); color: var(--text-main); min-height: 100vh; 
+            background-color: #0f172a; 
+            color: var(--text-main); min-height: 100vh; 
         }
 
+        /* Animations */
         @keyframes fadeInSlideUp {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @keyframes pulseAlert {
@@ -36,14 +37,46 @@
             100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
         }
 
-        .header { 
-            background: rgba(2, 6, 23, 0.95); backdrop-filter: blur(10px); color: white; 
-            padding: 25px 20px; text-align: center; border-bottom: 4px solid var(--fedex-orange); 
-            box-shadow: var(--shadow-md); position: sticky; top: 0; z-index: 100;
+        /* Top Navigation */
+        .top-nav {
+            background: #020617;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--fedex-purple);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .header h1 { margin: 0 0 8px 0; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); }
-        .header p { margin: 0; font-size: 1rem; color: var(--text-muted); font-weight: 600; }
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 15px; }
+        .top-nav .brand { font-weight: 800; font-size: 1.2rem; letter-spacing: 0.5px; color: white; display: flex; align-items: center; gap: 10px; }
+        .top-nav .brand span { color: var(--fedex-orange); }
+        
+        /* Hero Banner Image Section */
+        .hero-banner {
+            height: 380px;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba(2, 6, 23, 0.4) 0%, rgba(15, 23, 42, 1) 100%), url('18165.jpg') center/cover no-repeat, #1e293b;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 4px solid var(--fedex-orange);
+            margin-bottom: 30px;
+        }
+        .hero-banner h1 { 
+            font-size: 3rem; color: white; margin: 0 0 10px 0; font-weight: 800; 
+            letter-spacing: -1px; text-shadow: 2px 2px 10px rgba(0,0,0,0.9); 
+        }
+        .hero-banner p { 
+            font-size: 1.25rem; color: #e2e8f0; font-weight: 600; 
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.9); margin: 0; 
+            background: rgba(0,0,0,0.4); padding: 8px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .container { max-width: 1100px; margin: 0 auto 40px auto; padding: 0 15px; }
         .controls { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
 
         .login-btn { 
@@ -52,10 +85,10 @@
             transition: var(--transition); box-shadow: var(--shadow-sm); text-align: center; 
         }
         .login-btn:hover { border-color: var(--fedex-orange); background-color: rgba(255, 102, 0, 0.1); transform: translateY(-2px); }
-        .login-btn.unlocked { background-color: rgba(239, 68, 68, 0.1); border-color: #ef4444; color: #fca5a5; }
+        .login-btn.unlocked { background-color: rgba(239, 68, 68, 0.15); border-color: #ef4444; color: #fca5a5; }
 
         .search-bar { 
-            padding: 15px 20px; font-size: 1.05rem; background-color: rgba(30, 41, 59, 0.8); color: var(--text-main); 
+            padding: 15px 20px; font-size: 1.05rem; background-color: #1e293b; color: var(--text-main); 
             border: 2px solid var(--border-color); border-radius: 10px; width: 100%; box-sizing: border-box; 
             box-shadow: var(--shadow-sm); font-family: 'Inter', sans-serif; transition: var(--transition);
         }
@@ -73,14 +106,20 @@
 
         body.locked-state .mgmt-restricted { display: none !important; }
 
-        .table-container { background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow-md); overflow-x: auto; display: none; margin-bottom: 30px; border: 1px solid var(--border-color); }
-        .table-container.active { display: block; animation: fadeInSlideUp 0.5s ease forwards; }
+        .table-container { 
+            background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow-md); 
+            overflow-x: auto; display: none; margin-bottom: 40px; border: 1px solid var(--border-color); 
+        }
+        .table-container.active { 
+            display: block; 
+            animation: fadeInSlideUp 0.5s ease forwards; 
+        }
 
         table { width: 100%; border-collapse: collapse; min-width: 700px; }
         th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border-color); transition: background-color 0.2s; }
         th { background-color: #020617; color: var(--text-muted); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
         tr:last-child td { border-bottom: none; }
-        tr:hover td { background-color: rgba(51, 65, 85, 0.8); }
+        tr:hover td { background-color: rgba(51, 65, 85, 0.5); }
 
         .action-btn { display: inline-block; padding: 8px 16px; margin: 2px 0; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; color: white; text-align: center; white-space: nowrap; transition: filter 0.2s; }
         .action-btn:hover { filter: brightness(1.2); }
@@ -92,8 +131,14 @@
         .off-day { color: #f87171; font-weight: 800; }
         .tbd-day { color: #fbbf24; font-weight: 800; }
 
-        .day-card, .note-card, .inspection-card { border: 1px solid var(--border-color); border-radius: 10px; margin: 20px; overflow: hidden; box-shadow: var(--shadow-sm); background: #0f172a; transition: var(--transition); }
-        .day-card:hover, .note-card:hover, .inspection-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: #475569; }
+        .day-card, .note-card, .inspection-card { 
+            border: 1px solid var(--border-color); border-radius: 10px; margin: 20px; 
+            overflow: hidden; box-shadow: var(--shadow-sm); background: #0f172a; 
+            transition: var(--transition); 
+        }
+        .day-card:hover, .note-card:hover, .inspection-card:hover {
+            transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: #475569;
+        }
 
         .day-header { background-color: #020617; color: #22d3ee; padding: 15px 20px; font-size: 1.2rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0ea5e9; text-transform: uppercase; letter-spacing: 1px; }
         .day-count { background-color: #0ea5e9; color: #0f172a; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 800; }
@@ -102,20 +147,25 @@
         .driver-badge { background-color: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 6px; font-size: 0.95rem; font-weight: 600; text-align: left; border-left: 4px solid #10b981; color: #f8fafc; border-top: 1px solid #1e293b; border-right: 1px solid #1e293b; border-bottom: 1px solid #1e293b; transition: var(--transition); }
         .driver-badge:hover { background-color: rgba(16, 185, 129, 0.1); }
         .off-duty-badge { border-left: 4px solid #e11d48; color: #fda4af; border-color: rgba(225, 29, 72, 0.1); }
-        .off-duty-badge:hover { background-color: rgba(225, 29, 72, 0.1); }
-        .pending-badge { border-left: 4px solid #f59e0b; color: #fcd34d; font-style: italic; border-color: rgba(245, 158, 11, 0.1); }
+        .off-duty-badge:hover { background-color: rgba(225, 29, 72, 0.15); }
+        .pending-badge { border-left: 4px solid #f59e0b; color: #fcd34d; font-style: italic; border-color: rgba(245, 158, 11, 0.1); background-color: rgba(245, 158, 11, 0.05); }
+        .pending-badge:hover { background-color: rgba(245, 158, 11, 0.15); }
         
         .weekend-call-section { grid-column: 1 / -1; margin-top: 10px; padding-top: 15px; border-top: 2px dashed #1e293b; display: flex; flex-wrap: wrap; gap: 10px; }
         .weekend-call-title { width: 100%; font-weight: bold; color: #e11d48; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
 
         .database-form { padding: 20px; background: #0f172a; border-bottom: 2px solid var(--border-color); }
-        .db-input, .db-select, .db-textarea { width: 100%; padding: 14px; margin-bottom: 15px; background-color: rgba(30, 41, 59, 0.6); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; box-sizing: border-box; transition: var(--transition); }
+        .db-input, .db-select, .db-textarea { 
+            width: 100%; padding: 14px; margin-bottom: 15px; background-color: #1e293b; 
+            color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; 
+            font-family: 'Inter', sans-serif; font-size: 1rem; box-sizing: border-box; transition: var(--transition);
+        }
         .db-input:focus, .db-textarea:focus { border-color: #3b82f6; outline: none; background-color: #0f172a; }
         .db-input::placeholder, .db-textarea::placeholder { color: #64748b; }
         .db-textarea { resize: vertical; min-height: 120px; }
         
         .save-btn { background-color: var(--fedex-orange); color: white; border: none; padding: 14px 24px; font-size: 1.05rem; font-weight: 800; border-radius: 8px; cursor: pointer; width: 100%; transition: var(--transition); }
-        .save-btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3); }
+        .save-btn:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4); }
         
         .note-header { background-color: #020617; color: var(--text-main); padding: 15px 20px; font-size: 1.1rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
         .note-header.inspection { background-color: rgba(255, 102, 0, 0.1); border-bottom: 2px solid var(--fedex-orange); color: var(--fedex-orange); }
@@ -148,15 +198,26 @@
         .check-badge.pass { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
         .check-badge.fail { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid #ef4444; }
         
-        .mgmt-alert { background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 20px; margin: 20px; border-radius: 0 10px 10px 0; color: #fcd34d; font-size: 1rem; line-height: 1.6; animation: pulseAlert 2s infinite; }
+        .mgmt-alert { 
+            background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 20px; 
+            margin: 20px; border-radius: 0 10px 10px 0; color: #fcd34d; font-size: 1rem; line-height: 1.6; 
+            animation: pulseAlert 2.5s infinite;
+        }
         .mgmt-alert strong { color: #f59e0b; }
     </style>
 </head>
 <body class="locked-state">
 
-    <div class="header">
-        <h1>Operations Directory</h1>
-        <p>Facility: 4901 Village Creek Rd | Manager: Rob Alicea</p>
+    <!-- Top Navbar -->
+    <div class="top-nav">
+        <div class="brand">📦 FedEx Ground <span>Operations</span></div>
+        <div style="font-size: 0.9rem; color: #94a3b8;">Manager Access System</div>
+    </div>
+
+    <!-- Hero Image Banner -->
+    <div class="hero-banner">
+        <h1>4901 Village Creek Rd</h1>
+        <p>Terminal Operations & Dispatch | Manager: Rob Alicea</p>
     </div>
 
     <div class="container">
@@ -176,13 +237,15 @@
             </div>
         </div>
 
-        <!-- 1. SAFETY -->
+        <!-- 1. SAFETY & SERVICE MEETINGS TAB -->
         <div id="safety" class="table-container active">
             <div class="note-card">
                 <div class="note-header safety" style="border-bottom: 2px solid #10b981; color: #34d399;">
                     <span>🛡️ Weekly Safety & Service Briefing</span>
                 </div>
-                <div class="note-body" id="safetyTopicDisplay"><p>Loading safety topic...</p></div>
+                <div class="note-body" id="safetyTopicDisplay">
+                    <p>Loading safety topic...</p>
+                </div>
                 <div class="database-form">
                     <label class="checkbox-container">
                         <input type="checkbox" id="ackCheck">
@@ -196,9 +259,12 @@
                     <div id="ackSuccessMessage" style="color: #34d399; font-weight: bold; margin-top: 15px; display: none; text-align: center; font-size: 1.1rem;">✅ Digital Signature Saved Successfully!</div>
                 </div>
             </div>
+
             <div class="mgmt-restricted">
                 <div class="note-card" style="border-color: var(--fedex-orange);">
-                    <div class="note-header inspection"><span>⚙️ Manager Tools: Edit Topic & Print Ledger</span></div>
+                    <div class="note-header inspection">
+                        <span>⚙️ Manager Tools: Edit Topic & Print Ledger</span>
+                    </div>
                     <div class="database-form">
                         <h3 style="margin-top: 0; color: var(--text-main);">Update Weekly Safety Topic</h3>
                         <textarea id="editSafetyTopic" class="db-textarea" placeholder="Paste the new safety topic for the drivers here..."></textarea>
@@ -221,7 +287,7 @@
             <div class="note-card" style="border-color: #3b82f6;">
                 <div class="note-header" style="background: rgba(59, 130, 246, 0.1); border-bottom: 2px solid #3b82f6; color: #60a5fa;"><span>📬 Driver Request Form</span></div>
                 <div class="database-form">
-                    <p style="color: var(--text-muted); margin-top: 0; margin-bottom: 20px; font-size: 1.05rem;">Use this private form to request uniform changes, report route/truck issues, request time off, or communicate needs to management.</p>
+                    <p style="color: var(--text-muted); margin-top: 0; margin-bottom: 20px; font-size: 1.05rem;">Use this private form to request uniform changes, report route/truck issues, request time off, or communicate needs to management. Sent securely to Rob.</p>
                     <div class="input-row">
                         <input type="text" id="reqName" class="db-input" placeholder="Your Name (Required)">
                         <select id="reqType" class="db-select">
@@ -303,12 +369,12 @@
                     <tr><td>Jerrylee Camacho</td><td>wa135</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Ryan Huffaker</td><td>wa138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jesus Pasos</td><td>wa139</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>OPEN ROUTE</td><td>wa146</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Noe Rosales</td><td>wa154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="tbd-day">OFF (Rot)</td><td class="work-day">Work</td><td class="work-day">Work (Rot)</td></tr>
-                    <tr><td>Elvis Guanipa R.</td><td>wa155</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
+                    <tr><td>Elvis Guanipa Rangel</td><td>wa155</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                     <tr><td>Datavious Striblen</td><td>wa234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Richard A. (Pend)</td><td>Coverage</td><td class="off-day">OFF</td><td class="work-day">Work (155)</td><td class="work-day">Work (155)</td><td class="work-day">Work (138)</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Flex Driver (Pend)</td><td>Flex</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td><td class="off-day">OFF</td><td class="work-day">Work (154)</td><td class="off-day">OFF</td><td class="work-day">Work (127)</td></tr>
-                    <tr><td>OPEN ROUTE</td><td>wa146</td><td class="tbd-day">OPEN</td><td class="tbd-day">OPEN</td><td class="tbd-day">OPEN</td><td class="tbd-day">OPEN</td><td class="tbd-day">OPEN</td><td class="tbd-day">OPEN</td><td class="off-day">OFF (Rot)</td></tr>
                 </tbody>
             </table>
         </div>
@@ -317,22 +383,21 @@
         <div id="availability" class="table-container mgmt-restricted" style="background-color: #020617;">
             <div class="mgmt-alert">
                 <strong>MANAGEMENT DISCLOSURE:</strong><br>
-                1. <strong>Open Route Alert:</strong> Route wa146 is officially an OPEN ROUTE Monday-Saturday. Coverage is required.<br>
-                2. <strong>Pending Hires:</strong> Richard Alicea and the Flex Driver are in the hiring process. The routes assigned to them (indicated in italics) are currently <strong>OPEN ROUTES</strong> that must be covered internally until they clear.<br>
-                3. <strong>Cayton's Schedule:</strong> Cayton is taking Sunday off temporarily and working Monday to ensure weekday coverage until the Flex Driver is onboarded. Once staffing stabilizes, Cayton will resume the Sunday rotation with Noe.<br>
-                4. <strong>Jamal's Rotation:</strong> Jamal has formally requested Sundays off. Once staffing allows, he will join Noe and Cayton in the rotating Sunday-off schedule.
+                1. <strong>Pending Hires:</strong> Richard Alicea and the Flex Driver are in the hiring process. The routes assigned to them (indicated in italics) are currently <strong>OPEN ROUTES</strong> that must be covered internally until they clear.<br>
+                2. <strong>Cayton's Schedule:</strong> Cayton is taking Sunday off temporarily and working Monday to ensure weekday coverage until the Flex Driver is onboarded. Once staffing stabilizes, Cayton will resume the Sunday rotation with Noe.<br>
+                3. <strong>Jamal's Rotation:</strong> Jamal has formally requested Sundays off. Once staffing allows, he will join Noe and Cayton in the rotating Sunday-off schedule.<br>
+                4. <strong>Roster Update:</strong> Route wa146 is currently an OPEN ROUTE requiring immediate coverage Monday-Saturday.
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Monday</span><span class="day-count">11 Working + 1 Open Route</span></div>
+                <div class="day-header"><span>Monday</span><span class="day-count">12 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge">Mark Francis (wa126)</div>
                     <div class="driver-badge">Cayton McDonald (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
                     <div class="driver-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge">Jerrylee Camacho (wa135)</div>
                     <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge">Jesus Pasos (wa139)</div>
-                    <div class="driver-badge">Noe Rosales (wa154)</div><div class="driver-badge">Elvis Guanipa Rangel (wa155)</div>
-                    <div class="driver-badge">Datavious Striblen (wa234)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (wa146)</div>
+                    <div class="driver-badge pending-badge">Open Route (wa146)</div><div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Elvis Guanipa Rangel (wa155)</div><div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Richard Alicea (Coverage)</div>
@@ -342,15 +407,14 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Tuesday</span><span class="day-count">11 Working + 1 Open Route</span></div>
+                <div class="day-header"><span>Tuesday</span><span class="day-count">12 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge">Mark Francis (wa126)</div>
                     <div class="driver-badge">Cayton McDonald (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
                     <div class="driver-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge">Jerrylee Camacho (wa135)</div>
                     <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge">Jesus Pasos (wa139)</div>
-                    <div class="driver-badge">Noe Rosales (wa154)</div><div class="driver-badge pending-badge">Richard Alicea (wa155) [Pend]</div>
-                    <div class="driver-badge">Datavious Striblen (wa234)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (wa146)</div>
+                    <div class="driver-badge pending-badge">Open Route (wa146)</div><div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge pending-badge">Richard Alicea (wa155) [Pend]</div><div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Elvis Guanipa Rangel (wa155)</div>
@@ -360,15 +424,14 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Wednesday</span><span class="day-count">11 Working + 1 Open Route</span></div>
+                <div class="day-header"><span>Wednesday</span><span class="day-count">12 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge pending-badge">Flex Driver (wa126) [Pend]</div>
                     <div class="driver-badge">Cayton McDonald (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
                     <div class="driver-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge">Jerrylee Camacho (wa135)</div>
                     <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge">Jesus Pasos (wa139)</div>
-                    <div class="driver-badge">Noe Rosales (wa154)</div><div class="driver-badge pending-badge">Richard Alicea (wa155) [Pend]</div>
-                    <div class="driver-badge">Datavious Striblen (wa234)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (wa146)</div>
+                    <div class="driver-badge pending-badge">Open Route (wa146)</div><div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge pending-badge">Richard Alicea (wa155) [Pend]</div><div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (wa126)</div>
@@ -378,15 +441,14 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Thursday</span><span class="day-count">11 Working + 1 Open Route</span></div>
+                <div class="day-header"><span>Thursday</span><span class="day-count">12 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge">Mark Francis (wa126)</div>
                     <div class="driver-badge">Cayton McDonald (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
                     <div class="driver-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge">Jerrylee Camacho (wa135)</div>
                     <div class="driver-badge pending-badge">Richard Alicea (wa138) [Pend]</div><div class="driver-badge">Jesus Pasos (wa139)</div>
-                    <div class="driver-badge">Noe Rosales (wa154)</div><div class="driver-badge">Elvis Guanipa Rangel (wa155)</div>
-                    <div class="driver-badge">Datavious Striblen (wa234)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (wa146)</div>
+                    <div class="driver-badge pending-badge">Open Route (wa146)</div><div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Elvis Guanipa Rangel (wa155)</div><div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Ryan Huffaker (wa138)</div>
@@ -396,15 +458,14 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Friday</span><span class="day-count">11 Working + 1 Open Route</span></div>
+                <div class="day-header"><span>Friday</span><span class="day-count">12 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge">Mark Francis (wa126)</div>
                     <div class="driver-badge">Cayton McDonald (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
                     <div class="driver-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge">Jerrylee Camacho (wa135)</div>
                     <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge">Jesus Pasos (wa139)</div>
-                    <div class="driver-badge pending-badge">Flex Driver (wa154) [Pend]</div><div class="driver-badge">Elvis Guanipa Rangel (wa155)</div>
-                    <div class="driver-badge">Datavious Striblen (wa234)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (wa146)</div>
+                    <div class="driver-badge pending-badge">Open Route (wa146)</div><div class="driver-badge pending-badge">Flex Driver (wa154) [Pend]</div>
+                    <div class="driver-badge">Elvis Guanipa Rangel (wa155)</div><div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Noe Rosales (wa154) (Rot)</div>
@@ -413,13 +474,12 @@
                 </div>
             </div>
 
-            <div class="day-card" style="border: 1px solid #10b981;">
-                <div class="day-header" style="color: #34d399; border-bottom: 2px solid #10b981;"><span>Saturday</span><span class="day-count" style="background: #10b981; color: #020617;">5 Working + 1 Open Route</span></div>
+            <div class="day-card" style="border: 1px solid rgba(16, 185, 129, 0.5);">
+                <div class="day-header" style="color: #34d399; border-bottom: 2px solid #10b981;"><span>Saturday</span><span class="day-count" style="background: #10b981; color: #020617;">6 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Cayton McDonald (wa127)</div><div class="driver-badge">Jerrylee Camacho (wa135)</div>
-                    <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge">Noe Rosales (wa154)</div>
-                    <div class="driver-badge">Elvis Guanipa Rangel (wa155)</div>
-                    <div class="driver-badge rotator-badge" style="border-color: #ef4444; color: #fca5a5;">Open Route (wa146)</div>
+                    <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge pending-badge">Open Route (wa146)</div>
+                    <div class="driver-badge">Noe Rosales (wa154)</div><div class="driver-badge">Elvis Guanipa Rangel (wa155)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF DUTY</div>
                         <div class="driver-badge off-duty-badge">Jamal Sealy (wa123)</div><div class="driver-badge off-duty-badge">Mark Francis (wa126)</div>
@@ -430,7 +490,7 @@
                 </div>
             </div>
 
-            <div class="day-card" style="border: 1px solid #f59e0b;">
+            <div class="day-card" style="border: 1px solid rgba(245, 158, 11, 0.5);">
                 <div class="day-header" style="color: #fbbf24; border-bottom: 2px solid #f59e0b;"><span>Sunday</span><span class="day-count" style="background: #f59e0b; color: #020617;">5 Working</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge">Mark Francis (wa126)</div>
@@ -441,8 +501,8 @@
                         <div class="driver-badge off-duty-badge">Cayton McDonald (wa127) (Temp)</div><div class="driver-badge off-duty-badge">Jose Garcia (wa130)</div>
                         <div class="driver-badge off-duty-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge off-duty-badge">Jerrylee Camacho (wa135)</div>
                         <div class="driver-badge off-duty-badge">Ryan Huffaker (wa138)</div><div class="driver-badge off-duty-badge">Jesus Pasos (wa139)</div>
-                        <div class="driver-badge off-duty-badge">Datavious Striblen (wa234)</div><div class="driver-badge off-duty-badge">Richard Alicea (Coverage)</div>
-                        <div class="driver-badge off-duty-badge">Open Route (wa146 - Rot OFF)</div>
+                        <div class="driver-badge pending-badge">Open Route (wa146)</div><div class="driver-badge off-duty-badge">Datavious Striblen (wa234)</div>
+                        <div class="driver-badge off-duty-badge">Richard Alicea (Coverage)</div>
                     </div>
                 </div>
             </div>
