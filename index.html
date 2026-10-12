@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
         :root {
-            var(--accent-primary): #0ea5e9; 
+            --accent-primary: #0ea5e9; 
             --accent-secondary: #10b981; 
             --accent-alert: #f43f5e; 
             --bg-color: #020617; 
@@ -132,7 +132,7 @@
         .off-duty-badge { border-left: 4px solid var(--accent-alert); color: #fda4af; }
         .off-duty-badge:hover { background-color: rgba(244, 63, 94, 0.1); }
         .flex-badge { border-left: 4px solid #0ea5e9; color: #bae6fd; background-color: rgba(14, 165, 233, 0.05); }
-        .open-route-badge { border-left: 4px solid var(--fedex-orange); color: var(--fedex-orange); font-style: italic; background-color: rgba(255, 102, 0, 0.05); }
+        .sat-badge { border-left: 4px solid var(--fedex-orange); color: var(--fedex-orange); background-color: rgba(255, 102, 0, 0.05); }
         
         .weekend-call-section { grid-column: 1 / -1; margin-top: 10px; padding-top: 15px; border-top: 1px dashed var(--border-color); display: flex; flex-wrap: wrap; gap: 10px; }
         .weekend-call-title { width: 100%; font-weight: 800; color: var(--accent-alert); margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
@@ -143,7 +143,7 @@
             color: var(--text-main); border: 1px solid var(--border-color); border-radius: 6px; 
             font-family: 'Inter', sans-serif; font-size: 1rem; box-sizing: border-box; transition: var(--transition);
         }
-        .db-input:focus, .db-textarea:focus { border-color: #0ea5e9; outline: none; background-color: #020617; box-shadow: 0 0 10px rgba(14, 165, 233, 0.2); }
+        .db-input:focus, .db-textarea:focus { border-color: var(--accent-primary); outline: none; background-color: #020617; box-shadow: 0 0 10px rgba(14, 165, 233, 0.2); }
         .db-input::placeholder, .db-textarea::placeholder { color: #64748b; }
         .db-textarea { resize: vertical; min-height: 120px; }
         
@@ -214,6 +214,7 @@
         <!-- 0. HOME / LANDING PAGE -->
         <div id="home" class="table-container active">
             <div class="home-layout">
+                <!-- Inspirational Message -->
                 <div class="home-panel">
                     <h2>The Terminal Elite</h2>
                     <p>Welcome to the 4901 Village Creek Rd Dispatch Center. We are more than just drivers; we are the absolute frontline of logistics.</p>
@@ -230,6 +231,7 @@
                     </div>
                 </div>
                 
+                <!-- Hiring Form -->
                 <div class="home-panel" style="border-top: 3px solid #0ea5e9;">
                     <h2 style="color: #0ea5e9;">Join The Squad</h2>
                     <p style="font-size: 0.95rem; margin-top: -10px;">If you have the discipline and the exact mindset to run with an elite unit, we want to see your application.</p>
@@ -334,7 +336,7 @@
                     <tr><td>Jamal Sealy</td><td>wa123</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Mark Francis</td><td>wa126</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="work-day">Work</td></tr>
                     <tr><td>Jerrylee Camacho</td><td>wa127</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
-                    <tr><td>Jose Garcia</td><td>wa130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work (1x)</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jose Garcia</td><td>wa130</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day" style="color: var(--fedex-orange);">Work (123)</td><td class="off-day">OFF</td></tr>
                     <tr><td>Quinton Jackson</td><td>wa134/218</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
                     <tr><td>Cayton McDonald</td><td>Flex Core</td><td class="work-day">Work (146)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (146)</td><td class="work-day">Work (146)</td><td class="off-day">OFF</td></tr>
                     <tr><td>Ryan Huffaker</td><td>wa138</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
@@ -343,7 +345,7 @@
                     <tr><td>Noe Rosales</td><td>wa154</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td></tr>
                     <tr><td>Elvis Guanipa R.</td><td>wa155</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td></tr>
                     <tr><td>Datavious Striblen</td><td>wa234</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="work-day">Work</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
-                    <tr><td style="color: #0ea5e9; font-weight: bold;">Flex Driver</td><td>Open</td><td class="off-day">OFF</td><td class="work-day">Work (155)</td><td class="work-day">Work (126)</td><td class="off-day">OFF</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td></tr>
+                    <tr><td style="color: #0ea5e9; font-weight: bold;">Flex Driver</td><td>Coverage</td><td class="off-day">OFF</td><td class="work-day">Work (155)</td><td class="work-day">Work (126/155)</td><td class="off-day">OFF</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (127/135)</td></tr>
                 </tbody>
             </table>
         </div>
@@ -351,7 +353,7 @@
         <!-- 4. AVAILABILITY (DAILY BOARD) -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="mgmt-alert">
-                <strong>ROSTER INTEL:</strong> Current week execution is locked. Ryan is working M-F this week (starts Mon/Tue off next week). Route 135 is offline Monday. Jose is activated for Saturday to cover the 6th route. We have OPEN routes that need management coverage on Wednesday (155) and Sunday (127).
+                <strong>ROSTER INTEL:</strong> Current week execution is locked. Ryan is working M-F this week (starts Mon/Tue off next week). Route 135 is offline Monday. Jose Garcia is activated to cover Route 123 this Saturday. The "Flex Driver" designation accounts for all open gaps required to secure the board. 
             </div>
 
             <div class="day-card">
@@ -388,14 +390,14 @@
             </div>
 
             <div class="day-card">
-                <div class="day-header"><span>Wednesday</span><span class="day-count">11 Active + 1 OPEN</span></div>
+                <div class="day-header"><span>Wednesday</span><span class="day-count">12 Active</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge flex-badge">Flex Driver (wa126)</div>
                     <div class="driver-badge">Jerrylee Camacho (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
                     <div class="driver-badge">Quinton Jackson (wa134/218)</div><div class="driver-badge">Cayton McDonald (wa135)</div>
                     <div class="driver-badge">Ryan Huffaker (wa138)</div><div class="driver-badge">Jesus Pasos (wa139)</div>
                     <div class="driver-badge">Davion Oliver (wa146)</div><div class="driver-badge">Noe Rosales (wa154)</div>
-                    <div class="driver-badge open-route-badge">OPEN ROUTE (wa155)</div><div class="driver-badge">Datavious Striblen (wa234)</div>
+                    <div class="driver-badge flex-badge">Flex Driver (wa155)</div><div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF GRID</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (wa126)</div>
@@ -439,7 +441,7 @@
             <div class="day-card" style="border: 1px solid var(--accent-secondary);">
                 <div class="day-header" style="color: var(--text-main); border-bottom: 2px solid var(--accent-secondary); background: rgba(16, 185, 129, 0.1);"><span>Saturday Matrix</span><span class="day-count" style="background: var(--accent-secondary); color: #020617;">6 Active</span></div>
                 <div class="day-body">
-                    <div class="driver-badge">Jerrylee Camacho (wa127)</div><div class="driver-badge">Jose Garcia (wa130)</div>
+                    <div class="driver-badge sat-badge">Jose Garcia (wa123)</div><div class="driver-badge">Jerrylee Camacho (wa127)</div>
                     <div class="driver-badge flex-badge">Flex Driver (wa135)</div><div class="driver-badge">Cayton McDonald (wa146)</div>
                     <div class="driver-badge">Noe Rosales (wa154)</div><div class="driver-badge">Elvis Guanipa R. (wa155)</div>
                     <div class="weekend-call-section">
@@ -453,10 +455,10 @@
             </div>
 
             <div class="day-card" style="border: 1px solid #8b5cf6;">
-                <div class="day-header" style="color: var(--text-main); border-bottom: 2px solid #8b5cf6; background: rgba(139, 92, 246, 0.1);"><span>Sunday Matrix</span><span class="day-count" style="background: #8b5cf6; color: #020617;">4 Active + 1 OPEN</span></div>
+                <div class="day-header" style="color: var(--text-main); border-bottom: 2px solid #8b5cf6; background: rgba(139, 92, 246, 0.1);"><span>Sunday Matrix</span><span class="day-count" style="background: #8b5cf6; color: #020617;">5 Active</span></div>
                 <div class="day-body">
                     <div class="driver-badge">Jamal Sealy (wa123)</div><div class="driver-badge">Mark Francis (wa126)</div>
-                    <div class="driver-badge open-route-badge">OPEN ROUTE (wa127)</div><div class="driver-badge flex-badge">Flex Driver (wa135)</div>
+                    <div class="driver-badge flex-badge">Flex Driver (wa127)</div><div class="driver-badge flex-badge">Flex Driver (wa135)</div>
                     <div class="driver-badge">Elvis Guanipa R. (wa155)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF GRID (ON-CALL)</div>
@@ -515,7 +517,7 @@
         <!-- 7. DIARY & 8. INSPECTIONS -->
         <div id="notes" class="table-container mgmt-restricted">
             <div class="database-form">
-                <h3 style="margin-top: 0; color: #0ea5e9; text-transform: uppercase;">Add Daily Log / Comm</h3>
+                <h3 style="margin-top: 0; color: var(--accent-primary); text-transform: uppercase;">Add Daily Log / Comm</h3>
                 <input type="text" id="noteTitle" class="db-input" placeholder="Subject (e.g., Morning Huddle)">
                 <textarea id="noteBody" class="db-textarea" placeholder="Log details, issues, or general diary entries here..."></textarea>
                 <button class="save-btn" onclick="addNote()">💾 Commit to Ledger</button>
@@ -525,7 +527,7 @@
 
         <div id="inspections" class="table-container mgmt-restricted">
             <div class="database-form">
-                <h3 style="margin-top: 0; color: #0ea5e9; text-transform: uppercase;">Fleet Maintenance Log</h3>
+                <h3 style="margin-top: 0; color: var(--accent-primary); text-transform: uppercase;">Fleet Maintenance Log</h3>
                 <div class="input-row">
                     <input type="text" id="inspTruckNum" class="db-input" placeholder="Truck Number (e.g., 23412)">
                     <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., wa155 - Elvis)">
@@ -667,8 +669,8 @@
             container.innerHTML = ''; if (requests.length === 0) { container.innerHTML = '<p style="color: var(--text-muted);">No active transmissions.</p>'; return; }
             requests.slice().reverse().forEach(req => {
                 let isApp = req.type === "🚀 Recruitment Intel";
-                let badgeStyle = isApp ? "background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid #a855f7;" : "background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border: 1px solid #0ea5e9;";
-                let borderStyle = isApp ? "border-left: 4px solid #a855f7;" : "border-left: 4px solid #0ea5e9;";
+                let badgeStyle = isApp ? "background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid #a855f7;" : "background: rgba(14, 165, 233, 0.1); color: var(--accent-primary); border: 1px solid var(--accent-primary);";
+                let borderStyle = isApp ? "border-left: 4px solid #a855f7;" : "border-left: 4px solid var(--accent-primary);";
                 
                 container.innerHTML += `<div class="inspection-card" style="margin: 10px 0; ${borderStyle} border-radius: 6px;"><div style="padding: 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 15px;"><div style="flex-grow: 1;"><strong style="color: var(--text-main); font-size: 1.1rem; text-transform: uppercase;">${req.name}</strong> <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 8px;">${req.time}</span><br><span style="display: inline-block; ${badgeStyle} padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; margin: 10px 0; font-weight: 800; text-transform: uppercase;">${req.type}</span><p style="margin: 5px 0 0 0; color: #cbd5e1; line-height: 1.6;">${req.message}</p></div><button class="delete-btn" style="border-color: var(--accent-secondary); color: var(--accent-secondary);" onclick="resolveRequest(${req.id})">✔️ Clear</button></div></div>`;
             });
