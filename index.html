@@ -117,12 +117,14 @@
 
         /* Home/Front Page Layout */
         .home-layout { display: flex; flex-wrap: wrap; gap: 20px; padding: 25px; }
-        .home-panel { flex: 1; min-width: 300px; background: rgba(15, 23, 42, 0.7); padding: 30px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-sm); }
+        .home-panel { flex: 1; min-width: 300px; background: rgba(15, 23, 42, 0.7); padding: 30px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-sm); position: relative; }
         .home-panel h2 { color: var(--fedex-orange); margin-top: 0; font-size: 1.8rem; font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px; letter-spacing: -0.5px; }
         .home-panel p { line-height: 1.8; color: #e2e8f0; font-size: 1.1rem; margin-bottom: 20px; }
         .home-panel ul { line-height: 1.8; color: #e2e8f0; font-size: 1.1rem; padding-left: 20px; }
         .home-panel li { margin-bottom: 10px; }
         .highlight-text { color: #34d399; font-weight: bold; }
+        
+        .view-counter { margin-top: 30px; padding: 10px 15px; background: rgba(0,0,0,0.4); border-radius: 8px; display: inline-block; border: 1px solid rgba(255,255,255,0.05); color: #94a3b8; font-size: 0.9rem; font-weight: bold; letter-spacing: 0.5px; }
 
         table { width: 100%; border-collapse: collapse; min-width: 700px; }
         th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background-color 0.2s; }
@@ -262,6 +264,10 @@
                         <li>We protect our equipment and each other.</li>
                     </ul>
                     <p>Excellence isn't just our goal—it is our baseline.</p>
+                    
+                    <div class="view-counter" id="viewCounter">
+                        👁️ Dashboard Views: Loading...
+                    </div>
                 </div>
                 
                 <!-- Hiring Form -->
@@ -628,7 +634,21 @@
             } catch (error) { alert("Security error: Browser blocking storage."); }
         }
 
+        function initViewCounter() {
+            try {
+                let views = localStorage.getItem('fedex_site_views') || 0;
+                views = parseInt(views) + 1;
+                localStorage.setItem('fedex_site_views', views);
+                let counterEl = document.getElementById('viewCounter');
+                if(counterEl) counterEl.innerHTML = `👁️ Dashboard Views: ${views}`;
+            } catch(e) {
+                let counterEl = document.getElementById('viewCounter');
+                if(counterEl) counterEl.innerHTML = `👁️ Dashboard Views: Local`;
+            }
+        }
+
         window.onload = function() {
+            safeExecute(initViewCounter);
             safeExecute(applyAuthState);
             safeExecute(renderNotes);
             safeExecute(renderInspections);
