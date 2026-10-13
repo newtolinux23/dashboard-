@@ -1,91 +1,92 @@
-#+TITLE: FedEx Driver Operations Directory & Schedule
-#+AUTHOR: Rob Alicea, Manager - Facility: 4901 Village Creek Rd
-#+DATE: \today
-#+OPTIONS: toc:t num:nil
-#+LATEX_HEADER: \usepackage[landscape, margin=0.5in]{geometry}
-#+LATEX_HEADER: \usepackage{helvet}
-#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+OPTIONS: toc:nil num:nil H:4 title:nil
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \definecolor{DeepNavy}{HTML}{000080}
+#+LATEX_HEADER: \definecolor{MutedGold}{HTML}{C5A059}
+#+LATEX_HEADER: \definecolor{Charcoal}{HTML}{333333}
+#+LATEX_HEADER: \usepackage{sectsty}
+#+LATEX_HEADER: \sectionfont{\color{DeepNavy}\sffamily\Large}
+#+LATEX_HEADER: \subsectionfont{\color{MutedGold}\sffamily\large}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \setlength{\headheight}{40pt}
+#+LATEX_HEADER: \renewcommand{\headrulewidth}{1.5pt}
+#+LATEX_HEADER: \renewcommand{\headrule}{\hbox to\headwidth{\color{MutedGold}\leaders\hrule height \headrulewidth\hfill}}
+#+LATEX_HEADER: \renewcommand{\footrulewidth}{1.5pt}
+#+LATEX_HEADER: \renewcommand{\footrule}{\hbox to\headwidth{\color{MutedGold}\leaders\hrule height \footrulewidth\hfill}}
+#+LATEX_HEADER: \fancyhead[C]{\textcolor{DeepNavy}{\textbf{\Huge ROBERTO ALICEA}}\vspace{4pt}\\ \textcolor{Charcoal}{\small Fort Worth, TX • [Your Phone Number] • [Your Email] • linkedin.com/in/roberto-alicea}}
+#+LATEX_HEADER: \fancyfoot[C]{\textcolor{Charcoal}{\small Roberto Alicea - Operations & Leadership Profile - Page \thepage}}
+#+HTML_HEAD: <style>
+#+HTML_HEAD: body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; background: #FFFFFF; line-height: 1.6; max-width: 900px; margin: auto; padding: 20px; }
+#+HTML_HEAD: .fancy-header { text-align: center; border-bottom: 2px solid #C5A059; padding-bottom: 10px; margin-bottom: 20px; }
+#+HTML_HEAD: .fancy-header h1 { color: #000080; margin: 0; font-size: 2.5em; text-transform: uppercase; border: none; }
+#+HTML_HEAD: .fancy-header p { color: #333333; margin: 5px 0 0 0; font-size: 1.1em; }
+#+HTML_HEAD: .fancy-footer { text-align: center; border-top: 2px solid #C5A059; padding-top: 10px; margin-top: 30px; color: #777777; font-size: 0.9em; }
+#+HTML_HEAD: h2 { color: #000080; border-bottom: 1px solid #C5A059; padding-bottom: 5px; margin-top: 25px; }
+#+HTML_HEAD: h3 { color: #367588; margin-bottom: 0px; }
+#+HTML_HEAD: </style>
 
-* 1. Contact Directory
-| Driver Name | Route | Phone | Email |
-|-------------+-------+-------+-------|
-| Jamal Sealy | wa123 | 347-527-0069 | Malinvestments27@gmail.com |
-| Mark Francis | wa126 | 817-449-4466 | markanttony92@gmail.com |
-| Cayton McDonald | wa127 | 817-521-4570 | Cryptocayton@gmail.com |
-| Jose Garcia | wa130 | 682-234-1522 | Garcia_turco_jose@yahoo.com |
-| Quinton Jackson | wa134/218 | 817-730-8910 | yungactionjack@gmail.com |
-| Jerrylee Camacho | wa135 | TBD | TBD |
-| Ryan Huffaker | wa138 | 682-772-0589 | Wurker.man.247@gmail.com |
-| Jesus Pasos | wa139 | 817-875-0747 | Pasos_j@yahoo.com |
-| Davion Oliver | wa146 | 817-718-0259 | Oliverdavion@me.com |
-| Noe Rosales | wa154 | 682-552-9523 | Noe.r2003@yahoo.com |
-| Elvis Guanipa Rangel | wa155 | 210-897-1929 | Elvisguanipa529@gmail.com |
-| Datavious Striblen | wa234 | 682-287-7169 | dstrib99@gmail.com |
-| Richard Alicea (Pending) | Coverage | TBD | TBD |
-| Flex Driver (Pending) | Flex | TBD | TBD |
+#+BEGIN_EXPORT html
+<div class="fancy-header">
+  <h1>Roberto Alicea</h1>
+  <p>Fort Worth, TX &bull; [Your Phone Number] &bull; [Your Email] &bull; linkedin.com/in/roberto-alicea</p>
+</div>
+#+END_EXPORT
 
-* 2. Uniform Sizes
-| Driver Name | Route | Shirt | Pants | Vest |
-|-------------+-------+-------+-------+------|
-| Jamal Sealy | wa123 | L | 36 | N/A |
-| Mark Francis | wa126 | L | 36 | L |
-| Cayton McDonald | wa127 | L | 36 | L |
-| Jose Garcia | wa130 | XL | 38 | XL |
-| Quinton Jackson | wa134/218 | M | 29x32 | N/A |
-| Jerrylee Camacho | wa135 | TBD | TBD | TBD |
-| Ryan Huffaker | wa138 | M | 30 | M |
-| Jesus Pasos | wa139 | M | 34 | M |
-| Davion Oliver | wa146 | M | 34 | M |
-| Noe Rosales | wa154 | XL | 38 | XL |
-| Elvis Guanipa Rangel | wa155 | M | N/A | M |
-| Datavious Striblen | wa234 | XL / 2XL (Long)| 42 / 42x30 | Pending |
-| Richard Alicea (Pending)| Coverage| TBD | TBD | TBD |
-| Flex Driver (Pending) | Flex | TBD | TBD | TBD |
+* Executive Summary
+Dynamic, highly adaptable Operations Manager and former Professional Athlete with a proven reputation for executing complex logistics, driving revenue growth, and rapidly mastering new systems. Brings a unique blend of relentless work ethic, entrepreneurial business acumen, and self-taught technical expertise. Excels in high-pressure environments—from managing commercial fleet logistics and elite fitness facilities to developing custom web applications. A strategic problem-solver and fast learner who builds high-performing teams, resolves escalated disputes, and consistently delivers exceptional bottom-line results. 
 
-\newpage
-* 3. Weekly Master Schedule (Week 1 Rotation)
-| Driver Name | Route | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
-|-------------+-------+-----+-----+-----+-----+-----+-----+-----|
-| Jamal Sealy | wa123 | Work | Work | Work | Work | Work | OFF | Work |
-| Mark Francis | wa126 | Work | Work | OFF | Work | Work | OFF | Work |
-| Cayton McDonald | wa127 | Work | Work | Work | Work | Work | Work | OFF (Temp)|
-| Jose Garcia | wa130 | Work | Work | Work | Work | Work | OFF | OFF |
-| Quinton Jackson | wa134/218 | Work | Work | Work | Work | Work | OFF | OFF |
-| Jerrylee Camacho | wa135 | Work | Work | Work | Work | Work | Work | OFF |
-| Ryan Huffaker | wa138 | Work | Work | Work | OFF | Work | Work | OFF |
-| Jesus Pasos | wa139 | Work | Work | Work | Work | Work | OFF | OFF |
-| Davion Oliver | wa146 | Work | Work | Work | Work | Work | Work | OFF |
-| Noe Rosales | wa154 | Work | Work | Work | Work | OFF (Rot)| Work | Work (Rot)|
-| Elvis Guanipa Rangel | wa155 | Work | OFF | OFF | Work | Work | Work | Work |
-| Datavious Striblen | wa234 | Work | Work | Work | Work | Work | OFF | OFF |
-| Richard Alicea (Pend) | Cov | OFF | Work (155) | Work (155) | Work (138) | OFF | OFF | OFF |
-| Flex Driver (Pend) | Flex | OFF | OFF | Work (126) | OFF | Work (154) | OFF | Work (127)|
+* Technical & Operational Profile
+- **Operations & Leadership:** Logistics & Route Planning, Fleet Management, Full-Cycle Recruiting, P&L Accountability, Conflict Resolution, B2B Relationship Building.
+- **Technical Capabilities:** Linux Systems Administration, Command-Line (CLI) Operations, Network Fundamentals, Web Development, Custom Application Creation.
+- **Mindset & Approach:** Highly analytical, solutions-oriented, disciplined, and driven by a "make it happen" operational philosophy.
 
-* 4. Daily Availability & Headcounts
-** Monday (12 Working)
-Working: Jamal Sealy (wa123), Mark Francis (wa126), Cayton McDonald (wa127), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jerrylee Camacho (wa135), Ryan Huffaker (wa138), Jesus Pasos (wa139), Davion Oliver (wa146), Noe Rosales (wa154), Elvis Guanipa Rangel (wa155), Datavious Striblen (wa234)
-Off Duty: Richard Alicea (Coverage), Flex Driver (Flex)
+* Professional Experience
 
-** Tuesday (12 Working)
-Working: Jamal Sealy (wa123), Mark Francis (wa126), Cayton McDonald (wa127), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jerrylee Camacho (wa135), Ryan Huffaker (wa138), Jesus Pasos (wa139), Davion Oliver (wa146), Noe Rosales (wa154), Datavious Striblen (wa234), Richard Alicea (wa155 - Pend)
-Off Duty: Elvis Guanipa Rangel (wa155), Flex Driver (Flex)
+** FedEx Ground | Fort Worth, TX
+*** BC (Business Contact) - Operation Fleet Manager
+**** January 2026 - Present
+- Oversee daily terminal operations and fleet logistics as the primary Business Contact, guaranteeing 100% service and delivery compliance for all assigned work areas.
+- Architect dynamic daily route logistics and driver schedules to maximize fleet efficiency, adapting in real-time to volume fluctuations and operational bottlenecks.
+- Direct end-to-end talent acquisition, including recruiting, hiring, training, and retaining a reliable, high-performing team of commercial drivers.
+- Serve as the frontline responder for fleet operations, providing immediate mechanical troubleshooting, on-road emergency support, and coordinating comprehensive vehicle maintenance (DOT compliance).
+- Resolve escalated customer disputes and strengthen local B2B relationships by consulting with clients to offer customized, high-efficiency logistics solutions and superior service alternatives.
 
-** Wednesday (12 Working)
-Working: Jamal Sealy (wa123), Cayton McDonald (wa127), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jerrylee Camacho (wa135), Ryan Huffaker (wa138), Jesus Pasos (wa139), Davion Oliver (wa146), Noe Rosales (wa154), Datavious Striblen (wa234), Richard Alicea (wa155 - Pend), Flex Driver (wa126 - Pend)
-Off Duty: Mark Francis (wa126), Elvis Guanipa Rangel (wa155)
+** Independent Personal Training Business & Gym | New York City, NY
+*** Owner, Operator & Head Trainer
+**** March 2020 - January 2026
+- Founded, bootstrapped, and scaled a highly successful private training facility, overseeing all facets of business development, facility operations, and financial management.
+- Cultivated a premium client base through exceptional service, customized programming, and consistent delivery of measurable results, maintaining a 90%+ client retention rate.
+- Integrated modern technical solutions to streamline business operations, from payment processing to client progress tracking and digital marketing funnels.
 
-** Thursday (12 Working)
-Working: Jamal Sealy (wa123), Mark Francis (wa126), Cayton McDonald (wa127), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jerrylee Camacho (wa135), Jesus Pasos (wa139), Davion Oliver (wa146), Noe Rosales (wa154), Elvis Guanipa Rangel (wa155), Datavious Striblen (wa234), Richard Alicea (wa138 - Pend)
-Off Duty: Ryan Huffaker (wa138), Flex Driver (Flex)
+** New York Sports Clubs (NYSC) | New York City, NY
+*** Personal Training Manager & Lead Trainer
+**** June 2016 - March 2020
+- Led and mentored a large team of personal trainers, providing rigorous sales coaching, operational training, and performance evaluations.
+- Consistently obliterated facility revenue and session-serviced targets, ranking as the #1 Trainer in the home facility and officially recognized as a Top 5 and Top 10 Trainer across the entire NYSC corporate network.
+- Spearheaded member engagement initiatives that significantly improved facility-wide profitability and client satisfaction metrics.
 
-** Friday (12 Working)
-Working: Jamal Sealy (wa123), Mark Francis (wa126), Cayton McDonald (wa127), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jerrylee Camacho (wa135), Ryan Huffaker (wa138), Jesus Pasos (wa139), Davion Oliver (wa146), Elvis Guanipa Rangel (wa155), Datavious Striblen (wa234), Flex Driver (wa154 - Pend)
-Off Duty: Noe Rosales (wa154), Richard Alicea (Coverage)
+** Equinox | New York City, NY
+*** Elite Personal Trainer
+**** August 2015 - June 2016
+- Delivered premium, individualized fitness coaching and advanced exercise science programming in a highly competitive luxury environment.
+- Rapidly built a fully booked schedule through proactive networking, exceptional customer service, and relentless follow-through.
 
-** Saturday (6 Working)
-Working: Cayton McDonald (wa127), Jerrylee Camacho (wa135), Ryan Huffaker (wa138), Davion Oliver (wa146), Noe Rosales (wa154), Elvis Guanipa Rangel (wa155)
-Off Duty: Jamal Sealy (wa123), Mark Francis (wa126), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jesus Pasos (wa139), Datavious Striblen (wa234), Richard Alicea (Coverage), Flex Driver (Flex)
+* Athletic Career & Discipline
 
-** Sunday (5 Working)
-Working: Jamal Sealy (wa123), Mark Francis (wa126), Noe Rosales (wa154), Elvis Guanipa Rangel (wa155), Flex Driver (wa127 - Pend)
-Off Duty: Cayton McDonald (wa127), Jose Garcia (wa130), Quinton Jackson (wa134/218), Jerrylee Camacho (wa135), Ryan Huffaker (wa138), Jesus Pasos (wa139), Davion Oliver (wa146), Datavious Striblen (wa234), Richard Alicea (Coverage)
+** Professional & Collegiate Basketball
+*** International Professional Athlete & NCAA Standout
+**** September 2011 - August 2015
+- **Professional:** Competed at the professional level in overseas basketball leagues, demonstrating extreme adaptability to new cultures, high-pressure performance capabilities, and elite physical discipline.
+- **Collegiate:** Distinguished NCAA career characterized by exceptional leadership and competitive drive. Honored with both **Player of the Year** and **Athlete of the Year** awards. 
+- *Skill Transfer:* The rigorous demands of elite athletics forged an unparalleled work ethic, the ability to process complex strategies in real-time, and a deep understanding of team dynamics and leadership.
+
+* Education & Technical Passions
+- **The School of Personal Trainers (New York City):** Graduate, Exercise Science Program
+- **Self-Directed Technical Education:** Continuous, hands-on learning in Web & App Development, Linux OS, Command-Line utilities, and Networking protocols. 
+
+#+BEGIN_EXPORT html
+<div class="fancy-footer">
+  Roberto Alicea &bull; Operations & Leadership Profile &bull; Resume
+</div>
+#+END_EXPORT
