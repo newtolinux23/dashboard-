@@ -206,6 +206,7 @@
                 
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('schedules', this)">📅 Master Roster</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('availability', this)">🚥 Daily Board</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('intel', this)">🗺️ Route Intel</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('contacts', this)">📱 Personnel</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('inspections', this)">🚛 Fleet Log</button>
             </div>
@@ -214,7 +215,6 @@
         <!-- 0. HOME / LANDING PAGE -->
         <div id="home" class="table-container active">
             <div class="home-layout">
-                <!-- Inspirational Message -->
                 <div class="home-panel">
                     <h2>The Terminal Elite</h2>
                     <p>Welcome to the 4901 Village Creek Rd Dispatch Center. We are more than just drivers; we are the absolute frontline of logistics.</p>
@@ -231,7 +231,6 @@
                     </div>
                 </div>
                 
-                <!-- Hiring Form -->
                 <div class="home-panel" style="border-top: 3px solid #0ea5e9;">
                     <h2 style="color: #0ea5e9;">Join The Squad</h2>
                     <p style="font-size: 0.95rem; margin-top: -10px;">If you have the discipline and the exact mindset to run with an elite unit, we want to see your application.</p>
@@ -472,7 +471,31 @@
             </div>
         </div>
 
-        <!-- 5. CONTACT & UNIFORM DIRECTORIES -->
+        <!-- 5. ROUTE INTEL (NEW TAB) -->
+        <div id="intel" class="table-container mgmt-restricted">
+            <div class="note-card" style="border-color: var(--accent-primary);">
+                <div class="note-header" style="background: rgba(14, 165, 233, 0.1); border-bottom: 2px solid var(--accent-primary); color: var(--accent-primary);">
+                    <span>🗺️ Route 234 Tactical Intel: Furniture Returns & 146 Sweeps</span>
+                </div>
+                <div class="note-body">
+                    <p><strong>Primary Objective (Datavious):</strong> Bulk furniture store returns to a single designated drop location.</p>
+                    <p><strong>Secondary Objective (Route 146 Sweeps):</strong> Execute pre-pickup sweeps to clear volume for the primary Route 146 driver (Davion/Cayton), ensuring they do not get overloaded during strict pickup windows.</p>
+
+                    <h3 style="color: var(--text-main); margin-top: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; font-size: 1.1rem; text-transform: uppercase;">📍 Route 146 Sweep Target Locations</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">2452 Mansfield Hwy<br>Fort Worth, TX 76119</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">4301 Mansfield Hwy, Ste D<br>Forest Hill, TX 76119</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">5318 David Strickland Rd<br>Fort Worth, TX 76119</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">5142 Brush Creek Rd<br>Fort Worth, TX 76119</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">3853 E Loop 820 S<br>Fort Worth, TX 76119</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">5872 E Berry St<br>Fort Worth, TX 76119</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">5118 Brush Creek Rd<br>Fort Worth, TX 76119</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. CONTACT & UNIFORM DIRECTORIES -->
         <div id="contacts" class="table-container mgmt-restricted">
             <input type="text" id="contactSearch" class="search-bar" placeholder="🔍 Search Personnel..." style="margin: 20px; width: calc(100% - 40px);" onkeyup="filterTable('contactTable', this.value)">
             <table id="contactTable">
@@ -490,26 +513,6 @@
                     <tr><td>Noe Rosales</td><td>wa154</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Elvis Guanipa R.</td><td>wa155</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Datavious Striblen</td><td>wa234</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div id="uniforms" class="table-container mgmt-restricted">
-            <table id="uniformTable">
-                <thead><tr><th>Driver Name</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr></thead>
-                <tbody>
-                    <tr><td>Jamal Sealy</td><td>L</td><td>36</td><td>N/A</td></tr>
-                    <tr><td>Mark Francis</td><td>L</td><td>36</td><td>L</td></tr>
-                    <tr><td>Cayton McDonald</td><td>L</td><td>36</td><td>L</td></tr>
-                    <tr><td>Jose Garcia</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Quinton Jackson</td><td>M</td><td>29x32</td><td>N/A</td></tr>
-                    <tr><td>Jerrylee Camacho</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
-                    <tr><td>Ryan Huffaker</td><td>M</td><td>30</td><td>M</td></tr>
-                    <tr><td>Jesus Pasos</td><td>M</td><td>34</td><td>M</td></tr>
-                    <tr><td>Davion Oliver</td><td>M</td><td>34</td><td>M</td></tr>
-                    <tr><td>Noe Rosales</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Elvis Guanipa R.</td><td>M</td><td>N/A</td><td>M</td></tr>
-                    <tr><td>Datavious Striblen</td><td>XL / 2XL</td><td>42 / 42x30</td><td>Pending</td></tr>
                 </tbody>
             </table>
         </div>
