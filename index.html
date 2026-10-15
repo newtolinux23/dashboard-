@@ -210,7 +210,7 @@
         <div class="modal-card">
             <h3>Manager Verification</h3>
             <p style="color: var(--text-muted); font-size: 0.95rem;">Enter your 7-digit access code to unlock operational matrices.</p>
-            <input type="password" id="modalPinInput" inputmode="numeric" placeholder="•••••••" class="modal-input" />
+            <input type="password" id="modalPinInput" inputmode="numeric" placeholder="•••••••" class="modal-input" onkeydown="if(event.key === 'Enter') submitModalPin()" />
             <div style="display:flex; gap:10px;">
                 <button onclick="submitModalPin()" style="flex:1; padding:12px; background:#0ea5e9; color:#020617; font-weight:800; border:none; border-radius:6px; cursor:pointer; text-transform:uppercase;">Unlock</button>
                 <button onclick="closeModalPin()" style="flex:1; padding:12px; background:#334155; color:#cbd5e1; font-weight:800; border:none; border-radius:6px; cursor:pointer; text-transform:uppercase;">Cancel</button>
@@ -232,7 +232,7 @@
 
     <div class="container">
         <div class="controls">
-            <button id="loginBtn" class="login-btn" onclick="openPinModal()">🔒 Manager Login</button>
+            <button id="loginBtn" class="login-btn" onclick="toggleManagement()">🔒 Manager Login</button>
             <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search for a driver, route, or keyword..." onkeyup="filterContent()">
             
             <div class="tab-buttons">
@@ -244,6 +244,8 @@
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('availability', this)">🚥 Daily Board</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('intel', this)">🗺️ Route Intel</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('contacts', this)">📱 Personnel</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('uniforms', this)">👕 Uniforms</button>
+                <button class="tab-btn mgmt-restricted" onclick="switchTab('notes', this)">📓 Daily Log</button>
                 <button class="tab-btn mgmt-restricted" onclick="switchTab('inspections', this)">🚛 Fleet Log</button>
             </div>
         </div>
@@ -666,6 +668,9 @@
                 alert("Storage error: check browser privacy settings.");
             }
         }
+
+        // Alias kept for backwards compatibility
+        const openPinModal = toggleManagement;
 
         function submitModalPin() {
             let input = document.getElementById('modalPinInput');
