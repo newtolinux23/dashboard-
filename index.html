@@ -835,9 +835,12 @@
                         id: Date.now(),
                         date: new Date().toLocaleString(),
                         title: "MORNING ACTION BRIEFING",
-                        body: "<strong style='color:#0ea5e9;'>YESTERDAY'S DUMP:</strong><br>- Saul transferred Elvis out of the terminal.<br>- Cayton anchored to 135.<br>- Larissa Hernandez brought in to cover 126 today.<br>- Davion's post-3PM pickups successfully routed to Datavious.<br>- Route 127 had a 35-box bulk stop stripped to manage volume.<br><br><strong style='color:#10b981;'>MORNING ACTION ITEMS:</strong><br>- Verify Larissa has scanner and truck keys for 126.<br>- Confirm Datavious transitions to 146 sweeps at 2:30 PM.<br>- Check Jerrylee's volume on 127 to ensure it's balanced without the bulk stop.",
+                        body: "<strong style='color:#0ea5e9;'>YESTERDAY'S DUMP:</strong><br>- Sal transferred Elvis out of the terminal.<br>- Cayton anchored to 135.<br>- Larissa Hernandez brought in to cover 126 today.<br>- Davion's post-3PM pickups successfully routed to Datavious.<br>- Route 127 had a 35-box bulk stop stripped to manage volume.<br><br><strong style='color:#10b981;'>MORNING ACTION ITEMS:</strong><br>- Verify Larissa has scanner and truck keys for 126.<br>- Confirm Datavious transitions to 146 sweeps at 2:30 PM.<br>- Check Jerrylee's volume on 127 to ensure it's balanced without the bulk stop.",
                         type: "standard"
                     }];
+                    localStorage.setItem('fedex_diary', JSON.stringify(notes));
+                } else {
+                    notes.forEach(n => { if (n.body) n.body = n.body.replace(/\bSaul\b/g, 'Sal'); });
                     localStorage.setItem('fedex_diary', JSON.stringify(notes));
                 }
                 return notes;
