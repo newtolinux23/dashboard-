@@ -383,7 +383,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Jamal Sealy</td><td>wa123</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="off-day">OFF</td><td class="work-day">Work (123)</td></tr>
+                    <tr><td>Jamal Sealy (Driver)</td><td>wa123</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="off-day">OFF</td><td class="work-day">Work (123)</td></tr>
                     <tr><td>Mark Francis</td><td>wa126</td><td class="work-day">Work (126)</td><td class="work-day">Work (126)</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td><td class="work-day">Work (126)</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td></tr>
                     <tr><td>Jerrylee Camacho</td><td>wa127</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day" style="color: var(--fedex-orange);">Work (Sat)</td><td class="off-day">OFF</td></tr>
                     <tr><td>Jose Garcia</td><td>wa130</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
@@ -405,12 +405,12 @@
         <!-- 4. AVAILABILITY (DAILY BOARD) -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="mgmt-alert">
-                <strong style="color: var(--accent-secondary);">SATURDAY SHOUTOUT:</strong> Huge credit to <strong>Jamal Sealy</strong> for stepping up and helping Rob finish the routes after Saturday's 7-route schedule mix-up.<br><br>
+                <strong style="color: var(--accent-secondary);">SATURDAY SHOUTOUT:</strong> Huge credit to <strong>Jamal (Manager)</strong> for stepping up and helping Rob finish the routes after Saturday's 7-route schedule mix-up.<br><br>
                 <strong>THIS WEEK'S ROSTER UPDATES (MON: 12 | TUE–FRI: 13 | SAT: 7 | SUN: 5):</strong><br>
                 • <strong>Monday (Tomorrow):</strong> <strong>Cayton McDonald</strong> runs <strong>wa146</strong> and <strong>Quinton</strong> doubles <strong>wa134/218</strong> (Zero Gaps).<br>
                 • <strong>Mark Francis (wa126):</strong> Back to original days off — <strong>OFF Wednesday & Saturday</strong>.<br>
                 • <strong>Noe Rosales (wa154):</strong> Works straight through <strong>Monday–Saturday</strong>, <strong>OFF Sunday</strong>.<br>
-                • <strong>Jose Gonzalez (wa155) & Jamal Sealy (wa123):</strong> <strong>OFF Saturday</strong> (working Mon–Fri & Sun).<br>
+                • <strong>Jose Gonzalez (wa155) & Jamal Sealy (wa123 Driver):</strong> <strong>OFF Saturday</strong> (working Mon–Fri & Sun).<br>
                 • <strong>Route 146:</strong> Open <strong>Tuesday–Friday</strong> (covered by Flex Driver).
             </div>
 
@@ -631,9 +631,10 @@
         <div id="contacts" class="table-container mgmt-restricted">
             <input type="text" id="contactSearch" class="search-bar" placeholder="🔍 Search Personnel..." style="margin: 20px; width: calc(100% - 40px);" onkeyup="filterTable('contactTable', this.value)">
             <table id="contactTable">
-                <thead><tr><th>Driver Name</th><th>Primary Route / Days Off</th><th>Phone</th><th>Email</th></tr></thead>
+                <thead><tr><th>Name / Role</th><th>Primary Route / Days Off</th><th>Phone</th><th>Email</th></tr></thead>
                 <tbody>
-                    <tr><td>Jamal Sealy</td><td>wa123 (Sat OFF)</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Jamal (Manager)</td><td>Operations / Route Support</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 Mgmt</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ Mgmt</a></td></tr>
+                    <tr><td>Jamal Sealy (Driver)</td><td>wa123 (Sat OFF)</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Mark Francis</td><td>wa126 (Wed & Sat OFF)</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
                     <tr><td>Cayton McDonald</td><td>Mon/Sat 146 | Tue–Fri 135 (Sun OFF)</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jose Garcia</td><td>wa130 (Sat & Sun OFF)</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
@@ -915,7 +916,7 @@
         function getNotes() {
             try {
                 let notes = JSON.parse(localStorage.getItem('fedex_diary'));
-                const newWeekUpdateBody = "<strong style='color:#10b981;'>SATURDAY SHOUTOUT (TEAMWORK):</strong><br>- After Saturday's 7-route schedule mix-up, <strong>Jamal Sealy</strong> stepped up big time to help Rob finish the routes and save the day.<br><br><strong style='color:#0ea5e9;'>MONDAY DISPATCH (OCT 19 — 12 ROUTES / ZERO GAPS):</strong><br>- <strong>Cayton McDonald</strong> is running <strong>Route 146</strong>.<br>- <strong>Quinton Jackson</strong> is covering two routes (<strong>wa134 & wa218</strong>).<br>- <strong>Jose Gonzalez</strong> is on <strong>wa155</strong>.<br><br><strong style='color:#ff6600;'>THIS WEEK'S DAYS-OFF BREAKDOWN:</strong><br>- <strong>Mark Francis (wa126):</strong> Back to original days off — <strong>OFF Wednesday & Saturday</strong>.<br>- <strong>Noe Rosales (wa154):</strong> Works straight through <strong>Monday–Saturday</strong>, <strong>OFF Sunday</strong>.<br>- <strong>Jamal Sealy (wa123) & Jose Gonzalez (wa155):</strong> <strong>OFF Saturday</strong>.<br>- <strong>Jerrylee Camacho (wa127) & Cayton McDonald:</strong> <strong>OFF Sunday</strong>.<br>- <strong>Quinton, Jose Garcia, Jesus Pasos, Ryan Huffaker, Datavious:</strong> <strong>OFF Saturday & Sunday</strong>.<br>- <strong>Route 146:</strong> Open <strong>Tuesday–Friday</strong> for Flex Driver coverage.";
+                const newWeekUpdateBody = "<strong style='color:#10b981;'>SATURDAY SHOUTOUT (TEAMWORK):</strong><br>- After Saturday's 7-route schedule mix-up, <strong>Jamal (Manager)</strong> stepped up big time to help Rob finish the routes and save the day.<br><br><strong style='color:#0ea5e9;'>MONDAY DISPATCH (OCT 19 — 12 ROUTES / ZERO GAPS):</strong><br>- <strong>Cayton McDonald</strong> is running <strong>Route 146</strong>.<br>- <strong>Quinton Jackson</strong> is covering two routes (<strong>wa134 & wa218</strong>).<br>- <strong>Jose Gonzalez</strong> is on <strong>wa155</strong>.<br><br><strong style='color:#ff6600;'>THIS WEEK'S DAYS-OFF BREAKDOWN:</strong><br>- <strong>Mark Francis (wa126):</strong> Back to original days off — <strong>OFF Wednesday & Saturday</strong>.<br>- <strong>Noe Rosales (wa154):</strong> Works straight through <strong>Monday–Saturday</strong>, <strong>OFF Sunday</strong>.<br>- <strong>Jamal Sealy (wa123 Driver) & Jose Gonzalez (wa155):</strong> <strong>OFF Saturday</strong>.<br>- <strong>Jerrylee Camacho (wa127) & Cayton McDonald:</strong> <strong>OFF Sunday</strong>.<br>- <strong>Quinton, Jose Garcia, Jesus Pasos, Ryan Huffaker, Datavious:</strong> <strong>OFF Saturday & Sunday</strong>.<br>- <strong>Route 146:</strong> Open <strong>Tuesday–Friday</strong> for Flex Driver coverage.";
 
                 if (!notes || notes.length === 0) {
                     notes = [{
@@ -932,7 +933,7 @@
                     if (existingWeekNote) {
                         existingWeekNote.title = "WEEKLY ROSTER & DAYS-OFF LOCK";
                         existingWeekNote.body = newWeekUpdateBody;
-                    } else if (!localStorage.getItem('fedex_diary_week_oct19_v2_synced')) {
+                    } else if (!localStorage.getItem('fedex_diary_week_oct19_v3_synced')) {
                         notes.push({
                             id: Date.now(),
                             date: new Date().toLocaleString(),
@@ -941,7 +942,7 @@
                             type: "standard"
                         });
                     }
-                    localStorage.setItem('fedex_diary_week_oct19_v2_synced', 'true');
+                    localStorage.setItem('fedex_diary_week_oct19_v3_synced', 'true');
                     localStorage.setItem('fedex_diary', JSON.stringify(notes));
                 }
                 return notes;
