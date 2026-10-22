@@ -138,28 +138,8 @@
         
         .view-counter { margin-top: 30px; padding: 12px 18px; background: rgba(0,0,0,0.5); border-radius: 6px; display: inline-block; border: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; font-weight: bold; letter-spacing: 0.5px; }
 
-        .kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 15px;
-            margin: 20px;
-        }
-        .kpi-card {
-            background: #020617;
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent-primary);
-            border-radius: 8px;
-            padding: 18px;
-            box-shadow: var(--shadow-sm);
-        }
-        .kpi-card.hit { border-left-color: var(--accent-secondary); }
-        .kpi-card.gap { border-left-color: var(--accent-alert); }
-        .kpi-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 800; }
-        .kpi-value { font-size: 1.7rem; font-weight: 800; color: var(--text-main); margin: 6px 0; }
-        .kpi-sub { font-size: 0.85rem; color: var(--text-muted); }
-
         table { width: 100%; border-collapse: collapse; min-width: 700px; }
-        th, td { padding: 15px 18px; text-align: left; border-bottom: 1px solid var(--border-color); transition: background-color 0.2s; }
+        th, td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border-color); transition: background-color 0.2s; }
         th { background-color: #020617; color: var(--text-muted); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
         tr:last-child td { border-bottom: none; }
         tr:hover td { background-color: rgba(255, 255, 255, 0.03); }
@@ -169,10 +149,9 @@
         .phone-btn { background-color: var(--accent-secondary); color: #022c22; }
         .email-btn { background-color: #0ea5e9; color: #0f172a; }
         
-        .schedule-title { background-color: #020617; color: var(--text-main); padding: 18px 20px; font-weight: 800; font-size: 1.05rem; border-bottom: 1px solid var(--border-color); border-top: 1px solid var(--border-color); text-transform: uppercase; letter-spacing: 1px;}
+        .schedule-title { background-color: #020617; color: var(--text-main); padding: 18px 20px; font-weight: 800; font-size: 1.1rem; border-bottom: 1px solid var(--border-color); text-transform: uppercase; letter-spacing: 1px;}
         .work-day { color: var(--accent-secondary); font-weight: 800; }
         .off-day { color: var(--accent-alert); font-weight: 800; }
-        .offline-day { color: var(--text-muted); font-style: italic; }
 
         .day-card, .note-card, .inspection-card { 
             border: 1px solid var(--border-color); border-radius: 8px; margin: 20px; 
@@ -183,9 +162,9 @@
             transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: rgba(255,255,255,0.2);
         }
 
-        .day-header { background-color: #0f172a; color: #0ea5e9; padding: 15px 20px; font-size: 1.15rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); text-transform: uppercase; letter-spacing: 1px; flex-wrap: wrap; gap: 10px; }
-        .day-count { background-color: #0ea5e9; color: #0f172a; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; }
-        .day-body { padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+        .day-header { background-color: #0f172a; color: #0ea5e9; padding: 15px 20px; font-size: 1.2rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); text-transform: uppercase; letter-spacing: 1px; }
+        .day-count { background-color: #0ea5e9; color: #0f172a; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 800; }
+        .day-body { padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
         
         .driver-badge { background-color: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: 4px; font-size: 0.95rem; font-weight: 600; text-align: left; border-left: 4px solid var(--accent-secondary); color: var(--text-main); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); transition: var(--transition); }
         .driver-badge:hover { background-color: rgba(16, 185, 129, 0.1); }
@@ -269,10 +248,10 @@
         <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Terminal 4901</div>
     </div>
 
-    <!-- Hero Image Banner -->
-    <div class="hero-banner">
+    <!-- FIXED Hero Image Banner -->
+    <div class="hero-banner" style="background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.5) 0%, rgba(15, 23, 42, 1) 100%), url('18165.jpg'); background-size: cover; background-position: center; border-bottom: 3px solid #0ea5e9;">
         <h1>4901 Village Creek Rd</h1>
-        <p>Terminal Operations &amp; Dispatch | Owner: Salvador (Sal) | Manager: Rob Alicea</p>
+        <p>Terminal Operations & Dispatch | Manager: Rob Alicea</p>
     </div>
 
     <div class="container">
@@ -339,7 +318,7 @@
         <div id="safety" class="table-container">
             <div class="note-card">
                 <div class="note-header safety" style="border-bottom: 2px solid var(--accent-secondary); color: var(--accent-secondary);">
-                    <span>🛡️ Weekly Safety &amp; Service Briefing</span>
+                    <span>🛡️ Weekly Safety & Service Briefing</span>
                 </div>
                 <div class="note-body" id="safetyTopicDisplay">
                     <p>Loading safety topic...</p>
@@ -361,7 +340,7 @@
             <div class="mgmt-restricted">
                 <div class="note-card" style="border-color: #0ea5e9;">
                     <div class="note-header inspection">
-                        <span style="color: #0ea5e9;">⚙️ Command Center: Edit Briefing &amp; Print Ledger</span>
+                        <span style="color: #0ea5e9;">⚙️ Command Center: Edit Briefing & Print Ledger</span>
                     </div>
                     <div class="database-form">
                         <h3 style="margin-top: 0; color: #0ea5e9; text-transform: uppercase; font-size: 0.95rem;">Update Live Briefing Text</h3>
@@ -411,37 +390,12 @@
 
         <!-- 3. SCHEDULES (MASTER ROSTER) -->
         <div id="schedules" class="table-container mgmt-restricted">
-            <div class="schedule-title">Weekly Shift &amp; Employee Coverage Breakdown (Updated Mid-Week Execution)</div>
-            <div class="kpi-grid">
-                <div class="kpi-card">
-                    <div class="kpi-title">Total Weekly Route-Days</div>
-                    <div class="kpi-value">76 Routes</div>
-                    <div class="kpi-sub">Mon: 12 | Tue–Fri: 52 | Sat: 7 | Sun: 5</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-title">Total Driver Shifts Needed</div>
-                    <div class="kpi-value">71 Shifts</div>
-                    <div class="kpi-sub">Quinton runs 218 &amp; 134 on 2 trucks</div>
-                </div>
-                <div class="kpi-card hit">
-                    <div class="kpi-title">Shifts Hit Internally</div>
-                    <div class="kpi-value" style="color: var(--accent-secondary);">67 Shifts (94.4%)</div>
-                    <div class="kpi-sub">100% Weekday Coverage (Mon–Fri)</div>
-                </div>
-                <div class="kpi-card gap">
-                    <div class="kpi-title">Flex Driver Shifts Needed</div>
-                    <div class="kpi-value" style="color: var(--accent-alert);">4 Shifts</div>
-                    <div class="kpi-sub">0 Weekday Flex + 4 Weekend Flex</div>
-                </div>
-            </div>
-
-            <div class="schedule-title">Master Weekly Schedule — Chronological Route Order (wa123 to wa234)</div>
+            <div class="schedule-title">Master Route Matrix (Mon: 12 Rts | Tue–Fri: 13 Rts | Sat: 7 Rts | Sun: 5 Rts)</div>
             <table id="w1Table">
                 <thead>
                     <tr>
-                        <th>Route</th>
-                        <th>Primary / Active Driver</th>
-                        <th>Days Off / Notes</th>
+                        <th>Driver Name</th>
+                        <th>Assigned</th>
                         <th>Mon (12)</th>
                         <th>Tue (13)</th>
                         <th>Wed (13)</th>
@@ -452,242 +406,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>wa123</strong></td>
-                        <td>Jamal Sealy</td>
-                        <td>Saturday</td>
-                        <td class="work-day">Jamal</td>
-                        <td class="work-day">Jamal</td>
-                        <td class="work-day">Jamal</td>
-                        <td class="work-day">Jamal</td>
-                        <td class="work-day">Jamal</td>
-                        <td class="off-day">Flex Driver</td>
-                        <td class="work-day">Jamal</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa126</strong></td>
-                        <td>Mark Francis</td>
-                        <td>Wed &amp; Sat</td>
-                        <td class="work-day">Mark</td>
-                        <td class="work-day">Mark</td>
-                        <td class="work-day" style="color: #0ea5e9;">Larissa</td>
-                        <td class="work-day">Mark</td>
-                        <td class="work-day">Mark</td>
-                        <td class="offline-day">Offline</td>
-                        <td class="work-day">Mark</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa127</strong></td>
-                        <td>Jerrylee Camacho</td>
-                        <td>Sun (+Mon)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Larissa</td>
-                        <td class="work-day">Jerrylee</td>
-                        <td class="work-day">Jerrylee</td>
-                        <td class="work-day">Jerrylee</td>
-                        <td class="work-day">Jerrylee</td>
-                        <td class="work-day" style="color: var(--fedex-orange);">Jerrylee</td>
-                        <td class="off-day">Flex Driver</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa130</strong></td>
-                        <td>Jose Garcia</td>
-                        <td>Weekends</td>
-                        <td class="work-day">Jose Garcia</td>
-                        <td class="work-day">Jose Garcia</td>
-                        <td class="work-day">Jose Garcia</td>
-                        <td class="work-day">Jose Garcia</td>
-                        <td class="work-day">Jose Garcia</td>
-                        <td class="work-day" style="color: var(--fedex-orange);">Noe Rosales</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa134</strong></td>
-                        <td>Quinton Jackson</td>
-                        <td>Weekends</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (1/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (1/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (1/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (1/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (1/2)</td>
-                        <td class="offline-day">Offline</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa135</strong></td>
-                        <td>Cayton McDonald</td>
-                        <td>Mon Offline / Sun OFF</td>
-                        <td class="offline-day">No Route</td>
-                        <td class="work-day" style="color: var(--fedex-orange);">Rob (Manager)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Cayton</td>
-                        <td class="work-day" style="color: #0ea5e9;">Cayton</td>
-                        <td class="work-day" style="color: #0ea5e9;">Cayton</td>
-                        <td class="off-day">Flex Driver</td>
-                        <td class="work-day" style="color: #0ea5e9;">Ivan Cuba</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa138</strong></td>
-                        <td>Ryan Huffaker</td>
-                        <td>Weekends</td>
-                        <td class="work-day">Ryan</td>
-                        <td class="work-day">Ryan</td>
-                        <td class="work-day">Ryan</td>
-                        <td class="work-day">Ryan</td>
-                        <td class="work-day">Ryan</td>
-                        <td class="off-day">Flex Driver</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa139</strong></td>
-                        <td>Jesus Pasos</td>
-                        <td>Weekends</td>
-                        <td class="work-day">Jesus</td>
-                        <td class="work-day">Jesus</td>
-                        <td class="work-day">Jesus</td>
-                        <td class="work-day">Jesus</td>
-                        <td class="work-day">Jesus</td>
-                        <td class="offline-day">Offline</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa146</strong></td>
-                        <td>Davion Oliver / Cayton</td>
-                        <td>Davion Back Wed</td>
-                        <td class="work-day" style="color: #0ea5e9;">Cayton</td>
-                        <td class="work-day" style="color: #0ea5e9;">Cayton</td>
-                        <td class="work-day">Davion</td>
-                        <td class="work-day">Davion</td>
-                        <td class="work-day">Davion</td>
-                        <td class="work-day" style="color: var(--fedex-orange);">Cayton</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa154</strong></td>
-                        <td>Noe Rosales</td>
-                        <td>Sunday</td>
-                        <td class="work-day">Noe</td>
-                        <td class="work-day">Noe</td>
-                        <td class="work-day">Noe</td>
-                        <td class="work-day">Noe</td>
-                        <td class="work-day">Noe</td>
-                        <td class="offline-day">Runs wa130</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa155</strong></td>
-                        <td>Elvis Rangel / Jose G.</td>
-                        <td>Elvis Back Wed–Week</td>
-                        <td class="work-day">Jose Gonzalez</td>
-                        <td class="work-day">Jose Gonzalez</td>
-                        <td class="work-day" style="color: #0ea5e9;">Elvis Rangel</td>
-                        <td class="work-day" style="color: #0ea5e9;">Elvis Rangel</td>
-                        <td class="work-day" style="color: #0ea5e9;">Elvis Rangel</td>
-                        <td class="work-day" style="color: var(--fedex-orange);">Elvis / Ivan</td>
-                        <td class="work-day">Jose / Elvis</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa218</strong></td>
-                        <td>Quinton Jackson (2nd Truck)</td>
-                        <td>Weekends</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (2/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (2/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (2/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (2/2)</td>
-                        <td class="work-day" style="color: #0ea5e9;">Quinton (2/2)</td>
-                        <td class="offline-day">Offline</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                    <tr>
-                        <td><strong>wa234</strong></td>
-                        <td>Datavious Striblen</td>
-                        <td>Weekends</td>
-                        <td class="work-day">Datavious</td>
-                        <td class="work-day">Datavious</td>
-                        <td class="work-day">Datavious</td>
-                        <td class="work-day">Datavious</td>
-                        <td class="work-day">Datavious</td>
-                        <td class="offline-day">Offline</td>
-                        <td class="offline-day">Offline</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="schedule-title">Day-by-Day Shift Hit Count &amp; Flex Driver Gap Table</div>
-            <table id="shiftSummaryTable">
-                <thead>
-                    <tr>
-                        <th>Day of Week</th>
-                        <th>Total Routes</th>
-                        <th>Driver Shifts Required</th>
-                        <th>Hit Internally</th>
-                        <th>Flex Drivers Needed</th>
-                        <th>Notes / Coverage Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Monday</strong></td>
-                        <td>12 Routes <em>(No wa135)</em></td>
-                        <td>11 Shifts</td>
-                        <td class="work-day">11 Shifts (100% Hit)</td>
-                        <td class="work-day">0 Flex</td>
-                        <td class="work-day">Larissa on 127 | Cayton on 146</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tuesday (Yesterday)</strong></td>
-                        <td>13 Routes</td>
-                        <td>12 Shifts</td>
-                        <td class="work-day">12 Shifts (100% Hit)</td>
-                        <td class="work-day">0 Flex</td>
-                        <td class="work-day">Rob (Manager) covered wa135 | Cayton on 146</td>
-                    </tr>
-                    <tr style="background: rgba(14, 165, 233, 0.08);">
-                        <td><strong>Wednesday (TODAY)</strong></td>
-                        <td>13 Routes</td>
-                        <td>12 Shifts</td>
-                        <td class="work-day">12 Shifts (100% Hit)</td>
-                        <td class="work-day">0 Flex</td>
-                        <td class="work-day">Cayton 135 | Davion 146 | Elvis 155 | Larissa 126</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Thursday</strong></td>
-                        <td>13 Routes</td>
-                        <td>12 Shifts</td>
-                        <td class="work-day">12 Shifts (100% Hit)</td>
-                        <td class="work-day">0 Flex</td>
-                        <td class="work-day">Cayton 135 | Mark 126 | Davion 146 | Elvis 155</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Friday</strong></td>
-                        <td>13 Routes</td>
-                        <td>12 Shifts</td>
-                        <td class="work-day">12 Shifts (100% Hit)</td>
-                        <td class="work-day">0 Flex</td>
-                        <td class="work-day">Cayton 135 | Mark 126 | Davion 146 | Elvis 155</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Saturday</strong></td>
-                        <td>7 Routes</td>
-                        <td>7 Shifts</td>
-                        <td class="work-day">4 Shifts <em>(Jerrylee, Noe, Cayton, Elvis/Ivan)</em></td>
-                        <td class="off-day">3 Flex Drivers</td>
-                        <td class="off-day">Open: wa123, wa135, wa138</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sunday</strong></td>
-                        <td>5 Routes</td>
-                        <td>5 Shifts</td>
-                        <td class="work-day">4 Shifts <em>(Jamal, Mark, Ivan, Jose/Elvis)</em></td>
-                        <td class="off-day">1 Flex Driver</td>
-                        <td class="off-day">Open: wa127</td>
-                    </tr>
-                    <tr style="background: rgba(16, 185, 129, 0.08); font-weight: 800;">
-                        <td><strong>WEEKLY TOTALS</strong></td>
-                        <td><strong>76 Routes</strong></td>
-                        <td><strong>71 Shifts</strong></td>
-                        <td class="work-day"><strong>67 Shifts Hit (72 Routes)</strong></td>
-                        <td class="off-day"><strong>4 Weekend Flex Shifts</strong></td>
-                        <td class="work-day"><strong>Zero Weekday Flex Needed!</strong></td>
-                    </tr>
+                    <tr><td>Jamal Sealy (Driver)</td><td>wa123</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="work-day">Work (123)</td><td class="off-day">OFF</td><td class="work-day">Work (123)</td></tr>
+                    <tr><td>Mark Francis</td><td>wa126</td><td class="work-day">Work (126)</td><td class="work-day">Work (126)</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td><td class="work-day">Work (126)</td><td class="off-day">OFF</td><td class="work-day">Work (126)</td></tr>
+                    <tr><td>Jerrylee Camacho</td><td>wa127</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day">Work (127)</td><td class="work-day" style="color: var(--fedex-orange);">Work (Sat)</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jose Garcia</td><td>wa130</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="work-day">Work (130)</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Quinton Jackson</td><td>wa134 + wa218 (x2)</td><td class="work-day" style="color: #0ea5e9;">Work (2 Rts)</td><td class="work-day" style="color: #0ea5e9;">Work (2 Rts)</td><td class="work-day" style="color: #0ea5e9;">Work (2 Rts)</td><td class="work-day" style="color: #0ea5e9;">Work (2 Rts)</td><td class="work-day" style="color: #0ea5e9;">Work (2 Rts)</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Cayton McDonald</td><td>wa135 / Mon 146</td><td class="work-day" style="color: #0ea5e9;">Work (146)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (135)</td><td class="work-day">Work (146)</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Ryan Huffaker</td><td>wa138</td><td class="work-day">Work (138)</td><td class="work-day">Work (138)</td><td class="work-day">Work (138)</td><td class="work-day">Work (138)</td><td class="work-day">Work (138)</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jesus Pasos</td><td>wa139</td><td class="work-day">Work (139)</td><td class="work-day">Work (139)</td><td class="work-day">Work (139)</td><td class="work-day">Work (139)</td><td class="work-day">Work (139)</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Noe Rosales</td><td>wa154</td><td class="work-day">Work (154)</td><td class="work-day">Work (154)</td><td class="work-day">Work (154)</td><td class="work-day">Work (154)</td><td class="work-day">Work (154)</td><td class="work-day" style="color: var(--fedex-orange);">Work (Sat)</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Jose Gonzalez</td><td>wa155</td><td class="work-day">Work (155)</td><td class="work-day">Work (155)</td><td class="work-day">Work (155)</td><td class="work-day">Work (155)</td><td class="work-day">Work (155)</td><td class="off-day">OFF</td><td class="work-day" style="color: #0ea5e9;">Work (155)</td></tr>
+                    <tr><td>Datavious Striblen</td><td>wa234</td><td class="work-day">Work (234)</td><td class="work-day">Work (234)</td><td class="work-day">Work (234)</td><td class="work-day">Work (234)</td><td class="work-day">Work (234)</td><td class="off-day">OFF</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Larissa Hernandez</td><td>wa138 Cover</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day" style="color: var(--fedex-orange);">Work (138)</td><td class="work-day" style="color: #0ea5e9;">Work (127)</td></tr>
+                    <tr><td>Elvis</td><td>Sat 127</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day" style="color: var(--fedex-orange);">Work (127)</td><td class="off-day">OFF</td></tr>
+                    <tr><td>Ivan Cuba</td><td>Sat 155</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="off-day">OFF</td><td class="work-day" style="color: var(--fedex-orange);">Work (155)</td><td class="off-day">OFF</td></tr>
+                    <tr><td style="color: var(--accent-alert); font-weight: bold;">Flex Driver(s)</td><td>Open Spots</td><td class="work-day">0 Gaps</td><td class="off-day">Flex (135)</td><td class="off-day">Flex (135 & 126)</td><td class="off-day">Flex (135)</td><td class="off-day">Flex (135)</td><td class="off-day">Flex (123 Open)</td><td class="off-day">Flex (155 Open)</td></tr>
                 </tbody>
             </table>
         </div>
@@ -695,87 +428,84 @@
         <!-- 4. AVAILABILITY (DAILY BOARD) -->
         <div id="availability" class="table-container mgmt-restricted">
             <div class="mgmt-alert">
-                <strong>MID-WEEK ROSTER UPDATE (WEDNESDAY, OCT 21):</strong><br>
-                • <strong>Tuesday (Yesterday):</strong> <strong>Rob Alicea (Manager)</strong> personally stepped in and covered <code>wa135</code> (100% Internal Hit / 0 Flex used).<br>
-                • <strong>Wednesday (Today — 100% Covered):</strong> <strong>Cayton McDonald</strong> is back on <code>wa135</code>, <strong>Davion Oliver</strong> is on <code>wa146</code>, <strong>Elvis Guanipa Rangel</strong> is on <code>wa155</code>, and <strong>Larissa Hernandez</strong> is covering <code>wa126</code> (for Mark).<br>
-                • <strong>Rest of Weekdays (Thu–Fri):</strong> With <strong>Cayton</strong> on <code>wa135</code>, <strong>Davion</strong> on <code>wa146</code>, <strong>Mark</strong> returning to <code>wa126</code>, and <strong>Elvis Rangel</strong> on <code>wa155</code>, <strong>Monday through Friday is 100% covered with ZERO weekday Flex gaps!</strong>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span>Monday (NO ROUTE wa135)</span>
-                    <span class="day-count" style="background: var(--accent-secondary); color: #020617;">12 Routes / 11 Shifts — 100% HIT BY ROSTER</span>
-                </div>
-                <div class="day-body">
-                    <div class="driver-badge">wa123 — Jamal Sealy</div>
-                    <div class="driver-badge">wa126 — Mark Francis</div>
-                    <div class="driver-badge flex-badge">wa127 — Larissa Hernandez (Covered Jerrylee)</div>
-                    <div class="driver-badge">wa130 — Jose Garcia</div>
-                    <div class="driver-badge flex-badge">wa134 &amp; wa218 — Quinton Jackson (2 Trucks)</div>
-                    <div class="driver-badge">wa138 — Ryan Huffaker</div>
-                    <div class="driver-badge">wa139 — Jesus Pasos</div>
-                    <div class="driver-badge flex-badge">wa146 — Cayton McDonald</div>
-                    <div class="driver-badge">wa154 — Noe Rosales</div>
-                    <div class="driver-badge">wa155 — Jose Gonzalez</div>
-                    <div class="driver-badge">wa234 — Datavious Striblen</div>
-                    <div class="weekend-call-section">
-                        <div class="weekend-call-title">OFF GRID / OFFLINE MONDAY</div>
-                        <div class="driver-badge off-duty-badge">Jerrylee Camacho (Off Monday)</div>
-                        <div class="driver-badge off-duty-badge">Route wa135 (Not Run on Mondays)</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="day-card">
-                <div class="day-header">
-                    <span>Tuesday (YESTERDAY)</span>
-                    <span class="day-count" style="background: var(--accent-secondary); color: #020617;">13 Routes / 12 Shifts — 100% HIT (ROB COVERED 135)</span>
-                </div>
-                <div class="day-body">
-                    <div class="driver-badge">wa123 — Jamal Sealy</div>
-                    <div class="driver-badge">wa126 — Mark Francis</div>
-                    <div class="driver-badge">wa127 — Jerrylee Camacho</div>
-                    <div class="driver-badge">wa130 — Jose Garcia</div>
-                    <div class="driver-badge flex-badge">wa134 &amp; wa218 — Quinton Jackson (2 Trucks)</div>
-                    <div class="driver-badge sat-badge">wa135 — Rob Alicea (Manager Covered)</div>
-                    <div class="driver-badge">wa138 — Ryan Huffaker</div>
-                    <div class="driver-badge">wa139 — Jesus Pasos</div>
-                    <div class="driver-badge flex-badge">wa146 — Cayton McDonald</div>
-                    <div class="driver-badge">wa154 — Noe Rosales</div>
-                    <div class="driver-badge">wa155 — Jose Gonzalez</div>
-                    <div class="driver-badge">wa234 — Datavious Striblen</div>
-                    <div class="weekend-call-section">
-                        <div class="weekend-call-title">OFF GRID</div>
-                        <div class="driver-badge off-duty-badge">Davion Oliver</div>
-                        <div class="driver-badge off-duty-badge">Elvis Rangel</div>
-                        <div class="driver-badge off-duty-badge">Larissa Hernandez</div>
-                        <div class="driver-badge off-duty-badge">Ivan Cuba</div>
-                    </div>
-                </div>
+                <strong>WEEKEND REVISED MATRIX:</strong><br>
+                • <strong>Saturday (7 Routes):</strong> Larissa Hernandez on <strong>wa138</strong>, Elvis on <strong>wa127</strong>, Ivan Cuba on <strong>wa155</strong>, Jerrylee Camacho, Noe Rosales, Cayton McDonald. <strong>Only Route 123 is open for a Flex Driver!</strong><br>
+                • <strong>Sunday (5 Routes):</strong> Larissa Hernandez on <strong>wa127</strong>, Jamal Sealy, Mark Francis, Ivan Cuba, and <strong>Route 155 open for a Flex Driver</strong>.
             </div>
 
             <div class="day-card" style="border: 2px solid #0ea5e9;">
                 <div class="day-header" style="background: rgba(14, 165, 233, 0.15); border-bottom: 2px solid #0ea5e9;">
-                    <span>Wednesday (TODAY)</span>
-                    <span class="day-count" style="background: var(--accent-secondary); color: #020617;">13 Routes / 12 Shifts — 100% COVERED / ZERO GAPS</span>
+                    <span>Monday (TODAY)</span>
+                    <span class="day-count">12 Routes / 11 Drivers (Quinton x2) — ZERO GAPS</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">wa123 — Jamal Sealy</div>
-                    <div class="driver-badge flex-badge">wa126 — Larissa Hernandez (Mark OFF)</div>
-                    <div class="driver-badge">wa127 — Jerrylee Camacho</div>
-                    <div class="driver-badge">wa130 — Jose Garcia</div>
-                    <div class="driver-badge flex-badge">wa134 &amp; wa218 — Quinton Jackson (2 Trucks)</div>
-                    <div class="driver-badge flex-badge">wa135 — Cayton McDonald (Back on 135)</div>
-                    <div class="driver-badge">wa138 — Ryan Huffaker</div>
-                    <div class="driver-badge">wa139 — Jesus Pasos</div>
-                    <div class="driver-badge">wa146 — Davion Oliver (Back on 146)</div>
-                    <div class="driver-badge">wa154 — Noe Rosales</div>
-                    <div class="driver-badge flex-badge">wa155 — Elvis Rangel (Back on 155)</div>
-                    <div class="driver-badge">wa234 — Datavious Striblen</div>
+                    <div class="driver-badge">Jamal Sealy (wa123)</div>
+                    <div class="driver-badge">Mark Francis (wa126)</div>
+                    <div class="driver-badge">Jerrylee Camacho (wa127)</div>
+                    <div class="driver-badge">Jose Garcia (wa130)</div>
+                    <div class="driver-badge flex-badge">Quinton Jackson (wa134 + wa218)</div>
+                    <div class="driver-badge">Ryan Huffaker (wa138)</div>
+                    <div class="driver-badge">Jesus Pasos (wa139)</div>
+                    <div class="driver-badge flex-badge">Cayton McDonald (wa146)</div>
+                    <div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Jose Gonzalez (wa155)</div>
+                    <div class="driver-badge">Datavious Striblen (wa234)</div>
+                    <div class="weekend-call-section">
+                        <div class="weekend-call-title">OFF GRID</div>
+                        <div class="driver-badge off-duty-badge">Larissa Hernandez</div>
+                        <div class="driver-badge off-duty-badge">Ivan Cuba</div>
+                        <div class="driver-badge off-duty-badge">Elvis</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Tuesday</span>
+                    <span class="day-count" style="background: var(--accent-alert); color: #020617;">13 Routes — 1 FLEX DRIVER NEEDED (135)</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Jamal Sealy (wa123)</div>
+                    <div class="driver-badge">Mark Francis (wa126)</div>
+                    <div class="driver-badge">Jerrylee Camacho (wa127)</div>
+                    <div class="driver-badge">Jose Garcia (wa130)</div>
+                    <div class="driver-badge flex-badge">Quinton Jackson (wa134 + wa218)</div>
+                    <div class="driver-badge open-route-badge">Flex Driver (wa135)</div>
+                    <div class="driver-badge">Ryan Huffaker (wa138)</div>
+                    <div class="driver-badge">Jesus Pasos (wa139)</div>
+                    <div class="driver-badge flex-badge">Cayton McDonald (wa146)</div>
+                    <div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Jose Gonzalez (wa155)</div>
+                    <div class="driver-badge">Datavious Striblen (wa234)</div>
+                    <div class="weekend-call-section">
+                        <div class="weekend-call-title">OFF GRID</div>
+                        <div class="driver-badge off-duty-badge">Ivan Cuba</div>
+                        <div class="driver-badge off-duty-badge">Elvis</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <span>Wednesday</span>
+                    <span class="day-count" style="background: var(--accent-alert); color: #020617;">13 Routes — 2 FLEX DRIVERS NEEDED (126 & 135)</span>
+                </div>
+                <div class="day-body">
+                    <div class="driver-badge">Jamal Sealy (wa123)</div>
+                    <div class="driver-badge open-route-badge">Flex Driver (wa126 — Mark OFF)</div>
+                    <div class="driver-badge">Jerrylee Camacho (wa127)</div>
+                    <div class="driver-badge">Jose Garcia (wa130)</div>
+                    <div class="driver-badge flex-badge">Quinton Jackson (wa134 + wa218)</div>
+                    <div class="driver-badge open-route-badge">Flex Driver (wa135)</div>
+                    <div class="driver-badge">Ryan Huffaker (wa138)</div>
+                    <div class="driver-badge">Jesus Pasos (wa139)</div>
+                    <div class="driver-badge flex-badge">Cayton McDonald (wa146)</div>
+                    <div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Jose Gonzalez (wa155)</div>
+                    <div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF GRID</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (wa126 — Wed OFF)</div>
-                        <div class="driver-badge off-duty-badge">Ivan Cuba</div>
                     </div>
                 </div>
             </div>
@@ -783,25 +513,25 @@
             <div class="day-card">
                 <div class="day-header">
                     <span>Thursday</span>
-                    <span class="day-count" style="background: var(--accent-secondary); color: #020617;">13 Routes / 12 Shifts — 100% HIT / ZERO GAPS</span>
+                    <span class="day-count" style="background: var(--accent-alert); color: #020617;">13 Routes — 1 FLEX DRIVER NEEDED (135)</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">wa123 — Jamal Sealy</div>
-                    <div class="driver-badge">wa126 — Mark Francis</div>
-                    <div class="driver-badge">wa127 — Jerrylee Camacho</div>
-                    <div class="driver-badge">wa130 — Jose Garcia</div>
-                    <div class="driver-badge flex-badge">wa134 &amp; wa218 — Quinton Jackson (2 Trucks)</div>
-                    <div class="driver-badge flex-badge">wa135 — Cayton McDonald</div>
-                    <div class="driver-badge">wa138 — Ryan Huffaker</div>
-                    <div class="driver-badge">wa139 — Jesus Pasos</div>
-                    <div class="driver-badge">wa146 — Davion Oliver</div>
-                    <div class="driver-badge">wa154 — Noe Rosales</div>
-                    <div class="driver-badge flex-badge">wa155 — Elvis Rangel</div>
-                    <div class="driver-badge" style="border-left-color: var(--accent-secondary);">wa234 — Datavious Striblen (+146 Sweep)</div>
+                    <div class="driver-badge">Jamal Sealy (wa123)</div>
+                    <div class="driver-badge">Mark Francis (wa126)</div>
+                    <div class="driver-badge">Jerrylee Camacho (wa127)</div>
+                    <div class="driver-badge">Jose Garcia (wa130)</div>
+                    <div class="driver-badge flex-badge">Quinton Jackson (wa134 + wa218)</div>
+                    <div class="driver-badge open-route-badge">Flex Driver (wa135)</div>
+                    <div class="driver-badge">Ryan Huffaker (wa138)</div>
+                    <div class="driver-badge">Jesus Pasos (wa139)</div>
+                    <div class="driver-badge flex-badge">Cayton McDonald (wa146)</div>
+                    <div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Jose Gonzalez (wa155)</div>
+                    <div class="driver-badge" style="border-left-color: var(--accent-secondary);">Datavious Striblen (wa234 + 146 Sweep)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF GRID</div>
-                        <div class="driver-badge off-duty-badge">Larissa Hernandez</div>
                         <div class="driver-badge off-duty-badge">Ivan Cuba</div>
+                        <div class="driver-badge off-duty-badge">Elvis</div>
                     </div>
                 </div>
             </div>
@@ -809,25 +539,25 @@
             <div class="day-card">
                 <div class="day-header">
                     <span>Friday</span>
-                    <span class="day-count" style="background: var(--accent-secondary); color: #020617;">13 Routes / 12 Shifts — 100% HIT / ZERO GAPS</span>
+                    <span class="day-count" style="background: var(--accent-alert); color: #020617;">13 Routes — 1 FLEX DRIVER NEEDED (135)</span>
                 </div>
                 <div class="day-body">
-                    <div class="driver-badge">wa123 — Jamal Sealy</div>
-                    <div class="driver-badge">wa126 — Mark Francis</div>
-                    <div class="driver-badge">wa127 — Jerrylee Camacho</div>
-                    <div class="driver-badge">wa130 — Jose Garcia</div>
-                    <div class="driver-badge flex-badge">wa134 &amp; wa218 — Quinton Jackson (2 Trucks)</div>
-                    <div class="driver-badge flex-badge">wa135 — Cayton McDonald</div>
-                    <div class="driver-badge">wa138 — Ryan Huffaker</div>
-                    <div class="driver-badge">wa139 — Jesus Pasos</div>
-                    <div class="driver-badge">wa146 — Davion Oliver</div>
-                    <div class="driver-badge">wa154 — Noe Rosales</div>
-                    <div class="driver-badge flex-badge">wa155 — Elvis Rangel</div>
-                    <div class="driver-badge">wa234 — Datavious Striblen</div>
+                    <div class="driver-badge">Jamal Sealy (wa123)</div>
+                    <div class="driver-badge">Mark Francis (wa126)</div>
+                    <div class="driver-badge">Jerrylee Camacho (wa127)</div>
+                    <div class="driver-badge">Jose Garcia (wa130)</div>
+                    <div class="driver-badge flex-badge">Quinton Jackson (wa134 + wa218)</div>
+                    <div class="driver-badge open-route-badge">Flex Driver (wa135)</div>
+                    <div class="driver-badge">Ryan Huffaker (wa138)</div>
+                    <div class="driver-badge">Jesus Pasos (wa139)</div>
+                    <div class="driver-badge flex-badge">Cayton McDonald (wa146)</div>
+                    <div class="driver-badge">Noe Rosales (wa154)</div>
+                    <div class="driver-badge">Jose Gonzalez (wa155)</div>
+                    <div class="driver-badge">Datavious Striblen (wa234)</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">OFF GRID</div>
-                        <div class="driver-badge off-duty-badge">Larissa Hernandez</div>
                         <div class="driver-badge off-duty-badge">Ivan Cuba</div>
+                        <div class="driver-badge off-duty-badge">Elvis</div>
                     </div>
                 </div>
             </div>
@@ -835,26 +565,26 @@
             <div class="day-card" style="border: 1px solid var(--fedex-orange);">
                 <div class="day-header" style="color: var(--text-main); border-bottom: 2px solid var(--fedex-orange); background: rgba(255, 102, 0, 0.12);">
                     <span>Saturday Matrix (7 ROUTES)</span>
-                    <span class="day-count" style="background: var(--fedex-orange); color: #020617;">4–5 Hit by Roster + Flex Drivers</span>
+                    <span class="day-count" style="background: var(--fedex-orange); color: #020617;">6 Hit by Roster + 1 Flex Gap (wa123)</span>
                 </div>
                 <div class="day-body">
                     <div class="driver-badge open-route-badge">wa123 — Flex Driver</div>
-                    <div class="driver-badge sat-badge">wa127 — Jerrylee Camacho</div>
+                    <div class="driver-badge sat-badge">wa127 — Elvis</div>
                     <div class="driver-badge sat-badge">wa130 — Noe Rosales</div>
-                    <div class="driver-badge open-route-badge">wa135 — Flex Driver / Ivan Cuba</div>
-                    <div class="driver-badge open-route-badge">wa138 — Flex Driver</div>
+                    <div class="driver-badge sat-badge">wa135 — Ivan Cuba</div>
+                    <div class="driver-badge sat-badge">wa138 — Larissa Hernandez</div>
                     <div class="driver-badge sat-badge">wa146 — Cayton McDonald</div>
-                    <div class="driver-badge sat-badge">wa155 — Elvis Rangel / Ivan Cuba</div>
+                    <div class="driver-badge sat-badge">wa155 — Ivan Cuba / Roster</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title" style="color: var(--text-muted);">SATURDAY OFF GRID (SCHEDULED OFF)</div>
                         <div class="driver-badge off-duty-badge">Jamal Sealy (Sat OFF)</div>
                         <div class="driver-badge off-duty-badge">Mark Francis (Wed/Sat OFF)</div>
-                        <div class="driver-badge off-duty-badge">Davion Oliver (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Jose Garcia (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Quinton Jackson (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Ryan Huffaker (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Jesus Pasos (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Datavious Striblen (Weekends OFF)</div>
+                        <div class="driver-badge off-duty-badge">Jose Gonzalez (Sat OFF)</div>
+                        <div class="driver-badge off-duty-badge">Jose Garcia (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Jesus Pasos (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Quinton Jackson (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Ryan Huffaker (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Datavious Striblen (Sat/Sun OFF)</div>
                     </div>
                 </div>
             </div>
@@ -862,25 +592,24 @@
             <div class="day-card" style="border: 2px solid #8b5cf6;">
                 <div class="day-header" style="color: var(--text-main); border-bottom: 2px solid #8b5cf6; background: rgba(139, 92, 246, 0.15);">
                     <span>Sunday Matrix (5 ROUTES)</span>
-                    <span class="day-count" style="background: #8b5cf6; color: #020617;">4 Hit by Roster + 1 Flex Driver Needed</span>
+                    <span class="day-count" style="background: #8b5cf6; color: #020617;">4 Hit by Roster + 1 Flex Gap (wa155)</span>
                 </div>
                 <div class="day-body">
                     <div class="driver-badge">wa123 — Jamal Sealy</div>
                     <div class="driver-badge">wa126 — Mark Francis</div>
-                    <div class="driver-badge open-route-badge">wa127 — Flex Driver</div>
+                    <div class="driver-badge sat-badge">wa127 — Larissa Hernandez</div>
                     <div class="driver-badge flex-badge">wa135 — Ivan Cuba</div>
-                    <div class="driver-badge">wa155 — Jose Gonzalez / Elvis Rangel</div>
+                    <div class="driver-badge open-route-badge">wa155 — Flex Driver Needed</div>
                     <div class="weekend-call-section">
                         <div class="weekend-call-title">SUNDAY OFF GRID (SCHEDULED OFF)</div>
                         <div class="driver-badge off-duty-badge">Jerrylee Camacho (Sun OFF)</div>
                         <div class="driver-badge off-duty-badge">Noe Rosales (Sun OFF)</div>
                         <div class="driver-badge off-duty-badge">Cayton McDonald (Sun OFF)</div>
-                        <div class="driver-badge off-duty-badge">Davion Oliver (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Jose Garcia (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Quinton Jackson (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Ryan Huffaker (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Jesus Pasos (Weekends OFF)</div>
-                        <div class="driver-badge off-duty-badge">Datavious Striblen (Weekends OFF)</div>
+                        <div class="driver-badge off-duty-badge">Quinton Jackson (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Jose Garcia (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Jesus Pasos (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Ryan Huffaker (Sat/Sun OFF)</div>
+                        <div class="driver-badge off-duty-badge">Datavious Striblen (Sat/Sun OFF)</div>
                     </div>
                 </div>
             </div>
@@ -890,11 +619,11 @@
         <div id="intel" class="table-container mgmt-restricted">
             <div class="note-card" style="border-color: var(--accent-primary);">
                 <div class="note-header" style="background: rgba(14, 165, 233, 0.1); border-bottom: 2px solid var(--accent-primary); color: var(--accent-primary);">
-                    <span>🗺️ Route 234 Tactical Intel: Returns &amp; 146 Sweeps</span>
+                    <span>🗺️ Route 234 Tactical Intel: Returns & 146 Sweeps</span>
                 </div>
                 <div class="note-body">
                     <p><strong>Primary Objective (Datavious):</strong> Bulk furniture store returns to a single designated drop location.</p>
-                    <p><strong>Secondary Objective (Route 146 Sweeps):</strong> Execute pre-pickup sweeps to clear volume for the primary Route 146 driver (Davion / Cayton), ensuring they do not get overloaded during strict pickup windows.</p>
+                    <p><strong>Secondary Objective (Route 146 Sweeps):</strong> Execute pre-pickup sweeps to clear volume for the primary Route 146 driver, ensuring they do not get overloaded during strict pickup windows.</p>
 
                     <h3 style="color: var(--text-main); margin-top: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; font-size: 1.1rem; text-transform: uppercase;">📍 Route 146 Sweep Target Locations</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-top: 15px;">
@@ -928,43 +657,41 @@
                 <tbody>
                     <tr><td>Jamal (Manager)</td><td>Operations / Route Support</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 Mgmt</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ Mgmt</a></td></tr>
                     <tr><td>Jamal Sealy (Driver)</td><td>wa123 (Sat OFF)</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Mark Francis</td><td>wa126 (Wed &amp; Sat OFF)</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Jerrylee Camacho</td><td>wa127 Tue–Sat (Sun &amp; Mon OFF)</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉ TBD</a></td></tr>
-                    <tr><td>Jose Garcia</td><td>wa130 (Weekends OFF)</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Quinton Jackson</td><td>wa134 &amp; wa218 (Weekends OFF)</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Cayton McDonald</td><td>wa135 Wed–Fri / wa146 Mon,Tue,Sat (Sun OFF)</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Ryan Huffaker</td><td>wa138 (Weekends OFF)</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
-                    <tr><td>Jesus Pasos</td><td>wa139 (Weekends OFF)</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Davion Oliver</td><td>wa146 (Weekends OFF)</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Noe Rosales</td><td>wa154 Mon–Fri / Sat 130 (Sun OFF)</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Elvis Guanipa Rangel</td><td>wa155 (Back on 155 Rest of Week)</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Mark Francis</td><td>wa126 (Wed & Sat OFF)</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Cayton McDonald</td><td>wa146 Mon–Sat (Sun OFF)</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jose Garcia</td><td>wa130 (Sat & Sun OFF)</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Quinton Jackson</td><td>wa134 + wa218 (Sat & Sun OFF)</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Jerrylee Camacho</td><td>wa127 (Sun OFF)</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉ TBD</a></td></tr>
+                    <tr><td>Ryan Huffaker</td><td>wa138 (Sat & Sun OFF)</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉ Email</a></td></tr>
+                    <tr><td>Jesus Pasos</td><td>wa139 (Sat & Sun OFF)</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Noe Rosales</td><td>wa154 / Sat Rot. (Sun OFF)</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    <tr><td>Datavious Striblen</td><td>wa234 (Sat & Sun OFF)</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
                     <tr><td>Jose Gonzalez</td><td>wa155 (Sat OFF)</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ TBD</a></td></tr>
-                    <tr><td>Datavious Striblen</td><td>wa234 (Weekends OFF)</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 Call</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
-                    <tr><td>Ivan Cuba</td><td>Sat 155 / Sun 135</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ TBD</a></td></tr>
-                    <tr><td>Larissa Hernandez</td><td>Mon 127 / Wed 126</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ TBD</a></td></tr>
+                    <tr><td>Elvis</td><td>Sat 127</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ TBD</a></td></tr>
+                    <tr><td>Ivan Cuba</td><td>Sat 155</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ TBD</a></td></tr>
+                    <tr><td>Larissa Hernandez</td><td>Sat 138 / Sun 127</td><td><a href="#" class="action-btn phone-btn" style="background:#334155;">📞 TBD</a></td><td><a href="#" class="action-btn email-btn" style="background:#334155;">✉️ TBD</a></td></tr>
                 </tbody>
             </table>
         </div>
 
         <div id="uniforms" class="table-container mgmt-restricted">
             <table id="uniformTable">
-                <thead><tr><th>Driver Name</th><th>Route</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr></thead>
+                <thead><tr><th>Driver Name</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr></thead>
                 <tbody>
-                    <tr><td>Jamal Sealy</td><td>wa123</td><td>L</td><td>36</td><td>N/A</td></tr>
-                    <tr><td>Mark Francis</td><td>wa126</td><td>L</td><td>36</td><td>L</td></tr>
-                    <tr><td>Jerrylee Camacho</td><td>wa127</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
-                    <tr><td>Jose Garcia</td><td>wa130</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Quinton Jackson</td><td>wa134 / wa218</td><td>M</td><td>29x32</td><td>N/A</td></tr>
-                    <tr><td>Cayton McDonald</td><td>wa135 / wa146</td><td>L</td><td>36</td><td>L</td></tr>
-                    <tr><td>Ryan Huffaker</td><td>wa138</td><td>M</td><td>30</td><td>M</td></tr>
-                    <tr><td>Jesus Pasos</td><td>wa139</td><td>M</td><td>34</td><td>M</td></tr>
-                    <tr><td>Davion Oliver</td><td>wa146</td><td>M</td><td>34</td><td>M</td></tr>
-                    <tr><td>Noe Rosales</td><td>wa154</td><td>XL</td><td>38</td><td>XL</td></tr>
-                    <tr><td>Elvis Guanipa Rangel</td><td>wa155</td><td>M</td><td>TBD</td><td>M</td></tr>
-                    <tr><td>Jose Gonzalez</td><td>wa155</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
-                    <tr><td>Datavious Striblen</td><td>wa234</td><td>XL / 2XL</td><td>42 / 42x30</td><td>Pending</td></tr>
-                    <tr><td>Ivan Cuba</td><td>Sat 155 / Sun 135</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
-                    <tr><td>Larissa Hernandez</td><td>Mon 127 / Wed 126</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+                    <tr><td>Jamal Sealy</td><td>L</td><td>36</td><td>N/A</td></tr>
+                    <tr><td>Mark Francis</td><td>L</td><td>36</td><td>L</td></tr>
+                    <tr><td>Cayton McDonald</td><td>L</td><td>36</td><td>L</td></tr>
+                    <tr><td>Jose Garcia</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Quinton Jackson</td><td>M</td><td>29x32</td><td>N/A</td></tr>
+                    <tr><td>Jerrylee Camacho</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+                    <tr><td>Ryan Huffaker</td><td>M</td><td>30</td><td>M</td></tr>
+                    <tr><td>Jesus Pasos</td><td>M</td><td>34</td><td>M</td></tr>
+                    <tr><td>Noe Rosales</td><td>XL</td><td>38</td><td>XL</td></tr>
+                    <tr><td>Datavious Striblen</td><td>XL / 2XL</td><td>42 / 42x30</td><td>Pending</td></tr>
+                    <tr><td>Jose Gonzalez</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+                    <tr><td>Elvis</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+                    <tr><td>Ivan Cuba</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+                    <tr><td>Larissa Hernandez</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
                 </tbody>
             </table>
         </div>
@@ -985,14 +712,14 @@
                 <h3 style="margin-top: 0; color: var(--accent-primary); text-transform: uppercase;">Fleet Maintenance Log</h3>
                 <div class="input-row">
                     <input type="text" id="inspTruckNum" class="db-input" placeholder="Truck Number (e.g., 23412)">
-                    <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., wa155 - Elvis)">
+                    <input type="text" id="inspRouteNum" class="db-input" placeholder="Route / Driver (e.g., wa155 - Jose)">
                 </div>
                 <h4 style="color: var(--text-main); margin-bottom: 10px; font-size: 0.95rem; text-transform: uppercase;">Pre/Post Trip Matrix</h4>
                 <div class="chk-grid">
                     <label class="chk-item"><input type="checkbox" id="chkClean" checked> Cargo/Cab Clean</label>
                     <label class="chk-item"><input type="checkbox" id="chkBody" checked> No Body Damages</label>
                     <label class="chk-item"><input type="checkbox" id="chkTires" checked> Tires (Good Tread)</label>
-                    <label class="chk-item"><input type="checkbox" id="chkLights" checked> Lights &amp; Blinkers</label>
+                    <label class="chk-item"><input type="checkbox" id="chkLights" checked> Lights & Blinkers</label>
                     <label class="chk-item"><input type="checkbox" id="chkMirrors" checked> Mirrors Intact</label>
                 </div>
                 <select id="inspClean" class="db-select">
@@ -1017,7 +744,7 @@
                 let btn = document.getElementById('loginBtn');
                 if (isUnlocked) {
                     document.body.classList.remove('locked-state');
-                    if(btn) { btn.innerHTML = '🔓 Secure Connection Open (Tap to Lock)'; btn.classList.add('unlocked'); }
+                    if(btn) { btn.innerHTML = '🔓 Secure Connection Open'; btn.classList.add('unlocked'); }
                 } else {
                     document.body.classList.add('locked-state');
                     if(btn) { btn.innerHTML = '🔒 Manager Login'; btn.classList.remove('unlocked'); }
@@ -1121,7 +848,6 @@
             filterTable('contactTable', val);
             filterTable('uniformTable', val);
             filterTable('w1Table', val);
-            filterTable('shiftSummaryTable', val);
             document.querySelectorAll('.day-card, .note-card, .inspection-card').forEach(card => {
                 card.style.display = card.innerText.toLowerCase().includes(val.toLowerCase()) ? "" : "none";
             });
@@ -1166,7 +892,7 @@
         function resolveRequest(id) { if(confirm("Purge this transmission from the inbox?")) { try { localStorage.setItem('fedex_driver_requests', JSON.stringify(JSON.parse(localStorage.getItem('fedex_driver_requests') || '[]').filter(r => r.id !== id))); } catch(e) {} renderRequests(); } }
 
         function loadSafetyTopic() {
-            let topic = `<h3>📋 Weekly Safety &amp; Service Briefing: Play Like a Pro</h3><p><strong>Coach's Corner: The Mindset</strong><br>Alright team, listen up. The best teams in the league don't win by accident—they win because they execute the fundamentals every single day. In this business, our <strong>Service Rating is our scoreboard</strong>, and <strong>Safety is how we keep our best players on the field</strong>. Today, we are reviewing the DOT regulations and FedEx Ground standards that keep this operation running at a championship level. We have the best drivers in the building. Let's go out there and prove it.</p><p><strong>🛡️ 1. DOT/FMCSA Standards: Defense Wins Championships</strong><br>- <strong>The 5-Point Quick Check:</strong> Before you leave the terminal, you must verify your Tires, Lights, Mirrors, and Body Damages. If it doesn't pass the eye test, notify management immediately. Do not take a broken truck on the road.<br>- <strong>Cab Cleanliness:</strong> Your cab is your office and your locker room. Keep it clean and professional.<br>- <strong>Zero Distractions (FMCSA 392.82):</strong> DOT and FedEx have a zero-tolerance policy for handheld devices. If the wheels are rolling, the phone is down. Taking your eyes off the road for 5 seconds at 55 mph is like driving the length of a football field blindfolded.<br>- <strong>Three Points of Contact:</strong> Slips and falls are our biggest preventable injury. Always use two hands and one foot, or two feet and one hand when entering or exiting the cab and the cargo area. <strong>Never jump out of the truck.</strong></p><p><strong>🏆 2. FedEx Standards: Protecting the Service Rating (Offense)</strong><br>- <strong>Code 02 (Bad Address) Accountability:</strong> Never guess on a bad address. Verify the numbers, check the notes, and if you have <em>any</em> doubt, you MUST call management from the stop before applying a Code 02.<br>- <strong>Strict Pickup Windows:</strong> Check your itineraries the second you log in. Scanning a pickup a minute early or a minute late directly tanks our metrics. Hit your windows with precision.<br>- <strong>Beat the Misloads:</strong> Organization starts in the parking lot. Sort and organize your truck <em>before</em> you leave the terminal. Catch misloads early so we can fix the play before the game starts.</p><p><strong>The Game Plan:</strong><br>Protect the trucks, protect the packages, and most importantly, protect yourselves and the public. Have a great mindset, be sharp, and let's execute out there today.</p>`;
+            let topic = `<h3>📋 Weekly Safety & Service Briefing: Play Like a Pro</h3><p><strong>Coach's Corner: The Mindset</strong><br>Alright team, listen up. The best teams in the league don't win by accident—they win because they execute the fundamentals every single day. In this business, our <strong>Service Rating is our scoreboard</strong>, and <strong>Safety is how we keep our best players on the field</strong>. Today, we are reviewing the DOT regulations and FedEx Ground standards that keep this operation running at a championship level. We have the best drivers in the building. Let's go out there and prove it.</p><p><strong>🛡️ 1. DOT/FMCSA Standards: Defense Wins Championships</strong><br>- <strong>The 5-Point Quick Check:</strong> Before you leave the terminal, you must verify your Tires, Lights, Mirrors, and Body Damages. If it doesn't pass the eye test, notify management immediately. Do not take a broken truck on the road.<br>- <strong>Cab Cleanliness:</strong> Your cab is your office and your locker room. Keep it clean and professional.<br>- <strong>Zero Distractions (FMCSA 392.82):</strong> DOT and FedEx have a zero-tolerance policy for handheld devices. If the wheels are rolling, the phone is down. Taking your eyes off the road for 5 seconds at 55 mph is like driving the length of a football field blindfolded.<br>- <strong>Three Points of Contact:</strong> Slips and falls are our biggest preventable injury. Always use two hands and one foot, or two feet and one hand when entering or exiting the cab and the cargo area. <strong>Never jump out of the truck.</strong></p><p><strong>🏆 2. FedEx Standards: Protecting the Service Rating (Offense)</strong><br>- <strong>Code 02 (Bad Address) Accountability:</strong> Never guess on a bad address. Verify the numbers, check the notes, and if you have <em>any</em> doubt, you MUST call management before applying a Code 02.<br>- <strong>Strict Pickup Windows:</strong> Check your itineraries the second you log in. Scanning a pickup a minute early or a minute late directly tanks our metrics. Hit your windows with precision.<br>- <strong>Beat the Misloads:</strong> Organization starts in the parking lot. Sort and organize your truck <em>before</em> you leave the terminal. Catch misloads early so we can fix the play before the game starts.</p><p><strong>The Game Plan:</strong><br>Protect the trucks, protect the packages, and most importantly, protect yourselves and the public. Have a great mindset, be sharp, and let's execute out there today.</p>`;
             try { topic = localStorage.getItem('fedex_safety_topic') || topic; } catch(e) {}
             document.getElementById('safetyTopicDisplay').innerHTML = topic;
             let editBox = document.getElementById('editSafetyTopic'); if(editBox) editBox.value = topic.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''); 
@@ -1212,33 +938,32 @@
         function getNotes() {
             try {
                 let notes = JSON.parse(localStorage.getItem('fedex_diary'));
-                const newWeekUpdateBody = "<strong style='color:#0ea5e9;'>WEDNESDAY MID-WEEK ROSTER UPDATE (OCT 21):</strong><br>- <strong>Tuesday (Yesterday):</strong> <strong>Rob Alicea (Manager)</strong> personally covered Route <code>wa135</code> (100% Internal Hit).<br>- <strong>Wednesday (Today — 100% Covered):</strong> <strong>Cayton McDonald</strong> is back on <code>wa135</code>, <strong>Davion Oliver</strong> is on <code>wa146</code>, <strong>Elvis Guanipa Rangel</strong> is on <code>wa155</code>, and <strong>Larissa Hernandez</strong> is covering <code>wa126</code> (for Mark).<br><br><strong style='color:#10b981;'>REST OF WEEKDAYS (THU–FRI — 0 FLEX GAPS):</strong><br>- With <strong>Cayton McDonald</strong> on <code>wa135</code>, <strong>Davion Oliver</strong> on <code>wa146</code>, <strong>Mark Francis</strong> returning to <code>wa126</code>, and <strong>Elvis Rangel</strong> on <code>wa155</code>, 100% of weekday shifts (Mon–Fri) are covered internally.<br><br><strong style='color:#ff6600;'>WEEKEND LINEUP (SAT: 7 RTS | SUN: 5 RTS):</strong><br>- <strong>Saturday (7 Routes):</strong> Jerrylee (<code>wa127</code>), Noe (<code>wa130</code>), Cayton (<code>wa146</code>), Elvis Rangel / Ivan Cuba (<code>wa155</code>), plus <strong>Flex Drivers</strong> on <code>wa123</code>, <code>wa135</code>, and <code>wa138</code>.<br>- <strong>Sunday (5 Routes):</strong> Jamal Sealy (<code>wa123</code>), Mark Francis (<code>wa126</code>), Ivan Cuba (<code>wa135</code>), Jose Gonzalez / Elvis (<code>wa155</code>), plus <strong>Flex Driver</strong> on <code>wa127</code>.";
+                const newWeekUpdateBody = "<strong style='color:#10b981;'>WEEKEND REVISED MATRIX:</strong><br>- <strong>Saturday (7 Routes):</strong> Larissa Hernandez on wa138, Elvis on wa127, Ivan Cuba on wa155, Jerrylee Camacho, Noe Rosales, Cayton McDonald. Route 123 open for Flex Driver.<br>- <strong>Sunday (5 Routes):</strong> Larissa Hernandez on wa127, Jamal Sealy, Mark Francis, Ivan Cuba, and Route 155 open for Flex Driver.";
 
                 if (!notes || notes.length === 0) {
                     notes = [{
                         id: Date.now(),
                         date: new Date().toLocaleString(),
-                        title: "WEDNESDAY MID-WEEK ROSTER UPDATE",
+                        title: "WEEKEND REVISED MATRIX & MONDAY DISPATCH",
                         body: newWeekUpdateBody,
                         type: "standard"
                     }];
                     localStorage.setItem('fedex_diary', JSON.stringify(notes));
                 } else {
                     notes.forEach(n => { if (n.body) n.body = n.body.replace(/\bSaul\b/g, 'Sal'); });
-                    let existingWeekNote = notes.find(n => n.title === "WEDNESDAY MID-WEEK ROSTER UPDATE" || n.title === "FINAL PDF SCHEDULE & SHIFT ANALYSIS" || n.title === "WEEKLY ROSTER & DAYS-OFF LOCK" || n.title === "WEEKLY ROSTER & ROUTE 146 FLEX PLAN");
+                    let existingWeekNote = notes.find(n => n.title === "WEEKEND REVISED MATRIX & MONDAY DISPATCH");
                     if (existingWeekNote) {
-                        existingWeekNote.title = "WEDNESDAY MID-WEEK ROSTER UPDATE";
                         existingWeekNote.body = newWeekUpdateBody;
-                    } else if (!localStorage.getItem('fedex_diary_week_oct21_wed_v2_synced')) {
+                    } else if (!localStorage.getItem('fedex_diary_week_oct19_v6_synced')) {
                         notes.push({
                             id: Date.now(),
                             date: new Date().toLocaleString(),
-                            title: "WEDNESDAY MID-WEEK ROSTER UPDATE",
+                            title: "WEEKEND REVISED MATRIX & MONDAY DISPATCH",
                             body: newWeekUpdateBody,
                             type: "standard"
                         });
                     }
-                    localStorage.setItem('fedex_diary_week_oct21_wed_v2_synced', 'true');
+                    localStorage.setItem('fedex_diary_week_oct19_v6_synced', 'true');
                     localStorage.setItem('fedex_diary', JSON.stringify(notes));
                 }
                 return notes;
