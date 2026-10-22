@@ -8,139 +8,264 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
         :root {
-            --bg-main: #060b14;
-            --bg-header: #080f1d;
-            --bg-card: #101420;
-            --bg-row: #161b2a;
-            --text-white: #f8fafc;
-            --text-slate: #94a3b8;
-            --cyan: #0ea5e9;
-            --green: #10b981;
-            --orange: #f97316;
-            --purple: #8b5cf6;
-            --blue: #3b82f6;
-            --red: #f43f5e;
+            --accent-primary: #0ea5e9;
+            --accent-secondary: #10b981;
+            --accent-alert: #f43f5e;
+            --accent-warning: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --fedex-orange: #f97316;
+            --bg-color: #020617;
+            --card-bg: #0f172a;
+            --row-bg: #161b2a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --shadow-md: 0 10px 20px -3px rgba(0, 0, 0, 0.7);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-white);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
             line-height: 1.5;
-            padding-bottom: 50px;
         }
 
-        /* Sticky Top Command Header */
-        .top-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: var(--bg-header);
-            border-bottom: 2px solid var(--cyan);
+        /* Sticky Top Command Header matching screenshots 18851 & 18853 */
+        .top-nav {
+            background: rgba(8, 15, 29, 0.96);
             padding: 14px 18px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid var(--accent-primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
-        .header-left {
-            font-size: 1.15rem;
+        .top-nav .brand-left {
             font-weight: 900;
+            font-size: 1.15rem;
             letter-spacing: 0.5px;
             color: #ffffff;
-        }
-
-        .header-center {
-            font-size: 1.05rem;
-            font-weight: 900;
-            line-height: 1.15;
-            color: var(--cyan);
             text-transform: uppercase;
         }
 
-        .header-right {
+        .top-nav .brand-center {
+            font-weight: 900;
+            font-size: 1.05rem;
+            line-height: 1.15;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+        }
+
+        .top-nav .brand-right {
             font-size: 0.82rem;
+            color: var(--text-muted);
             font-weight: 800;
             line-height: 1.2;
-            color: var(--text-slate);
             text-transform: uppercase;
             text-align: right;
         }
 
+        /* Hero Banner with Wallpaper */
+        .hero-banner {
+            padding: 32px 20px;
+            text-align: center;
+            background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.65) 0%, rgba(15, 23, 42, 0.98) 100%), url('18165.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid rgba(14, 165, 233, 0.4);
+        }
+
+        .hero-banner h1 {
+            margin: 0;
+            font-size: 1.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .hero-banner p {
+            margin: 8px 0 0;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
         .container {
-            max-width: 680px;
-            margin: 22px auto;
-            padding: 0 16px;
+            max-width: 1050px;
+            margin: 22px auto 60px;
+            padding: 0 15px;
+        }
+
+        /* Controls, Lock Button, Search & Tabs */
+        .controls {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 12px;
+            margin-bottom: 22px;
         }
 
-        /* Matrix Card Base */
-        .matrix-card {
-            background-color: var(--bg-card);
+        .lock-btn {
+            width: 100%;
+            padding: 13px 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(14, 165, 233, 0.4);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #38bdf8;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lock-btn.unlocked {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.3));
+            border-color: var(--accent-secondary);
+            color: #34d399;
+        }
+
+        .search-bar {
+            padding: 14px 18px;
+            font-size: 1rem;
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            width: 100%;
+            background: var(--card-bg);
+            color: var(--text-main);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+        }
+
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 125px;
+            padding: 12px 14px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: var(--card-bg);
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: #020617;
+            border-color: #38bdf8;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.35);
+        }
+
+        .mgmt-only {
+            display: none;
+        }
+
+        .tab-section {
+            display: none;
+            animation: fadeIn 0.35s ease forwards;
+        }
+
+        .tab-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Matrix Cards matching 18851.jpg and 18853.jpg */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .day-card {
+            background-color: #101420;
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+            box-shadow: var(--shadow-md);
+            border: 1.5px solid var(--border-color);
         }
 
-        .matrix-card.weekday-card {
-            border: 1.5px solid var(--cyan);
+        .day-card.sat-card {
+            border: 1.5px solid var(--fedex-orange);
         }
 
-        .matrix-card.saturday-card {
-            border: 1.5px solid var(--orange);
+        .day-card.sun-card {
+            border: 1.5px solid var(--accent-purple);
         }
 
-        .matrix-card.sunday-card {
-            border: 1.5px solid var(--purple);
+        .day-card.wkd-card {
+            border: 1.5px solid var(--accent-primary);
         }
 
-        .matrix-card.sms-card {
-            border: 1.5px solid var(--green);
-        }
-
-        .card-header {
+        .day-header {
             padding: 20px 20px 18px;
+            border-bottom: 1.5px solid var(--border-color);
         }
 
-        .weekday-card .card-header {
-            background: rgba(14, 165, 233, 0.08);
-            border-bottom: 1.5px solid var(--cyan);
-        }
-
-        .saturday-card .card-header {
+        .sat-card .day-header {
             background: rgba(249, 115, 22, 0.09);
-            border-bottom: 1.5px solid var(--orange);
+            border-bottom-color: var(--fedex-orange);
         }
 
-        .sunday-card .card-header {
+        .sun-card .day-header {
             background: rgba(139, 92, 246, 0.12);
-            border-bottom: 1.5px solid var(--purple);
+            border-bottom-color: var(--accent-purple);
         }
 
-        .sms-card .card-header {
-            background: rgba(16, 185, 129, 0.1);
-            border-bottom: 1.5px solid var(--green);
+        .wkd-card .day-header {
+            background: rgba(14, 165, 233, 0.08);
+            border-bottom-color: var(--accent-primary);
         }
 
-        .card-title {
+        .day-title {
             font-size: 1.25rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-bottom: 12px;
             color: #ffffff;
+            margin: 0 0 12px 0;
         }
 
-        .status-pill {
+        .day-pill {
             display: inline-block;
             width: 100%;
             padding: 8px 16px;
@@ -152,110 +277,69 @@
             color: #050811;
         }
 
-        .weekday-card .status-pill {
-            background-color: var(--cyan);
-        }
+        .sat-card .day-pill { background-color: var(--fedex-orange); }
+        .sun-card .day-pill { background-color: var(--accent-purple); }
+        .wkd-card .day-pill { background-color: var(--accent-primary); }
 
-        .saturday-card .status-pill {
-            background-color: var(--orange);
-        }
-
-        .sunday-card .status-pill {
-            background-color: var(--purple);
-        }
-
-        .sms-card .status-pill {
-            background-color: var(--green);
-        }
-
-        .card-body {
-            padding: 18px 18px 22px;
-        }
-
-        .route-list {
+        .day-body {
+            padding: 18px;
             display: flex;
             flex-direction: column;
             gap: 11px;
         }
 
-        .route-item {
-            background-color: var(--bg-row);
+        .driver-badge {
+            background-color: var(--row-bg);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 8px;
             padding: 13px 16px;
             font-size: 1.02rem;
             font-weight: 700;
             color: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
+            border-left: 5px solid var(--accent-secondary);
         }
 
-        /* Left Accent Bars */
-        .bar-green {
-            border-left: 5px solid var(--green);
+        .sat-card .driver-badge {
+            border-left-color: var(--fedex-orange);
+            color: #fb923c;
         }
 
-        .bar-orange {
-            border-left: 5px solid var(--orange);
+        .driver-badge.cyan-bar {
+            border-left-color: var(--accent-primary);
+            color: #f8fafc;
         }
 
-        .bar-blue {
-            border-left: 5px solid var(--cyan);
+        .driver-badge.green-bar {
+            border-left-color: var(--accent-secondary);
+            color: #f8fafc;
         }
 
-        .bar-purple {
-            border-left: 5px solid var(--purple);
-        }
-
-        .bar-red {
-            border-left: 5px solid var(--red);
+        .driver-badge.flex-bar {
+            border-left-color: var(--accent-alert);
             background-color: rgba(244, 63, 94, 0.12);
             color: #fda4af;
         }
 
-        .route-badge {
-            font-size: 0.74rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-slate);
-            white-space: nowrap;
-        }
-
-        /* Off Grid Section */
         .off-grid-divider {
             border-top: 1px dotted rgba(255, 255, 255, 0.16);
-            margin: 20px 0 14px;
+            margin: 10px 0 4px;
         }
 
         .off-grid-title {
-            font-size: 0.85rem;
+            font-size: 0.84rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-bottom: 10px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
         }
 
-        .saturday-card .off-grid-title {
-            color: var(--text-slate);
+        .sun-card .off-grid-title {
+            color: var(--accent-alert);
         }
 
-        .sunday-card .off-grid-title {
-            color: var(--red);
-        }
-
-        .off-grid-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .off-item {
-            background-color: rgba(15, 23, 42, 0.7);
+        .off-badge {
+            background-color: rgba(15, 23, 42, 0.75);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 7px;
             padding: 10px 14px;
@@ -264,12 +348,101 @@
             color: #cbd5e1;
         }
 
-        /* SMS Copy Box */
-        .sms-box {
+        /* Tables (Master Roster, Contacts, Uniforms) */
+        .table-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow-x: auto;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+        }
+
+        .section-banner {
+            background: #1e293b;
+            color: var(--accent-primary);
+            padding: 15px 20px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.94rem;
+        }
+
+        th {
             background-color: #090e1a;
+            color: var(--text-muted);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.6px;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .work-cell { color: var(--accent-secondary); font-weight: 700; }
+        .off-cell { color: var(--accent-alert); font-weight: 700; }
+        .cov-cell { color: var(--accent-primary); font-weight: 700; }
+
+        .action-btn {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .phone-btn { background-color: var(--accent-secondary); color: #022c22; }
+        .email-btn { background-color: var(--accent-primary); color: #082f49; }
+
+        /* Notes, Safety & SMS Cards */
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 22px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-header {
+            background: #1e293b;
+            padding: 16px 20px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-body {
+            padding: 20px;
+        }
+
+        .sms-pre {
+            background: #060b14;
             border: 1px solid rgba(16, 185, 129, 0.35);
             border-radius: 10px;
-            padding: 14px 16px;
+            padding: 16px;
             font-family: monospace;
             font-size: 0.9rem;
             color: #e2e8f0;
@@ -277,168 +450,220 @@
             margin-bottom: 14px;
         }
 
-        .copy-btn {
-            width: 100%;
+        .btn-primary {
             background: linear-gradient(135deg, #10b981, #059669);
-            color: #04130d;
+            color: #022c22;
             border: none;
+            padding: 13px 20px;
             border-radius: 8px;
-            padding: 12px 16px;
-            font-size: 0.95rem;
             font-weight: 800;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.6px;
             cursor: pointer;
-            margin-bottom: 18px;
+            width: 100%;
         }
 
-        .copy-btn:active {
-            transform: scale(0.99);
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: #060b14;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
     <!-- Top Command Header -->
-    <header class="top-header">
-        <div class="header-left">OPERATIONS</div>
-        <div class="header-center">COMMAND<br>CENTER</div>
-        <div class="header-right">TERMINAL<br>4901</div>
+    <header class="top-nav">
+        <div class="brand-left">OPERATIONS</div>
+        <div class="brand-center">COMMAND<br>CENTER</div>
+        <div class="brand-right">TERMINAL<br>4901</div>
     </header>
 
-    <main class="container">
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <h1>Terminal 4901 Operations</h1>
+        <p>C &amp; S Delivery Service, Inc. | Operations Manager: Rob Alicea</p>
+    </section>
 
-        <!-- SATURDAY MATRIX (7 ROUTES) -->
-        <section class="matrix-card saturday-card">
-            <div class="card-header">
-                <h2 class="card-title">SATURDAY MATRIX (7 ROUTES)</h2>
-                <div class="status-pill">7 HIT BY ROSTER &amp; COVERAGE — 100% LOCKED</div>
+    <div class="container">
+
+        <!-- Controls & Navigation -->
+        <div class="controls">
+            <button id="mgmtLockBtn" class="lock-btn" onclick="toggleManagement()">🔐 Manager Login (Unlock Full Directory &amp; Logs)</button>
+            <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search driver, route (e.g., wa123, wa135), day, or code..." onkeyup="filterContent()">
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab('board', this)">1. Daily Board</button>
+                <button class="tab-btn" onclick="switchTab('schedules', this)">2. Master Roster</button>
+                <button class="tab-btn" onclick="switchTab('safety', this)">3. Safety &amp; SMS</button>
+                <button class="tab-btn" onclick="switchTab('requests', this)">4. Driver Requests</button>
+                <button class="tab-btn mgmt-only" onclick="switchTab('contacts', this)">5. Directory</button>
+                <button class="tab-btn mgmt-only" onclick="switchTab('uniforms', this)">6. Uniforms</button>
+                <button class="tab-btn mgmt-only" onclick="switchTab('inspections', this)">7. Inspections</button>
+                <button class="tab-btn mgmt-only" onclick="switchTab('notes', this)">8. Daily Log</button>
             </div>
-            <div class="card-body">
-                <div class="route-list">
-                    <div class="route-item bar-orange">
-                        <span>wa123 — Jerrylee Camacho</span>
-                        <span class="route-badge">Confirmed</span>
+        </div>
+
+        <!-- 1. DAILY BOARD TAB (WEEKEND & WEEKDAY MATRICES) -->
+        <div id="board" class="tab-section active">
+            <div class="matrix-grid">
+
+                <!-- SATURDAY MATRIX (7 ROUTES) -->
+                <div class="day-card sat-card">
+                    <div class="day-header">
+                        <h2 class="day-title">SATURDAY MATRIX (7 ROUTES)</h2>
+                        <div class="day-pill">7 HIT BY ROSTER + FLEX DRIVERS</div>
                     </div>
-                    <div class="route-item bar-blue">
-                        <span>wa127 — Larissa Hernandez</span>
-                        <span class="route-badge">Confirmed</span>
-                    </div>
-                    <div class="route-item bar-orange">
-                        <span>wa130 — Noe Rosales</span>
-                        <span class="route-badge">Roster</span>
-                    </div>
-                    <div class="route-item bar-orange">
-                        <span>wa135 — Cayton McDonald</span>
-                        <span class="route-badge">Confirmed</span>
-                    </div>
-                    <div class="route-item bar-blue">
-                        <span>wa138 — Ivan Cuba</span>
-                        <span class="route-badge">Confirmed</span>
-                    </div>
-                    <div class="route-item bar-orange">
-                        <span>wa146 — Davion Oliver</span>
-                        <span class="route-badge">Confirmed</span>
-                    </div>
-                    <div class="route-item bar-orange">
-                        <span>wa155 — Elvis Rangel</span>
-                        <span class="route-badge">Roster</span>
+                    <div class="day-body">
+                        <div class="driver-badge">wa123 — Jerrylee Camacho</div>
+                        <div class="driver-badge">wa127 — Larissa Hernandez</div>
+                        <div class="driver-badge">wa130 — Noe Rosales</div>
+                        <div class="driver-badge">wa135 — Cayton McDonald</div>
+                        <div class="driver-badge">wa138 — Ivan Cuba</div>
+                        <div class="driver-badge">wa146 — Davion Oliver</div>
+                        <div class="driver-badge">wa155 — Elvis Rangel</div>
+
+                        <div class="off-grid-divider"></div>
+                        <div class="off-grid-title">SATURDAY OFF GRID (SCHEDULED OFF)</div>
+                        <div class="off-badge">Jamal Sealy (Sat OFF)</div>
+                        <div class="off-badge">Mark Francis (Wed &amp; Sat OFF)</div>
+                        <div class="off-badge">Jose Gonzalez (Sat OFF)</div>
+                        <div class="off-badge">Jose Garcia (Wknd OFF)</div>
+                        <div class="off-badge">Quinton Jackson (Wknd OFF)</div>
+                        <div class="off-badge">Ryan Huffaker (Wknd OFF)</div>
+                        <div class="off-badge">Jesus Pasos (Wknd OFF)</div>
+                        <div class="off-badge">Datavious Striblen (Wknd OFF)</div>
                     </div>
                 </div>
 
-                <div class="off-grid-divider"></div>
-                <div class="off-grid-title">SATURDAY OFF GRID (SCHEDULED OFF)</div>
-                <div class="off-grid-list">
-                    <div class="off-item">Jamal Sealy (Sat OFF)</div>
-                    <div class="off-item">Mark Francis (Wed &amp; Sat OFF)</div>
-                    <div class="off-item">Jose Gonzalez (Sat OFF)</div>
-                    <div class="off-item">Jose Garcia (Wknd OFF)</div>
-                    <div class="off-item">Quinton Jackson (Wknd OFF)</div>
-                    <div class="off-item">Ryan Huffaker (Wknd OFF)</div>
-                    <div class="off-item">Jesus Pasos (Wknd OFF)</div>
-                    <div class="off-item">Datavious Striblen (Wknd OFF)</div>
-                </div>
-            </div>
-        </section>
+                <!-- SUNDAY MATRIX (5 ROUTES) -->
+                <div class="day-card sun-card">
+                    <div class="day-header">
+                        <h2 class="day-title">SUNDAY MATRIX (5 ROUTES)</h2>
+                        <div class="day-pill">5 HIT BY ROSTER + FLEX COVERAGE</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="driver-badge green-bar">wa123 — Jamal Sealy</div>
+                        <div class="driver-badge green-bar">wa126 — Mark Francis</div>
+                        <div class="driver-badge cyan-bar">wa127 — Davion Oliver</div>
+                        <div class="driver-badge cyan-bar">wa135 — Ivan Cuba</div>
+                        <div class="driver-badge green-bar">wa155 — Larissa Hernandez</div>
 
-        <!-- SUNDAY MATRIX (5 ROUTES) -->
-        <section class="matrix-card sunday-card">
-            <div class="card-header">
-                <h2 class="card-title">SUNDAY MATRIX (5 ROUTES)</h2>
-                <div class="status-pill">5 HIT BY ROSTER &amp; COVERAGE — 100% LOCKED</div>
-            </div>
-            <div class="card-body">
-                <div class="route-list">
-                    <div class="route-item bar-green">
-                        <span>wa123 — Jamal Sealy</span>
-                        <span class="route-badge">Confirmed</span>
-                    </div>
-                    <div class="route-item bar-green">
-                        <span>wa126 — Mark Francis</span>
-                        <span class="route-badge">Roster</span>
-                    </div>
-                    <div class="route-item bar-blue">
-                        <span>wa127 — Davion Oliver</span>
-                        <span class="route-badge">Confirmed</span>
-                    </div>
-                    <div class="route-item bar-blue">
-                        <span>wa135 — Ivan Cuba</span>
-                        <span class="route-badge">Roster</span>
-                    </div>
-                    <div class="route-item bar-green">
-                        <span>wa155 — Larissa Hernandez</span>
-                        <span class="route-badge">Confirmed</span>
+                        <div class="off-grid-divider"></div>
+                        <div class="off-grid-title">SUNDAY OFF GRID (SCHEDULED OFF)</div>
+                        <div class="off-badge">Jerrylee Camacho (Sun OFF)</div>
+                        <div class="off-badge">Cayton McDonald (Sun OFF)</div>
+                        <div class="off-badge">Noe Rosales (Sun OFF)</div>
+                        <div class="off-badge">Elvis Rangel (Sun OFF)</div>
+                        <div class="off-badge">Jose Gonzalez (Sun OFF)</div>
+                        <div class="off-badge">Jose Garcia (Wknd OFF)</div>
+                        <div class="off-badge">Quinton Jackson (Wknd OFF)</div>
+                        <div class="off-badge">Ryan Huffaker (Wknd OFF)</div>
+                        <div class="off-badge">Jesus Pasos (Wknd OFF)</div>
+                        <div class="off-badge">Datavious Striblen (Wknd OFF)</div>
                     </div>
                 </div>
 
-                <div class="off-grid-divider"></div>
-                <div class="off-grid-title">SUNDAY OFF GRID (SCHEDULED OFF)</div>
-                <div class="off-grid-list">
-                    <div class="off-item">Jerrylee Camacho (Sun OFF)</div>
-                    <div class="off-item">Noe Rosales (Sun OFF)</div>
-                    <div class="off-item">Cayton McDonald (Sun OFF)</div>
-                    <div class="off-item">Elvis Rangel (Sun OFF)</div>
-                    <div class="off-item">Jose Garcia (Wknd OFF)</div>
-                    <div class="off-item">Quinton Jackson (Wknd OFF)</div>
-                    <div class="off-item">Ryan Huffaker (Wknd OFF)</div>
-                    <div class="off-item">Jesus Pasos (Wknd OFF)</div>
-                    <div class="off-item">Datavious Striblen (Wknd OFF)</div>
+                <!-- MONDAY MATRIX (12 ROUTES) -->
+                <div class="day-card wkd-card">
+                    <div class="day-header">
+                        <h2 class="day-title">MONDAY MATRIX (12 ROUTES)</h2>
+                        <div class="day-pill">WA135 OFFLINE MONDAYS — 12 ROUTES LOCKED</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="driver-badge green-bar">wa123 — Jamal Sealy</div>
+                        <div class="driver-badge green-bar">wa126 — Mark Francis</div>
+                        <div class="driver-badge green-bar">wa127 — Jerrylee Camacho</div>
+                        <div class="driver-badge green-bar">wa130 — Jose Garcia</div>
+                        <div class="driver-badge green-bar">wa134 / wa218 — Quinton Jackson (2 Trucks)</div>
+                        <div class="driver-badge green-bar">wa138 — Ryan Huffaker</div>
+                        <div class="driver-badge green-bar">wa139 — Jesus Pasos</div>
+                        <div class="driver-badge green-bar">wa146 — Cayton McDonald / Davion Oliver</div>
+                        <div class="driver-badge green-bar">wa154 — Noe Rosales</div>
+                        <div class="driver-badge green-bar">wa155 — Elvis Rangel / Jose Gonzalez</div>
+                        <div class="driver-badge green-bar">wa234 — Datavious Striblen</div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- WEEKDAY MATRIX (MON - FRI OVERVIEW) -->
-        <section class="matrix-card weekday-card">
-            <div class="card-header">
-                <h2 class="card-title">WEEKDAY BASELINE (MON 12 / TUE–FRI 13)</h2>
-                <div class="status-pill">CORE ROUTE ASSIGNMENTS (MON: NO WA135)</div>
-            </div>
-            <div class="card-body">
-                <div class="route-list">
-                    <div class="route-item bar-blue"><span>wa123 — Jamal Sealy</span><span class="route-badge">Off Sat</span></div>
-                    <div class="route-item bar-blue"><span>wa126 — Mark Francis</span><span class="route-badge">Off Wed/Sat</span></div>
-                    <div class="route-item bar-blue"><span>wa127 — Jerrylee Camacho</span><span class="route-badge">Off Sun</span></div>
-                    <div class="route-item bar-blue"><span>wa130 — Jose Garcia</span><span class="route-badge">Mon–Fri</span></div>
-                    <div class="route-item bar-blue"><span>wa134 / wa218 — Quinton Jackson</span><span class="route-badge">2 Trucks</span></div>
-                    <div class="route-item bar-blue"><span>wa135 — Cayton McDonald</span><span class="route-badge">Off Sun</span></div>
-                    <div class="route-item bar-blue"><span>wa138 — Ryan Huffaker</span><span class="route-badge">Mon–Fri</span></div>
-                    <div class="route-item bar-blue"><span>wa139 — Jesus Pasos</span><span class="route-badge">Mon–Fri</span></div>
-                    <div class="route-item bar-blue"><span>wa146 — Davion Oliver</span><span class="route-badge">Core</span></div>
-                    <div class="route-item bar-blue"><span>wa154 — Noe Rosales</span><span class="route-badge">Off Sun</span></div>
-                    <div class="route-item bar-blue"><span>wa155 — Elvis Rangel / Jose Gonzalez</span><span class="route-badge">Core</span></div>
-                    <div class="route-item bar-blue"><span>wa234 — Datavious Striblen</span><span class="route-badge">Mon–Fri</span></div>
+                <!-- TUESDAY - FRIDAY MATRIX (13 ROUTES) -->
+                <div class="day-card wkd-card">
+                    <div class="day-header">
+                        <h2 class="day-title">TUE – FRI MATRIX (13 ROUTES)</h2>
+                        <div class="day-pill">ALL 13 ROUTES LOCKED (WED 126: LARISSA)</div>
+                    </div>
+                    <div class="day-body">
+                        <div class="driver-badge green-bar">wa123 — Jamal Sealy</div>
+                        <div class="driver-badge green-bar">wa126 — Mark Francis (Wed: Larissa Hernandez)</div>
+                        <div class="driver-badge green-bar">wa127 — Jerrylee Camacho</div>
+                        <div class="driver-badge green-bar">wa130 — Jose Garcia</div>
+                        <div class="driver-badge green-bar">wa134 / wa218 — Quinton Jackson (2 Trucks)</div>
+                        <div class="driver-badge green-bar">wa135 — Cayton McDonald</div>
+                        <div class="driver-badge green-bar">wa138 — Ryan Huffaker</div>
+                        <div class="driver-badge green-bar">wa139 — Jesus Pasos</div>
+                        <div class="driver-badge green-bar">wa146 — Davion Oliver</div>
+                        <div class="driver-badge green-bar">wa154 — Noe Rosales</div>
+                        <div class="driver-badge green-bar">wa155 — Elvis Rangel / Jose Gonzalez</div>
+                        <div class="driver-badge green-bar">wa234 — Datavious Striblen</div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- SMS COPY & PASTE CHECKLIST HUB -->
-        <section class="matrix-card sms-card">
-            <div class="card-header">
-                <h2 class="card-title">SMS DISPATCH &amp; DRIVER CHECKLIST</h2>
-                <div class="status-pill">ONE-TAP COPY FOR GROUP TEXT</div>
             </div>
-            <div class="card-body">
-                <div id="smsTextBlock" class="sms-box">📋 WEEKEND LINEUP &amp; DAILY CHECKLIST
+        </div>
+
+        <!-- 2. MASTER ROSTER TAB -->
+        <div id="schedules" class="tab-section">
+            <div class="table-wrapper">
+                <div class="section-banner">Master Route &amp; Driver Schedule (Chronological by Route)</div>
+                <table id="rosterTable">
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Driver Name</th>
+                            <th>Mon (12)</th>
+                            <th>Tue (13)</th>
+                            <th>Wed (13)</th>
+                            <th>Thu (13)</th>
+                            <th>Fri (13)</th>
+                            <th>Sat (7)</th>
+                            <th>Sun (5)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>wa123</strong></td><td>Jamal Sealy</td><td class="work-cell">wa123</td><td class="work-cell">wa123</td><td class="work-cell">wa123</td><td class="work-cell">wa123</td><td class="work-cell">wa123</td><td class="off-cell">OFF</td><td class="work-cell">wa123</td></tr>
+                        <tr><td><strong>wa126</strong></td><td>Mark Francis</td><td class="work-cell">wa126</td><td class="work-cell">wa126</td><td class="off-cell">OFF</td><td class="work-cell">wa126</td><td class="work-cell">wa126</td><td class="off-cell">OFF</td><td class="work-cell">wa126</td></tr>
+                        <tr><td><strong>wa127</strong></td><td>Jerrylee Camacho</td><td class="work-cell">wa127</td><td class="work-cell">wa127</td><td class="work-cell">wa127</td><td class="work-cell">wa127</td><td class="work-cell">wa127</td><td class="cov-cell">wa123</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa130</strong></td><td>Jose Garcia</td><td class="work-cell">wa130</td><td class="work-cell">wa130</td><td class="work-cell">wa130</td><td class="work-cell">wa130</td><td class="work-cell">wa130</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa134 / 218</strong></td><td>Quinton Jackson</td><td class="work-cell">218 &amp; 134</td><td class="work-cell">218 &amp; 134</td><td class="work-cell">218 &amp; 134</td><td class="work-cell">218 &amp; 134</td><td class="work-cell">218 &amp; 134</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa135</strong></td><td>Cayton McDonald</td><td class="cov-cell">wa146</td><td class="work-cell">wa135</td><td class="work-cell">wa135</td><td class="work-cell">wa135</td><td class="work-cell">wa135</td><td class="work-cell">wa135</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa138</strong></td><td>Ryan Huffaker</td><td class="work-cell">wa138</td><td class="work-cell">wa138</td><td class="work-cell">wa138</td><td class="work-cell">wa138</td><td class="work-cell">wa138</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa139</strong></td><td>Jesus Pasos</td><td class="work-cell">wa139</td><td class="work-cell">wa139</td><td class="work-cell">wa139</td><td class="work-cell">wa139</td><td class="work-cell">wa139</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa146</strong></td><td>Davion Oliver</td><td class="work-cell">wa146</td><td class="work-cell">wa146</td><td class="work-cell">wa146</td><td class="work-cell">wa146</td><td class="work-cell">wa146</td><td class="work-cell">wa146</td><td class="cov-cell">wa127</td></tr>
+                        <tr><td><strong>wa154</strong></td><td>Noe Rosales</td><td class="work-cell">wa154</td><td class="work-cell">wa154</td><td class="work-cell">wa154</td><td class="work-cell">wa154</td><td class="work-cell">wa154</td><td class="cov-cell">wa130</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa155</strong></td><td>Elvis Guanipa Rangel</td><td class="work-cell">wa155</td><td class="off-cell">OFF</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa155</strong></td><td>Jose Gonzalez</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="work-cell">wa155</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>wa234</strong></td><td>Datavious Striblen</td><td class="work-cell">wa234</td><td class="work-cell">wa234</td><td class="work-cell">wa234</td><td class="work-cell">wa234</td><td class="work-cell">wa234</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td></tr>
+                        <tr><td><strong>Flex / Cov</strong></td><td>Larissa Hernandez</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td><td class="cov-cell">wa126</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td><td class="cov-cell">wa127</td><td class="cov-cell">wa155</td></tr>
+                        <tr><td><strong>Flex / Cov</strong></td><td>Ivan Cuba</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td><td class="off-cell">OFF</td><td class="cov-cell">wa138</td><td class="cov-cell">wa135</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. SAFETY, EXPECTATIONS & SMS CHECKLIST TAB -->
+        <div id="safety" class="tab-section">
+            <div class="info-card">
+                <div class="info-header" style="color: #34d399;">
+                    <span>📲 SMS Weekend Lineup &amp; Driver Checklist (Copy &amp; Paste)</span>
+                </div>
+                <div class="info-body">
+                    <div id="smsChecklistText" class="sms-pre">📋 WEEKEND LINEUP &amp; DAILY CHECKLIST
 
 🟧 SATURDAY LINEUP (7 ROUTES)
 ✅ wa123 — Jerrylee Camacho
@@ -465,18 +690,295 @@
 [ ] 6. PICKUPS: Hit pickup windows strictly on time (never early/late) &amp; scan every package into the truck.
 [ ] 7. CODES (02 / 27 / 85): Call Management/Dispatch BEFORE using Code 02. Code every remaining package before returning (NO Code 85 left in truck).
 [ ] 8. END OF DAY CLEAN-OUT: Remove all trash, return scanners/keys &amp; ZERO tolerance for pee bottles.</div>
-                <button class="copy-btn" onclick="copySmsChecklist()">📲 Copy Weekend Lineup + Checklist for SMS</button>
+                    <button class="btn-primary" onclick="copySmsText()">📋 Copy SMS Lineup &amp; Checklist</button>
+                </div>
             </div>
-        </section>
 
-    </main>
+            <div class="info-card">
+                <div class="info-header" style="color: #f43f5e;">
+                    <span>🚨 Mandatory Driver Coding &amp; Operational Standards</span>
+                </div>
+                <div class="info-body">
+                    <p><strong>1. Morning Organization &amp; Eliminating Code 27:</strong> Organize every shelf before leaving the station and catch misloads/bad addresses at the dock so you never skip a stop and find the package at the end of the day.</p>
+                    <p><strong>2. Accuracy Over Speed:</strong> Obey all posted speed limits on highways and streets, wear your seatbelt 100% of the time, and read every shipping label twice before leaving the package.</p>
+                    <p><strong>3. Strict Pickup Windows &amp; 100% Scanning:</strong> Pick up packages strictly within the designated window—never early and never late—and scan every single package as you load it into the truck.</p>
+                    <p><strong>4. Exception Codes (Code 02, Code 27 &amp; Code 85):</strong></p>
+                    <ul>
+                        <li><strong>Code 04:</strong> Business closed during normal hours.</li>
+                        <li><strong>Code 07:</strong> Residential access blocked or signature required with no one home (leave door tag).</li>
+                        <li><strong>Code 11:</strong> Business closed on weekends.</li>
+                        <li><strong>Code 02 (Incorrect Address ONLY):</strong> Never use Code 02 because you "cannot find" a place. Call Station Management / Dispatch from the stop first.</li>
+                        <li><strong>No Code 85 Inside the Truck:</strong> Every undelivered package left behind in the truck must be properly coded before returning to the terminal.</li>
+                    </ul>
+                    <p><strong>5. End-of-Day Truck Cleanliness (Zero Tolerance):</strong> Clean all trash from the cab and cargo area daily. <strong>Zero tolerance for urine ("pee") bottles inside the trucks.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. DRIVER REQUESTS TAB -->
+        <div id="requests" class="tab-section">
+            <div class="info-card">
+                <div class="info-header">
+                    <span>📝 Submit Driver Request (Uniforms, Route Issues, Time Off)</span>
+                </div>
+                <div class="info-body">
+                    <input type="text" id="reqDriverName" class="form-input" placeholder="Your Full Name">
+                    <select id="reqCategory" class="form-select">
+                        <option value="Uniform Request">Uniform Request</option>
+                        <option value="Schedule / Time Off">Schedule / Time Off</option>
+                        <option value="Truck / Maintenance">Truck / Maintenance Issue</option>
+                        <option value="Route / General">Route / General Question</option>
+                    </select>
+                    <textarea id="reqDetails" class="form-textarea" rows="4" placeholder="Enter details here..."></textarea>
+                    <button class="btn-primary" onclick="submitDriverRequest()">✅ Submit Request to Management</button>
+                </div>
+            </div>
+
+            <div class="info-card mgmt-only" id="managerInboxCard">
+                <div class="info-header" style="color: var(--accent-primary);">
+                    <span>📥 Manager Inbox (Submitted Driver Requests)</span>
+                </div>
+                <div class="info-body" id="requestsInboxList"></div>
+            </div>
+        </div>
+
+        <!-- 5. PERSONNEL DIRECTORY TAB (MANAGER LOCKED) -->
+        <div id="contacts" class="tab-section">
+            <div class="table-wrapper">
+                <div class="section-banner">Personnel Contact Directory (Chronological by Route)</div>
+                <table id="contactTable">
+                    <thead>
+                        <tr><th>Route</th><th>Driver Name</th><th>Phone</th><th>Email</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>wa123</strong></td><td>Jamal Sealy</td><td><a href="tel:+13475270069" class="action-btn phone-btn">📞 347-527-0069</a></td><td><a href="mailto:Malinvestments27@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa126</strong></td><td>Mark Francis</td><td><a href="tel:+18174494466" class="action-btn phone-btn">📞 817-449-4466</a></td><td><a href="mailto:markanttony92@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa127</strong></td><td>Jerrylee Camacho</td><td><a href="tel:" class="action-btn phone-btn">📞 Active</a></td><td><a href="mailto:" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa130</strong></td><td>Jose Garcia</td><td><a href="tel:+16822341522" class="action-btn phone-btn">📞 682-234-1522</a></td><td><a href="mailto:Garcia_turco_jose@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa134 / 218</strong></td><td>Quinton Jackson</td><td><a href="tel:+18177308910" class="action-btn phone-btn">📞 817-730-8910</a></td><td><a href="mailto:yungactionjack@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa135</strong></td><td>Cayton McDonald</td><td><a href="tel:+18175214570" class="action-btn phone-btn">📞 817-521-4570</a></td><td><a href="mailto:Cryptocayton@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa138</strong></td><td>Ryan Huffaker</td><td><a href="tel:+16827720589" class="action-btn phone-btn">📞 682-772-0589</a></td><td><a href="mailto:Wurker.man.247@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa139</strong></td><td>Jesus Pasos</td><td><a href="tel:+18178750747" class="action-btn phone-btn">📞 817-875-0747</a></td><td><a href="mailto:Pasos_j@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa146</strong></td><td>Davion Oliver</td><td><a href="tel:+18177180259" class="action-btn phone-btn">📞 817-718-0259</a></td><td><a href="mailto:Oliverdavion@me.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa154</strong></td><td>Noe Rosales</td><td><a href="tel:+16825529523" class="action-btn phone-btn">📞 682-552-9523</a></td><td><a href="mailto:Noe.r2003@yahoo.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa155</strong></td><td>Elvis Guanipa Rangel</td><td><a href="tel:+12108971929" class="action-btn phone-btn">📞 210-897-1929</a></td><td><a href="mailto:Elvisguanipa529@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa155</strong></td><td>Jose Gonzalez</td><td><a href="tel:" class="action-btn phone-btn">📞 Active</a></td><td><a href="mailto:" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>wa234</strong></td><td>Datavious Striblen</td><td><a href="tel:+16822877169" class="action-btn phone-btn">📞 682-287-7169</a></td><td><a href="mailto:dstrib99@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>Flex / Cov</strong></td><td>Larissa Hernandez</td><td><a href="tel:" class="action-btn phone-btn">📞 Active</a></td><td><a href="mailto:" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>Flex / Cov</strong></td><td>Ivan Cuba</td><td><a href="tel:" class="action-btn phone-btn">📞 Active</a></td><td><a href="mailto:" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>Floater</strong></td><td>Kyaire Segers</td><td><a href="tel:+18564546248" class="action-btn phone-btn">📞 856-454-6248</a></td><td><a href="mailto:Kyaire333@icloud.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                        <tr><td><strong>TBD</strong></td><td>Joshua Boyd</td><td><a href="tel:+16624354826" class="action-btn phone-btn">📞 662-435-4826</a></td><td><a href="mailto:jcboyd97@gmail.com" class="action-btn email-btn">✉️ Email</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 6. UNIFORMS TAB (MANAGER LOCKED) -->
+        <div id="uniforms" class="tab-section">
+            <div class="table-wrapper">
+                <div class="section-banner">Driver Uniform Sizes</div>
+                <table id="uniformTable">
+                    <thead>
+                        <tr><th>Route</th><th>Driver Name</th><th>Shirt</th><th>Pants</th><th>Vest</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>wa123</td><td>Jamal Sealy</td><td>L</td><td>36</td><td>N/A</td></tr>
+                        <tr><td>wa126</td><td>Mark Francis</td><td>L</td><td>36</td><td>L</td></tr>
+                        <tr><td>wa130</td><td>Jose Garcia</td><td>XL</td><td>38</td><td>XL</td></tr>
+                        <tr><td>wa134 / 218</td><td>Quinton Jackson</td><td>M</td><td>29x32</td><td>N/A</td></tr>
+                        <tr><td>wa135</td><td>Cayton McDonald</td><td>L</td><td>36</td><td>L</td></tr>
+                        <tr><td>wa138</td><td>Ryan Huffaker</td><td>M</td><td>30</td><td>M</td></tr>
+                        <tr><td>wa139</td><td>Jesus Pasos</td><td>M</td><td>34</td><td>M</td></tr>
+                        <tr><td>wa146</td><td>Davion Oliver</td><td>M</td><td>34</td><td>M</td></tr>
+                        <tr><td>wa154</td><td>Noe Rosales</td><td>XL</td><td>38</td><td>XL</td></tr>
+                        <tr><td>wa155</td><td>Elvis Guanipa Rangel</td><td>M</td><td>N/A</td><td>M</td></tr>
+                        <tr><td>wa234</td><td>Datavious Striblen</td><td>XL / 2XL</td><td>42 / 42x30</td><td>Pending</td></tr>
+                        <tr><td>Floater</td><td>Kyaire Segers</td><td>S / M</td><td>28 / 29</td><td>M</td></tr>
+                        <tr><td>TBD</td><td>Joshua Boyd</td><td>2XL</td><td>38</td><td>2XL</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 7. TRUCK INSPECTIONS TAB (MANAGER LOCKED) -->
+        <div id="inspections" class="tab-section">
+            <div class="info-card">
+                <div class="info-header">
+                    <span>🔧 Log Truck &amp; Route Inspection</span>
+                </div>
+                <div class="info-body">
+                    <input type="text" id="inspTruck" class="form-input" placeholder="Truck Number (e.g., Truck 23412)">
+                    <input type="text" id="inspRoute" class="form-input" placeholder="Route Number (e.g., wa135)">
+                    <textarea id="inspNotes" class="form-textarea" rows="3" placeholder="Inspection notes (tires, lights, mirrors, fuel, cleanliness)..."></textarea>
+                    <button class="btn-primary" onclick="saveInspection()">💾 Save Inspection Log</button>
+                </div>
+            </div>
+            <div id="inspectionsList"></div>
+        </div>
+
+        <!-- 8. DAILY LOG / NOTES DB TAB (MANAGER LOCKED) -->
+        <div id="notes" class="tab-section">
+            <div class="info-card">
+                <div class="info-header">
+                    <span>📓 Add Daily Operations Note</span>
+                </div>
+                <div class="info-body">
+                    <input type="text" id="noteTitle" class="form-input" placeholder="Note Title">
+                    <textarea id="noteBody" class="form-textarea" rows="4" placeholder="Enter daily operational notes..."></textarea>
+                    <button class="btn-primary" onclick="addNote()">💾 Save Note</button>
+                </div>
+            </div>
+            <div id="notesList"></div>
+        </div>
+
+    </div>
 
     <script>
-        function copySmsChecklist() {
-            const text = document.getElementById("smsTextBlock").innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Copied SMS Lineup & Checklist to clipboard!");
+        let isUnlocked = false;
+        const MANAGER_PIN = "7170928";
+
+        function toggleManagement() {
+            const btn = document.getElementById("mgmtLockBtn");
+            const mgmtElements = document.querySelectorAll(".mgmt-only");
+
+            if (!isUnlocked) {
+                const pin = prompt("Enter Manager PIN:");
+                if (pin === MANAGER_PIN) {
+                    isUnlocked = true;
+                    mgmtElements.forEach(el => el.style.display = "inline-block");
+                    const inbox = document.getElementById("managerInboxCard");
+                    if (inbox) inbox.style.display = "block";
+                    btn.innerText = "🔓 Manager Mode Unlocked (Tap to Lock)";
+                    btn.classList.add("unlocked");
+                    renderRequests();
+                    renderInspections();
+                    renderNotes();
+                } else if (pin !== null) {
+                    alert("Incorrect PIN.");
+                }
+            } else {
+                isUnlocked = false;
+                mgmtElements.forEach(el => el.style.display = "none");
+                btn.innerText = "🔐 Manager Login (Unlock Full Directory & Logs)";
+                btn.classList.remove("unlocked");
+                switchTab('board', document.querySelector('.tab-btn'));
+            }
+        }
+
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+
+        function filterContent() {
+            const q = document.getElementById("searchInput").value.toLowerCase();
+            document.querySelectorAll('.day-card, .info-card').forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(q) ? "" : "none";
             });
+            ['rosterTable', 'contactTable', 'uniformTable'].forEach(id => {
+                const table = document.getElementById(id);
+                if (!table) return;
+                const rows = table.getElementsByTagName("tr");
+                for (let i = 1; i < rows.length; i++) {
+                    rows[i].style.display = rows[i].innerText.toLowerCase().includes(q) ? "" : "none";
+                }
+            });
+        }
+
+        function copySmsText() {
+            const text = document.getElementById("smsChecklistText").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied Weekend Lineup & Checklist for SMS!");
+            });
+        }
+
+        function submitDriverRequest() {
+            const name = document.getElementById("reqDriverName").value.trim();
+            const cat = document.getElementById("reqCategory").value;
+            const details = document.getElementById("reqDetails").value.trim();
+            if (!name || !details) {
+                alert("Please enter your name and request details.");
+                return;
+            }
+            const list = JSON.parse(localStorage.getItem("fedex_driver_requests") || "[]");
+            list.push({ id: Date.now(), name, cat, details, date: new Date().toLocaleString() });
+            localStorage.setItem("fedex_driver_requests", JSON.stringify(list));
+            document.getElementById("reqDriverName").value = "";
+            document.getElementById("reqDetails").value = "";
+            alert("Request submitted to Management!");
+            renderRequests();
+        }
+
+        function renderRequests() {
+            const box = document.getElementById("requestsInboxList");
+            if (!box) return;
+            const list = JSON.parse(localStorage.getItem("fedex_driver_requests") || "[]");
+            if (list.length === 0) {
+                box.innerHTML = "<p style='color:#94a3b8;'>No driver requests submitted yet.</p>";
+                return;
+            }
+            box.innerHTML = list.slice().reverse().map(r => `
+                <div style="border-left:4px solid #0ea5e9; background:#161b2a; padding:12px; border-radius:6px; margin-bottom:10px;">
+                    <strong>${r.name}</strong> &bull; <span style="color:#38bdf8;">${r.cat}</span>
+                    <div style="font-size:0.8rem; color:#94a3b8;">${r.date}</div>
+                    <p style="margin:6px 0 0;">${r.details}</p>
+                </div>
+            `).join("");
+        }
+
+        function saveInspection() {
+            const truck = document.getElementById("inspTruck").value.trim();
+            const route = document.getElementById("inspRoute").value.trim();
+            const notes = document.getElementById("inspNotes").value.trim();
+            if (!truck || !route) {
+                alert("Please enter both Truck Number and Route Number.");
+                return;
+            }
+            const list = JSON.parse(localStorage.getItem("fedex_inspections") || "[]");
+            list.push({ id: Date.now(), truck, route, notes, date: new Date().toLocaleString() });
+            localStorage.setItem("fedex_inspections", JSON.stringify(list));
+            document.getElementById("inspTruck").value = "";
+            document.getElementById("inspRoute").value = "";
+            document.getElementById("inspNotes").value = "";
+            renderInspections();
+        }
+
+        function renderInspections() {
+            const box = document.getElementById("inspectionsList");
+            if (!box) return;
+            const list = JSON.parse(localStorage.getItem("fedex_inspections") || "[]");
+            box.innerHTML = list.slice().reverse().map(item => `
+                <div class="info-card">
+                    <div class="info-header"><span>🚛 ${item.truck} | Route: ${item.route}</span><span style="font-size:0.8rem; color:#94a3b8;">${item.date}</span></div>
+                    <div class="info-body">${item.notes || "Inspection logged."}</div>
+                </div>
+            `).join("");
+        }
+
+        function addNote() {
+            const title = document.getElementById("noteTitle").value.trim();
+            const body = document.getElementById("noteBody").value.trim();
+            if (!title || !body) return;
+            const list = JSON.parse(localStorage.getItem("fedex_notes_v35") || "[]");
+            list.push({ id: Date.now(), title, body, date: new Date().toLocaleDateString() });
+            localStorage.setItem("fedex_notes_v35", JSON.stringify(list));
+            document.getElementById("noteTitle").value = "";
+            document.getElementById("noteBody").value = "";
+            renderNotes();
+        }
+
+        function renderNotes() {
+            const box = document.getElementById("notesList");
+            if (!box) return;
+            const list = JSON.parse(localStorage.getItem("fedex_notes_v35") || "[]");
+            box.innerHTML = list.slice().reverse().map(n => `
+                <div class="info-card">
+                    <div class="info-header"><span>${n.date} — ${n.title}</span></div>
+                    <div class="info-body">${n.body}</div>
+                </div>
+            `).join("");
         }
     </script>
 </body>
